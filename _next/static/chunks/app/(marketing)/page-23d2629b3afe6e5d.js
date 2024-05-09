@@ -220,14 +220,16 @@
             headerText
           } = e;
           return (0, l.jsxs)("div", {
-            className: "flex flex-col h-full justify-between mt-6",
+            className: "flex flex-col h-full justify-between mt-6 items-center",
               children:[
                     (0, l.jsxs)("h2", {
-                      className:'text-center text-[24px] aTextGrad ',
+                      className:'text-center aTextGrad',
+                      style:{fontSize:"2.125rem"},
                       children:headerText
                     }),
                     (0, l.jsxs)("p", {
-                      className:'text-[13px] text-center',
+                      className:'text-center',
+                      style:{fontSize:"1.125rem"},
                       children:a
                     }),
                     (0, l.jsx)("video", {
