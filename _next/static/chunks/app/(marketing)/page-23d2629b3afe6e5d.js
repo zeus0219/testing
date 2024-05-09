@@ -266,7 +266,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Easily Inspect and Edit CSS",
-                videoUrl:"https://superdevpro.com/videos/css-inspector.mp4"
+                videoUrl:"/videos/css-inspector.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
@@ -278,7 +278,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Test New Texts in a Blink",
-                videoUrl:"https://superdevpro.com/videos/live-text-editor.mp4"
+                videoUrl:"/videos/live-text-editor.mp4"
               }),
             ],
           }),
@@ -296,7 +296,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Effortless Font Switching",
-                videoUrl:"https://superdevpro.com/videos/fonts-changer.mp4"
+                videoUrl:"/videos/fonts-changer.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
@@ -308,7 +308,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Font Details at Fingertips",
-                videoUrl:"https://superdevpro.com/videos/list-all-fonts.mp4"
+                videoUrl:"/videos/list-all-fonts.mp4"
               }),
             ],
           }),
@@ -326,7 +326,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Precise Color Selection",
-                videoUrl:"https://superdevpro.com/videos/color-picker.mp4"
+                videoUrl:"/videos/color-picker.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
@@ -338,7 +338,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Explore Website Colors",
-                videoUrl:"https://superdevpro.com/videos/color-palette.mp4"
+                videoUrl:"/videos/color-palette.mp4"
               }),
             ],
           }),
@@ -356,7 +356,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Move Elements with Ease",
-                videoUrl:"https://superdevpro.com/videos/move-element.mp4"
+                videoUrl:"/videos/move-element.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
@@ -368,7 +368,7 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Move Elements with Ease",
-                videoUrl:"https://superdevpro.com/videos/delete-element.mp4"
+                videoUrl:"/videos/delete-element.mp4"
               }),
             ],
           }),
