@@ -1112,6 +1112,20 @@
                   }),
                 ],
               }),
+
+              (0, l.jsxs)("div", {
+                className:
+                  "relative flex flex-col items-center justify-center",
+                children: [
+                  (0, l.jsx)("img", {
+                    className:"relative",
+                    src:"/poster.png",
+                    width:"50%",
+                    style:{"top":"400px"}
+                  }),
+                ],
+              }),
+              
               (0, l.jsxs)(d.E.div, {
                 className: (0, o.Z)(
                   "pointer-events-none absolute left-1/3",
