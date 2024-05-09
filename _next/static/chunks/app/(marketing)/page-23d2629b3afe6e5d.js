@@ -216,7 +216,8 @@
             bulletPoints: o,
             imgClassName: d = "",
             className: u,
-            videoUrl
+            videoUrl,
+            headerText
           } = e;
           return (0, l.jsxs)("div", {
             className: u,
@@ -229,21 +230,39 @@
                     className:
                       "flex items-start justify-between gap-2 px-4 lg:px-6",
                     children: [
-                      (0, l.jsx)("video", {
-                        className:"mt-8 rounded-list md:mt-11",
-                        controls: !1,
-                        height: "0",
-                        loop: !0,
-                        muted: !0,
-                        autoplay: 1,
-                        width: "100%",
+                      (0, l.jsxs)("div", {
+                        className:"",
                         children:[
-                          (0, l.jsx)("source", {
-                            type: "video/webm",
-                            src:videoUrl,
+                          (0, l.jsxs)("a", {
+                            children:[
+                              (0, l.jsxs)("h2", {
+                                className:'text-center text-[24px] aTextGrad ',
+                                children:headerText
+                              }),
+                              (0, l.jsxs)("p", {
+                                className:'text-[13px] text-center',
+                                children:a
+                              }),
+                              (0, l.jsx)("video", {
+                                className:"mt-8 rounded-list md:mt-11",
+                                controls: !1,
+                                height: "0",
+                                loop: !0,
+                                muted: !0,
+                                autoplay: 1,
+                                width: "100%",
+                                children:[
+                                  (0, l.jsx)("source", {
+                                    type: "video/webm",
+                                    src:videoUrl,
+                                  })
+                                ]
+                              }),
+                            ]
                           })
                         ]
                       }),
+                     
                     ],
                   }),
                 ],
@@ -277,15 +296,12 @@
                 className: "contents snap-x snap-center ",
                 title: "Beautiful coin profiles",
                 description:
-                  "Show off your token and let users dig into useful data in an intuitive way.",
+                  "Want to inspect or edit a website without leaving your browser? Do that right within the browser.",
                 imgURL: r.L.profileExample,
                 Icon: u,
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                bulletPoints: [
-                  "Community growth metrics",
-                  "Advanced holder analysis",
-                ],
+                headerText: "Easily Inspect and Edit CSS",
                 videoUrl:"https://superdevpro.com/videos/color-picker.mp4"
               }),
               (0, l.jsx)(_h, {
@@ -297,10 +313,7 @@
                 Icon: u,
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                bulletPoints: [
-                  "Community growth metrics",
-                  "Advanced holder analysis",
-                ],
+                headerText: "Community growth metrics",
                 videoUrl:"https://superdevpro.com/videos/color-palette.mp4"
               }),
               (0, l.jsx)(_h, {
@@ -312,10 +325,7 @@
                 Icon: u,
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                bulletPoints: [
-                  "Community growth metrics",
-                  "Advanced holder analysis",
-                ],
+                headerText: "Advanced holder analysis",
                 videoUrl:"https://superdevpro.com/videos/move-element.mp4"
               }),
             ],
