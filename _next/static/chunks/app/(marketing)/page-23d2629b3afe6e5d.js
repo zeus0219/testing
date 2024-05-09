@@ -207,9 +207,119 @@
             ],
           });
         },
+        _h = (e) => {
+          let {
+            title: t,
+            description: a,
+            Icon: s,
+            imgURL: r,
+            bulletPoints: o,
+            imgClassName: d = "",
+            className: u,
+            videoUrl
+          } = e;
+          return (0, l.jsxs)("div", {
+            className: u,
+            children: [
+              (0, l.jsxs)("div", {
+                className:
+                  "flex flex-col",
+                children: [
+                  (0, l.jsxs)("div", {
+                    className:
+                      "flex items-start justify-between gap-2 px-4 lg:px-6",
+                    children: [
+                      (0, l.jsx)("video", {
+                        className:"mt-8 rounded-list md:mt-11",
+                        controls: !1,
+                        height: "0",
+                        loop: !0,
+                        muted: !0,
+                        width: "100%",
+                        children:[
+                          (0, l.jsx)("source", {
+                            type: "video/webm",
+                            src:videoUrl,
+                          })
+                        ]
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, l.jsxs)("div", {
+                className:
+                  "jsx-a6565fdce2e7bb3a feature-explainer-bullet-points -mt-[var(--arrow-size)] flex flex-col text-gray-40",
+                children: [
+                  (0, l.jsx)(n(), {
+                    id: "a6565fdce2e7bb3a",
+                    children:
+                      ".feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:3rem;--size:1rem}@media(min-width:1024px){.feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:4rem;--size:1.5rem}}",
+                  }),
+                ],
+              }),
+            ],
+          });
+        },
         m = (e) => {
           let { className: t = "" } = e;
-          return (0, l.jsxs)("div", {
+          return [(0, l.jsxs)("div", {
+            className: (0, c.cn)(
+              "grid grid-cols-[repeat(3,calc(100vw-2.5rem))] grid-rows-[1fr_auto] gap-x-4 overflow-x-auto [grid-auto-flow:column] md:grid-cols-[repeat(3,50vw)] lg:grid-cols-3",
+              "snap-x snap-mandatory",
+              "px-2 md:px-0",
+              "rounded-lg aBGGrid",
+              t
+            ),
+            children: [
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Show off your token and let users dig into useful data in an intuitive way.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                bulletPoints: [
+                  "Community growth metrics",
+                  "Advanced holder analysis",
+                ],
+                videoUrl:"https://superdevpro.com/videos/color-picker.mp4"
+              }),
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Show off your token and let users dig into useful data in an intuitive way.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                bulletPoints: [
+                  "Community growth metrics",
+                  "Advanced holder analysis",
+                ],
+                videoUrl:"https://superdevpro.com/videos/color-palette.mp4"
+              }),
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Show off your token and let users dig into useful data in an intuitive way.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                bulletPoints: [
+                  "Community growth metrics",
+                  "Advanced holder analysis",
+                ],
+                videoUrl:"https://superdevpro.com/videos/move-element.mp4"
+              }),
+            ],
+          }),
+          (0, l.jsxs)("div", {
             className: (0, c.cn)(
               "grid grid-cols-[repeat(3,calc(100vw-2.5rem))] grid-rows-[1fr_auto] gap-x-4 overflow-x-auto [grid-auto-flow:column] md:grid-cols-[repeat(3,50vw)] lg:grid-cols-3",
               "snap-x snap-mandatory",
@@ -260,7 +370,7 @@
                 ],
               }),
             ],
-          });
+          }),];
         };
     },
     71609: function (e, t, a) {
@@ -667,7 +777,8 @@
               [e]
             ),
             j = (0, u.useMemo)(() => e.width < 940, [e]);
-          return (0, l.jsxs)("header", {
+          return [
+            (0, l.jsxs)("header", {
             className: (0, o.Z)(
               "relative mx-2 mt-4 h-[700px] max-h-[700px] min-h-[700px] font-wide font-bold leading-none"
             ),
@@ -1112,19 +1223,6 @@
                   }),
                 ],
               }),
-
-              (0, l.jsxs)("div", {
-                className:
-                  "relative flex flex-col items-center justify-center",
-                children: [
-                  (0, l.jsx)("img", {
-                    className:"relative",
-                    src:"/poster.png",
-                    width:"50%",
-                    style:{"top":"400px"}
-                  }),
-                ],
-              }),
               
               (0, l.jsxs)(d.E.div, {
                 className: (0, o.Z)(
@@ -1241,7 +1339,22 @@
                 ],
               }),
             ],
-          });
+            }),
+            (0,l.jsxs)("div",{
+              className:"",
+              children:[
+                (0,l.jsxs)("div",{
+                  className:"aBGGrid",
+                  children:[
+                    (0,l.jsxs)("img",{
+                      src:"/poster.png",
+                      width:"100%"
+                    })
+                  ]
+                })
+              ]
+            })
+          ]
         };
     },
     16345: function (e, t, a) {
