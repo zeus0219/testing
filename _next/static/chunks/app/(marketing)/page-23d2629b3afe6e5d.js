@@ -220,76 +220,38 @@
             headerText
           } = e;
           return (0, l.jsxs)("div", {
-            className: u,
-            children: [
-              (0, l.jsxs)("div", {
-                className:
-                  "flex flex-col",
-                children: [
-                  (0, l.jsxs)("div", {
-                    className:
-                      "flex items-start justify-between gap-2 px-4 lg:px-6",
-                    children: [
-                      (0, l.jsxs)("div", {
-                        className:"",
-                        children:[
-                          (0, l.jsxs)("a", {
-                            children:[
-                              (0, l.jsxs)("h2", {
-                                className:'text-center text-[24px] aTextGrad ',
-                                children:headerText
-                              }),
-                              (0, l.jsxs)("p", {
-                                className:'text-[13px] text-center',
-                                children:a
-                              }),
-                              (0, l.jsx)("video", {
-                                className:"mt-8 rounded-list md:mt-11",
-                                controls: !1,
-                                height: "0",
-                                loop: !0,
-                                muted: !0,
-                                autoplay: 1,
-                                width: "100%",
-                                children:[
-                                  (0, l.jsx)("source", {
-                                    type: "video/webm",
-                                    src:videoUrl,
-                                  })
-                                ]
-                              }),
-                            ]
-                          })
-                        ]
-                      }),
-                     
-                    ],
-                  }),
-                ],
-              }),
-              (0, l.jsxs)("div", {
-                className:
-                  "jsx-a6565fdce2e7bb3a feature-explainer-bullet-points -mt-[var(--arrow-size)] flex flex-col text-gray-40",
-                children: [
-                  (0, l.jsx)(n(), {
-                    id: "a6565fdce2e7bb3a",
-                    children:
-                      ".feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:3rem;--size:1rem}@media(min-width:1024px){.feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:4rem;--size:1.5rem}}",
-                  }),
-                ],
-              }),
-            ],
+            className: "flex flex-col h-full justify-between mt-6",
+              children:[
+                    (0, l.jsxs)("h2", {
+                      className:'text-center text-[24px] aTextGrad ',
+                      children:headerText
+                    }),
+                    (0, l.jsxs)("p", {
+                      className:'text-[13px] text-center',
+                      children:a
+                    }),
+                    (0, l.jsx)("video", {
+                      className:"rounded-list md:mt-11 mb-5",
+                      controls: !1,
+                      height: "0",
+                      loop: !0,
+                      muted: !0,
+                      autoplay: 1,
+                      width: "100%",
+                      children:[
+                        (0, l.jsx)("source", {
+                          type: "video/webm",
+                          src:videoUrl,
+                        })
+                      ]
+                    }),
+              ]
           });
         },
         m = (e) => {
           let { className: t = "" } = e;
           return [(0, l.jsxs)("div", {
-            className: (0, c.cn)(
-              "grid grid-cols-[repeat(3,calc(100vw-2.5rem))] grid-rows-[1fr_auto] gap-x-4 overflow-x-auto [grid-auto-flow:column] md:grid-cols-[repeat(3,50vw)] lg:grid-cols-3",
-              "snap-x snap-mandatory",
-              "px-2 md:px-0",
-              "rounded-lg aBGGrid",
-              t
+            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
             ),
             children: [
               (0, l.jsx)(_h, {
@@ -302,34 +264,113 @@
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
                 headerText: "Easily Inspect and Edit CSS",
+                videoUrl:"https://superdevpro.com/videos/css-inspector.mp4"
+              }),
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Need to edit text on a website instantly? Edit them as if you’re typing in a doc, easy peasy!",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                headerText: "Test New Texts in a Blink",
+                videoUrl:"https://superdevpro.com/videos/live-text-editor.mp4"
+              }),
+            ],
+          }),
+          (0, l.jsxs)("div", {
+            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+            ),
+            children: [
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                headerText: "Effortless Font Switching",
+                videoUrl:"https://superdevpro.com/videos/fonts-changer.mp4"
+              }),
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                headerText: "Font Details at Fingertips",
+                videoUrl:"https://superdevpro.com/videos/list-all-fonts.mp4"
+              }),
+            ],
+          }),
+          (0, l.jsxs)("div", {
+            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+            ),
+            children: [
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                headerText: "Precise Color Selection",
                 videoUrl:"https://superdevpro.com/videos/color-picker.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
                 title: "Beautiful coin profiles",
                 description:
-                  "Show off your token and let users dig into useful data in an intuitive way.",
+                  "Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.",
                 imgURL: r.L.profileExample,
                 Icon: u,
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Community growth metrics",
+                headerText: "Explore Website Colors",
                 videoUrl:"https://superdevpro.com/videos/color-palette.mp4"
+              }),
+            ],
+          }),
+          (0, l.jsxs)("div", {
+            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+            ),
+            children: [
+              (0, l.jsx)(_h, {
+                className: "contents snap-x snap-center ",
+                title: "Beautiful coin profiles",
+                description:
+                  "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
+                imgURL: r.L.profileExample,
+                Icon: u,
+                imgClassName:
+                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                headerText: "Move Elements with Ease",
+                videoUrl:"https://superdevpro.com/videos/move-element.mp4"
               }),
               (0, l.jsx)(_h, {
                 className: "contents snap-x snap-center ",
                 title: "Beautiful coin profiles",
                 description:
-                  "Show off your token and let users dig into useful data in an intuitive way.",
+                  "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
                 imgURL: r.L.profileExample,
                 Icon: u,
                 imgClassName:
                   "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Advanced holder analysis",
-                videoUrl:"https://superdevpro.com/videos/move-element.mp4"
+                headerText: "Move Elements with Ease",
+                videoUrl:"https://superdevpro.com/videos/delete-element.mp4"
               }),
             ],
           }),
+
           (0, l.jsxs)("div", {
             className: (0, c.cn)(
               "grid grid-cols-[repeat(3,calc(100vw-2.5rem))] grid-rows-[1fr_auto] gap-x-4 overflow-x-auto [grid-auto-flow:column] md:grid-cols-[repeat(3,50vw)] lg:grid-cols-3",
