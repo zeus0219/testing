@@ -360,7 +360,7 @@
                 className: "contents snap-x snap-center ",
                 title: "Beautiful coin profiles",
                 description:
-                  "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
+                  "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
                 imgURL: r.L.profileExample,
                 Icon: u,
                 imgClassName:
