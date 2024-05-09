@@ -235,6 +235,7 @@
                         height: "0",
                         loop: !0,
                         muted: !0,
+                        autoplay: 1,
                         width: "100%",
                         children:[
                           (0, l.jsx)("source", {
@@ -1341,7 +1342,7 @@
             ],
             }),
             (0,l.jsxs)("div",{
-              className:"",
+              className:"mt-6",
               children:[
                 (0,l.jsxs)("div",{
                   className:"aBGGrid",
