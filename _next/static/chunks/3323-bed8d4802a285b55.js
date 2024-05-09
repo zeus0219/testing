@@ -35,7 +35,7 @@
       function v(e) {
         let { limit: t, className: a } = e,
           { data: c } = (0, A.ZP)(
-            "/public/coins.json",
+            "/_public/coins.json",
             async (e) => {
               let { coins: t } = await (0, l.Z)(e, { throwOnHTTPError: !1 });
               return {
