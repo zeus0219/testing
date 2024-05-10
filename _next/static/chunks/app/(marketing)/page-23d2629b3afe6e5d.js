@@ -221,15 +221,16 @@
           } = e;
           return (0, l.jsxs)("div", {
             className: "flex flex-col h-full justify-between mt-6 items-center",
+            style:{minWidth:"100%"},
               children:[
                     (0, l.jsxs)("h2", {
                       className:'text-center aTextGrad',
-                      style:{fontSize:"2.125rem"},
+                      style:{fontSize:"1.1rem"},
                       children:headerText
                     }),
                     (0, l.jsxs)("p", {
                       className:'text-center',
-                      style:{fontSize:"1.125rem"},
+                      style:{fontSize:"0.75rem"},
                       children:a
                     }),
                     (0, l.jsx)("video", {
@@ -406,36 +407,113 @@
           //     }),
           //   ],
           // }),
-          // (0, l.jsxs)("div", {
-          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-          //   ),
-          //   children: [
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Move Elements with Ease",
-          //       videoUrl:"/videos/move-element.mp4"
-          //     }),
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Move Elements with Ease",
-          //       videoUrl:"/videos/delete-element.mp4"
-          //     }),
-          //   ],
-          // }),
+          (0, l.jsxs)("div", {
+            className:"overflow-x-auto mobile-carousel",
+            children:[
+              (0, l.jsxs)("div", {
+                className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4 flex"
+                ),
+                children: [
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/move-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                  (0, l.jsx)(_h, {
+                    className: "contents snap-x snap-center ",
+                    title: "Beautiful coin profiles",
+                    description:
+                      "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+                    imgURL: r.L.profileExample,
+                    Icon: u,
+                    imgClassName:
+                      "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+                    headerText: "Move Elements with Ease",
+                    videoUrl:"/videos/delete-element.mp4"
+                  }),
+                ],
+              }),
+            ]
+          }),
 
           (0, l.jsxs)("div", {
             className: (0, c.cn)(

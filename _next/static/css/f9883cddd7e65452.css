@@ -8,10 +8,10 @@
   width:100%;
   margin:0px auto;
 }
-.slick-slide{
+/* .slick-slide{
   margin:20px;
-}
-.slick-slide img{
+} */
+.slick-slide video{
   width:100%;
   border: 2px solid #fff;
 }
@@ -19,7 +19,16 @@
   font-size:20px;
   color:white;
 }
-
+@media only screen and (min-width: 768px) {
+  .mobile-carousel{
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .desktop-carousel{
+    display: none !important;
+  }
+}
 
 
 [data-simplebar] {

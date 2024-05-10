@@ -337,27 +337,14 @@
 
 <script>
   window.addEventListener('load', async function() {
-    
     const _carousel = await fetch("/_public/carousel.json");
     const carousel =  await _carousel.text();
     var beforeCarousel = document.getElementById("beforeCarousel");
     beforeCarousel.parentElement.insertAdjacentHTML('afterend',carousel);
-    function isMobileDevice() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    if(isMobileDevice()){
-      $('.carousel').slick({
-        slidesToShow: 1,
-        dots:true,
-        centerMode: true,
-      });
-    }else{
-      $('.carousel').slick({
-        slidesToShow: 2,
-        dots:true,
-        centerMode: true,
-      });
-    }
+    $('.carousel').slick({
+      slidesToShow: 2,
+      dots:true,
+      centerMode: true,
+    });
   });
 </script>

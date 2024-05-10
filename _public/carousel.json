@@ -1,57 +1,56 @@
 <div class="wrapper">
-    <div class="carousel">
-        
+    <div class="carousel desktop-carousel">
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Text New Texts in a Blinks</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Text New Texts in a Blinks</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Need to edit text on a website instantly? Edit them as if you’re typing in a doc, easy peasy!</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/live-text-editor.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Effortless Font Switching</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Effortless Font Switching</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/fonts-changer.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Font Details at Fingertips</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Font Details at Fingertips</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/list-all-fonts.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Precise Color Selection</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Precise Color Selection</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/color-picker.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Explore Website Colors</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Explore Website Colors</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/color-palette.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Move Element with Ease</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Move Element with Ease</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/move-element.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Delete Or Hide Elements</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Delete Or Hide Elements</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/delete-element.mp4">
             </video>
         </div>
         <div class="mx-8 items-center">
-            <h2 class="text-center aTextGrad" style="font-size: 1.725rem;">Easily Inspect and Edit CSS</h2>
+            <h2 class="text-center text-lg font-bold lg:text-xl">Easily Inspect and Edit CSS</h2>
             <p class="text-center w-full m-auto mb-4" style="font-size: 0.725rem;">Want to inspect or edit a website without leaving your browser? Do that right within the browser.</p>
             <video class="rounded md:mt-11 mb-5" height="0" loop="" autoplay muted width="100%">
                 <source type="video/webm" src="/videos/css-inspector.mp4">
