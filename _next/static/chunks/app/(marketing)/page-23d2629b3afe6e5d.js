@@ -250,128 +250,192 @@
               ]
           });
         },
+        casel = (e) => {
+          let {
+            title: t,
+            description: a,
+            Icon: s,
+            imgURL: r,
+            bulletPoints: o,
+            imgClassName: d = "",
+            className: u,
+          } = e;
+          return (0, l.jsxs)("div", {
+            className: u,
+            children: [
+              (0, l.jsxs)("div", {
+                className:
+                  "flex flex-col overflow-hidden rounded-lg bg-gray-20 pt-6",
+                children: [
+                  (0, l.jsxs)("div", {
+                    className:
+                      "flex items-start justify-between gap-2 px-4 lg:px-6",
+                    children: [
+                      (0, l.jsx)("h1", {
+                        className: "text-lg font-bold lg:text-xl",
+                        children: t,
+                      }),
+                      (0, l.jsx)(s, {
+                        className:
+                          "size-icon-lg shrink-0 translate-y-[4px] lg:size-icon-xl",
+                      }),
+                    ],
+                  }),
+                  (0, l.jsx)("p", {
+                    className: "mb-4 mt-2 px-4 text-gray-70 lg:px-6",
+                    children: a,
+                  }),
+                  (0, l.jsx)("div", {
+                    className:
+                      "flex max-h-[80vh] grow items-start overflow-hidden md:max-h-none md:items-end",
+                    children: (0, l.jsx)("img", {
+                      src: r,
+                      alt: "".concat(t, " illustration"),
+                      className: (0, c.cn)(
+                        "h-auto  w-auto sm:max-h-none lg:w-full",
+                        d
+                      ),
+                    }),
+                  }),
+                ],
+              }),
+              (0, l.jsxs)("div", {
+                className:
+                  "jsx-a6565fdce2e7bb3a feature-explainer-bullet-points -mt-[var(--arrow-size)] flex flex-col text-gray-40",
+                children: [
+                  (0, l.jsx)(n(), {
+                    id: "a6565fdce2e7bb3a",
+                    children:
+                      ".feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:3rem;--size:1rem}@media(min-width:1024px){.feature-explainer-bullet-points.jsx-a6565fdce2e7bb3a{--arrow-size:4rem;--size:1.5rem}}",
+                  }),
+                  (0, l.jsx)("div", {
+                    className:
+                      "jsx-a6565fdce2e7bb3a " +
+                      ((0, c.cn)(
+                        "joint-b-r inline-flex h-[var(--arrow-size)] w-[var(--arrow-size)] items-center justify-center self-baseline rounded-md bg-gray-95 lg:rounded-lg",
+                        "p-[6px] lg:p-[14px]"
+                      ) || ""),
+                    children: (0, l.jsx)(x, { className: "h-full w-full" }),
+                  }),
+                  (0, l.jsx)("div", {
+                    className:
+                      "jsx-a6565fdce2e7bb3a ml-[var(--arrow-size)] rounded-lg rounded-tl-none bg-gray-95 p-3 md:px-4 md:py-4",
+                    children: o.map((e) =>
+                      (0, l.jsxs)(
+                        "div",
+                        {
+                          className:
+                            "jsx-a6565fdce2e7bb3a my-1 flex items-start gap-[0.4rem]",
+                          children: [
+                            (0, l.jsx)(i.StarIcon, {
+                              className:
+                                " h-4 w-4 shrink-0 translate-y-[0.3rem]",
+                            }),
+                            e,
+                          ],
+                        },
+                        e
+                      )
+                    ),
+                  }),
+                ],
+              }),
+            ],
+          });
+        },
         m = (e) => {
           let { className: t = "" } = e;
-          return [(0, l.jsxs)("div", {
-            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-            ),
-            children: [
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Want to inspect or edit a website without leaving your browser? Do that right within the browser.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Easily Inspect and Edit CSS",
-                videoUrl:"/videos/css-inspector.mp4"
-              }),
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Need to edit text on a website instantly? Edit them as if you’re typing in a doc, easy peasy!",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Test New Texts in a Blink",
-                videoUrl:"/videos/live-text-editor.mp4"
-              }),
-            ],
-          }),
-          (0, l.jsxs)("div", {
-            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-            ),
-            children: [
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Effortless Font Switching",
-                videoUrl:"/videos/fonts-changer.mp4"
-              }),
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Font Details at Fingertips",
-                videoUrl:"/videos/list-all-fonts.mp4"
-              }),
-            ],
-          }),
-          (0, l.jsxs)("div", {
-            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-            ),
-            children: [
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Precise Color Selection",
-                videoUrl:"/videos/color-picker.mp4"
-              }),
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Explore Website Colors",
-                videoUrl:"/videos/color-palette.mp4"
-              }),
-            ],
-          }),
-          (0, l.jsxs)("div", {
-            className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-            ),
-            children: [
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Move Elements with Ease",
-                videoUrl:"/videos/move-element.mp4"
-              }),
-              (0, l.jsx)(_h, {
-                className: "contents snap-x snap-center ",
-                title: "Beautiful coin profiles",
-                description:
-                  "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
-                imgURL: r.L.profileExample,
-                Icon: u,
-                imgClassName:
-                  "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-                headerText: "Move Elements with Ease",
-                videoUrl:"/videos/delete-element.mp4"
-              }),
-            ],
-          }),
+          return [
+          // (0, l.jsxs)("div", {
+          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+          //   ),
+          //   children: [
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Effortless Font Switching",
+          //       videoUrl:"/videos/fonts-changer.mp4"
+          //     }),
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Font Details at Fingertips",
+          //       videoUrl:"/videos/list-all-fonts.mp4"
+          //     }),
+          //   ],
+          // }),
+          // (0, l.jsxs)("div", {
+          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+          //   ),
+          //   children: [
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Precise Color Selection",
+          //       videoUrl:"/videos/color-picker.mp4"
+          //     }),
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Explore Website Colors",
+          //       videoUrl:"/videos/color-palette.mp4"
+          //     }),
+          //   ],
+          // }),
+          // (0, l.jsxs)("div", {
+          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
+          //   ),
+          //   children: [
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Move Elements with Ease",
+          //       videoUrl:"/videos/move-element.mp4"
+          //     }),
+          //     (0, l.jsx)(_h, {
+          //       className: "contents snap-x snap-center ",
+          //       title: "Beautiful coin profiles",
+          //       description:
+          //         "Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+          //       imgURL: r.L.profileExample,
+          //       Icon: u,
+          //       imgClassName:
+          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
+          //       headerText: "Move Elements with Ease",
+          //       videoUrl:"/videos/delete-element.mp4"
+          //     }),
+          //   ],
+          // }),
 
           (0, l.jsxs)("div", {
             className: (0, c.cn)(
@@ -434,6 +498,7 @@
           return r;
         },
       });
+
       var l = a(2067),
         s = a(28967),
         n = a(15039);
@@ -2943,6 +3008,7 @@
           children:
             t.length > 0 &&
             (0, l.jsx)(n.Z, {
+              id:"beforeCarousel",
               className: (0, s.cn)("-my-4 w-full px-2 py-4", a),
               children: (0, l.jsx)("div", {
                 className: (0, s.cn)(

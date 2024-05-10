@@ -1,3 +1,27 @@
+
+.wrapper{
+  width:100%;
+  padding-top: 20px;
+  text-align:center;
+}
+.carousel{
+  width:100%;
+  margin:0px auto;
+}
+.slick-slide{
+  margin:20px;
+}
+.slick-slide img{
+  width:100%;
+  border: 2px solid #fff;
+}
+.wrapper .slick-dots li button:before {
+  font-size:20px;
+  color:white;
+}
+
+
+
 [data-simplebar] {
   position: relative;
   flex-direction: column;
