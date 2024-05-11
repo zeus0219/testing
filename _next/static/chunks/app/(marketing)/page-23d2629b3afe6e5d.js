@@ -1541,13 +1541,14 @@
               className:"mt-6",
               children:[
                 (0,l.jsxs)("div",{
-                  className:"aBGGrid",
-                  children:[
-                    (0,l.jsxs)("img",{
-                      src:"/poster.png",
-                      width:"100%"
-                    })
-                  ]
+                  className:"aBGGrid computer-effect",
+                  id:"computer-effect",
+                  // children:[
+                  //   (0,l.jsxs)("img",{
+                  //     src:"/poster.png",
+                  //     width:"100%"
+                  //   })
+                  // ]
                 })
               ]
             })
