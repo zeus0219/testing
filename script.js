@@ -11,9 +11,30 @@ window.addEventListener('load', async function() {
       centerMode: true,
     });
     $('.computer-effect').append(computerEffect)    
-    window.addEventListener("scroll", (e)=>{
-        const helloUI = document.getElementById("style-Becmw");
-        const fy = this.scrollY/20;
-        helloUI.style.transform = `translate3d(0px, ${-62}px, ${190}px) rotateX(${-56.5+fy}deg) scale3d(${0.825}, ${0.765}, 1)`;
-    });
+    // window.addEventListener("scroll", A),
+    // window.addEventListener("resize", A);
+    // const d_oJ=(e)=> {
+    //   let t = 0;
+    //   for (; e; ) (t += e.offsetTop), (e = e.offsetParent);
+    //   return t;
+    // }
+    // let d_uZ = (e, t, r) => (e < t ? t : e > r ? r : e);
+    // function A(){
+    //   let A = $("div[data-component=sticky]")[0];
+    //   if (A) {
+    //     let t = window.pageYOffset || window.scrollY,
+    //       e = d_oJ(A),
+    //       i = A.getBoundingClientRect().height,
+    //       n = Math.max(
+    //         document.documentElement.clientHeight,
+    //         window.innerHeight || 0
+    //       ),
+    //       a = d_uZ((t - e) / (i - n) || 0, 0, 1);
+    //     requestAnimationFrame(() => A_result(Number(a.toPrecision(2))));
+    //   }
+    // }
+    // function A_result(value){
+    //   console.log(value,'444444444');
+    // }
+
 });
