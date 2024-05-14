@@ -1,0 +1,32 @@
+@font-face {
+  font-family: __calibre_a44071;
+  src: url(/marketing/_next/static/media/fa2e688780748037-s.p.woff2)
+    format("woff2");
+  font-display: swap;
+  font-weight: 200;
+}
+@font-face {
+  font-family: __calibre_a44071;
+  src: url(/marketing/_next/static/media/69c8001088dcc787-s.p.woff2)
+    format("woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: __calibre_a44071;
+  src: url(/marketing/_next/static/media/acd629bf77ed15ef-s.p.woff2)
+    format("woff2");
+  font-display: swap;
+  font-weight: 600;
+}
+@font-face {
+  font-family: __calibre_Fallback_a44071;
+  src: local("Arial");
+  ascent-override: 107.24%;
+  descent-override: 28.18%;
+  line-gap-override: 0%;
+  size-adjust: 87.66%;
+}
+.__className_a44071 {
+  font-family: __calibre_a44071, __calibre_Fallback_a44071;
+}

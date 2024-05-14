@@ -31,19 +31,18 @@
         </div>
         <div class="sc-773c9270-20 jPSkUp" style="animation: 4s ease 0.3s 1 normal forwards running fadein;">
             <div tabindex="-1" class="sc-773c9270-21 fdmMdP" style="transform: translateY(0px);">
-                <div class="sc-773c9270-22 bbqbZH" style="transform: translateY(12vh);">
+                <div class="sc-773c9270-22 bbqbZH" style="transform: translateY(18vh);">
                     <div class="sc-773c9270-10 ktrLKJ"></div><img
-                        srcset="/_next/static/media/macbook_1x.dfe0dcce.jpg 1x,/_next/static/media/macbook_2x.943dda57.jpg 1.5x,/_next/static/media/macbook_4x.299ca224.jpg 2x,"
-                        src="/_next/static/media/macbook_4x.299ca224.jpg" alt="" width="760" height="410"
-                        loading="eager" class="sc-5b600b70-0 eYVVsC sc-773c9270-23 lkJXTz">
+                        srcset="/media/macbook_1x.dfe0dcce.jpg 1x,/media/macbook_2x.943dda57.jpg 1.5x,/media/macbook_4x.299ca224.jpg 2x,"
+                        src="/media/macbook_4x.299ca224.jpg" alt="" width="760" height="410" loading="eager"
+                        class="sc-5b600b70-0 eYVVsC sc-773c9270-23 lkJXTz">
                     <div class="sc-773c9270-25 dEBaCt"><img
-                            srcset="/_next/static/media/screen-3_1x.77433fd1.jpg 1x,/_next/static/media/screen-3_2x.273beb24.jpg 1.5x,/_next/static/media/screen-3_4x.8b2644d4.jpg 2x,"
-                            src="/_next/static/media/screen-3_4x.8b2644d4.jpg" alt="" width="760" height="410"
-                            loading="eager" class="sc-5b600b70-0 eYVVsC sc-773c9270-24 jwrGjI"></div>
-                    <div class="sc-773c9270-26 eVYjzT"><img
-                            srcset="/_next/static/media/key-lights.e51a9404.svg 1x,"
-                            src="/_next/static/media/key-lights.e51a9404.svg" alt="" width="760" height="410"
-                            loading="eager" class="sc-5b600b70-0 eYVVsC"></div>
+                            srcset="/media/screen-3_1x.77433fd1.jpg 1x,/media/screen-3_2x.273beb24.jpg 1.5x,/media/screen-3_4x.8b2644d4.jpg 2x,"
+                            src="/media/screen-3_4x.8b2644d4.jpg" alt="" width="760" height="410" loading="eager"
+                            class="sc-5b600b70-0 eYVVsC sc-773c9270-24 jwrGjI"></div>
+                    <div class="sc-773c9270-26 eVYjzT"><img srcset="/media/key-lights.e51a9404.svg 1x,"
+                            src="/media/key-lights.e51a9404.svg" alt="" width="760" height="410" loading="eager"
+                            class="sc-5b600b70-0 eYVVsC"></div>
                 </div>
             </div>
             <div data-component="sticky">
@@ -51,19 +50,18 @@
                     <div class="sc-818cefdc-1 fefEVY">
                         <div class="sc-818cefdc-2 iEfcYU">
                             <div aria-hidden="true" tabindex="-1" class="sc-773c9270-17 heIrlK">
-                                <div class="sc-773c9270-18 hDAIRi" style="transform: translateY(22vh);">
+                                <div class="sc-773c9270-18 hDAIRi" style="transform: translateY(18vh);">
                                     <div class="sc-773c9270-27 fxRIMW"></div>
                                     <div class="sc-773c9270-27 gzDnuz"
                                         style="top: 1px; box-shadow: rgb(11, 11, 15) 0px -30px 40px 0px; opacity: 0;">
                                     </div>
                                     <div class="sc-773c9270-28 fXnmev"
-                                        style="transform: translate3d(0px, -38px, 290px) rotateX(-67deg) scale3d(0.772, 1, 1);">
+                                        style="transform: translate3d(0px, -55px, 198px) rotateX(-61deg) scale3d(0.835, 0.88, 1)">
                                         <div style="width: 100%; height: 100%;">
                                             <div class="sc-213d6256-0 ewehIP"
                                                 style="border-top-left-radius: 11px; border-top-right-radius: 11px;">
-                                                <img srcset="/_next/static/media/home-UI_1x.84d28fcb.png 1x,/_next/static/media/home-UI_2x.93e459b8.png 1.5x,/_next/static/media/home-UI_4x.2c3d07f7.png 2x,"
-                                                    src="/_next/static/media/home-UI_4x.2c3d07f7.png"
-                                                    alt="Fey home page" width="750" height="469" loading="eager"
+                                                <img src="/media/home-UI_1x.84d28fcb.png" alt="Fey home page"
+                                                    width="750" height="469" loading="eager"
                                                     class="sc-5b600b70-0 eYVVsC" style="height: 100%;">
                                                 <div aria-hidden="true" class="sc-fe3fc0e9-0 gtaQZm">
                                                     <div>
@@ -73,10 +71,11 @@
                                                 </div>
                                                 <div
                                                     style="position: absolute; top: 0px; left: 0px; opacity: 0; visibility: hidden; transition: opacity 0.25s ease 0s;">
-                                                    <img srcset="/_next/static/media/canvas-UI_1x.125fd4b0.png 1x,/_next/static/media/canvas-UI_2x.4c680c4e.png 1.5x,/_next/static/media/canvas-UI_4x.331c4e23.png 2x,"
-                                                        src="/_next/static/media/canvas-UI_4x.331c4e23.png"
-                                                        alt="Fey canvas" width="750" height="469" loading="eager"
-                                                        class="sc-5b600b70-0 eYVVsC" style="height: 100%;"></div>
+                                                    <img srcset="/media/canvas-UI_1x.125fd4b0.png 1x,/media/canvas-UI_2x.4c680c4e.png 1.5x,/media/canvas-UI_4x.331c4e23.png 2x,"
+                                                        src="/media/canvas-UI_4x.331c4e23.png" alt="Fey canvas"
+                                                        width="750" height="469" loading="eager"
+                                                        class="sc-5b600b70-0 eYVVsC" style="height: 100%;">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

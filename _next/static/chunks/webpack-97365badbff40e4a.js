@@ -114,7 +114,8 @@
       );
     }),
     (l.u = function (e) {
-      return 9042 === e
+
+      return e && 9042 === e
         ? "static/chunks/9042-41bbef5a15edb20f.js"
         : 2261 === e
         ? "static/chunks/2261-e8e5be12563029b4.js"

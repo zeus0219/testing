@@ -1,4 +1,9 @@
+
 window.addEventListener('load', async function() {
+  // if(document.querySelector(".computer-effect")){
+  //   var div = "<div id ='__next_computer'></div>"
+  //   $(".computer-effect").html(div);
+  // }
     const _carousel = await fetch("/_public/carousel.json");
     const _computerEffect = await fetch('/_public/computer-effect.json');
     const carousel =  await _carousel.text();
@@ -10,7 +15,32 @@ window.addEventListener('load', async function() {
       dots:true,
       centerMode: true,
     });
-    $('.computer-effect').append(computerEffect)    
+    setTimeout(() => {
+      $(".computer-effect").append(ddd);
+      $("#__next_computer").show();
+      // if(this.window.ddd){
+      //   this.window?.ddd?.className =  "sdf"
+      // }
+    }, 1000);
+
+  //   var iframe = document.createElement("iframe");
+  //   iframe.id = 'computer-iframe';
+
+  //   // Get the document object of the iframe
+  //   iframe.onload = function() {
+  //     // Get the document object of the iframe
+  //       var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    
+  //       // Set the HTML content of the iframe document
+  //       iframeDocument.open();
+  //       iframeDocument.write(computerEffect);
+  //       iframeDocument.close();
+  //   };
+
+// Append the iframe to the element with the class name "computer-effect"
+  // $('.computer-effect').append(computerEffect);
+
+
     // window.addEventListener("scroll", A),
     // window.addEventListener("resize", A);
     // const d_oJ=(e)=> {
