@@ -1143,7 +1143,7 @@
                   children: [
                     (0, i.jsx)(ay, {
                       tabIndex: -1,
-                      style: { transform: "translateY(-".concat(d / 2 - 250, "px)") },
+                      style: { transform: "translateY(-".concat(d / 300, "px)") },
                       children: (0, i.jsxs)(aI, {
                         ref: l,
                         children: [
@@ -1542,7 +1542,8 @@
                           ref: a,
                           style: {
                             position: "relative",
-                            top: "-".concat(d, "vh"),
+                            top: t < 768 ?"-".concat(d,"vh") :"".concat(18, "vh"),
+                            // top: "".concat(12, "vh"),
                           },
                           children: [
                             (0, i.jsx)(V.Z.h2, {
