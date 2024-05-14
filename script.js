@@ -21,7 +21,7 @@ window.addEventListener('load', async function() {
       // if(this.window.ddd){
       //   this.window?.ddd?.className =  "sdf"
       // }
-    }, 1000);
+    }, 700);
 
   //   var iframe = document.createElement("iframe");
   //   iframe.id = 'computer-iframe';
