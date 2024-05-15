@@ -523,14 +523,14 @@
           let [t, r] = e;
           return i.routeLoader.onEntrypoint(t, r);
         };
-        window.ddd = document.getElementById("__next_computer")
+        window.ddd = document.getElementById("__next")
         return (
           window.__NEXT_P &&
             window.__NEXT_P.map((e) => setTimeout(() => s(e), 0)),
           (window.__NEXT_P = []),
           (window.__NEXT_P.push = s),
           ((u = (0, T.default)()).getIsSsr = () => n.isSsr),
-          (l = document.getElementById("__next_computer")),
+          (l = document.getElementById("__next")),
           { assetPrefix: t }
         );
       }

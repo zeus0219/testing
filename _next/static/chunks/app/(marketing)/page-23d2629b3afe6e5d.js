@@ -346,67 +346,49 @@
         },
         m = (e) => {
           let { className: t = "" } = e;
+          let carouselData = [{
+              headerText:"Text New Texts in a Blinks",
+              description:"Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
+              videoUrl:"/videos/live-text-editor.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Effortless Font Switching",
+              description:"Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
+              videoUrl:"/videos/fonts-changer.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Font Details at Fingertips",
+              description:"Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.",
+              videoUrl:"/videos/list-all-fonts.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Precise Color Selection",
+              description:"Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.",
+              videoUrl:"/videos/color-picker.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Explore Website Colors",
+              description:"Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.",
+              videoUrl:"/videos/color-palette.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Move Element with Ease",
+              description:"Rearrange elements like puzzle pieces! Drag and drop them to new positions and see your ideas come to life.",
+              videoUrl:"/videos/move-element.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Delete Or Hide Elements",
+              description:"Cluttered website? Remove or hide any element with a click! Made a mistake? No worries, just undo it.",
+              videoUrl:"/videos/delete-element.mp4",
+              posterUrl:"/images/poster.png"
+            },{
+              headerText:"Easily Inspect and Edit CSS",
+              description:"Want to inspect or edit a website without leaving your browser? Do that right within the browser.",
+              videoUrl:"/videos/css-inspector.mp4",
+              posterUrl:"/images/poster.png"
+            }
+          ];
           return [
-          // (0, l.jsxs)("div", {
-          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-          //   ),
-          //   children: [
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Fonts not feeling right? Test out 1100+ Google and local fonts, and see your website transform in a few clicks!",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Effortless Font Switching",
-          //       videoUrl:"/videos/fonts-changer.mp4"
-          //     }),
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Curious about what fonts are used on a website? Instantly list every font used, their sizes, weights, and how they look.",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Font Details at Fingertips",
-          //       videoUrl:"/videos/list-all-fonts.mp4"
-          //     }),
-          //   ],
-          // }),
-          // (0, l.jsxs)("div", {
-          //   className: (0, c.cn)("grid grid-cols-1 md:grid-cols-2 gap-4"
-          //   ),
-          //   children: [
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Spotted a color on a website and wished you could use it? Grab those colors now; works even with images and videos.",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Precise Color Selection",
-          //       videoUrl:"/videos/color-picker.mp4"
-          //     }),
-          //     (0, l.jsx)(_h, {
-          //       className: "contents snap-x snap-center ",
-          //       title: "Beautiful coin profiles",
-          //       description:
-          //         "Want to copy a website’s color palette? Unveil all the colors with a click. Create your color masterpiece today.",
-          //       imgURL: r.L.profileExample,
-          //       Icon: u,
-          //       imgClassName:
-          //         "translate-x-4 lg:translate-x-6 min-w-[100%] !h-auto",
-          //       headerText: "Explore Website Colors",
-          //       videoUrl:"/videos/color-palette.mp4"
-          //     }),
-          //   ],
-          // }),
           (0, l.jsxs)("div", {
             className:"overflow-x-auto mobile-carousel",
             children:[
@@ -514,7 +496,45 @@
               }),
             ]
           }),
-
+          (0,l.jsxs)("div",{
+            className:"wrapper",
+            children:[
+              (0,l.jsxs)("div",{
+                className:"carousel desktop-carousel",
+                children:[
+                  carouselData.map((data,index)=>(
+                    (0,l.jsxs)("div",{
+                      className:"mx-8 items-center",
+                      children:[
+                        (0,l.jsx)("h2",{
+                          className:"text-center text-lg font-bold lg:text-xl",
+                          children:data?.headerText
+                        }),
+                        (0,l.jsx)("p",{
+                          className:"text-center w-full m-auto mb-4",
+                          style:{fontSize:"0.725rem;"},
+                          children:data?.description
+                        }),
+                        (0,l.jsx)("video",{
+                          className:"rounded md:mt-11 mb-5",
+                          controls: !1,
+                          height: "0",
+                          loop: !0,
+                          muted: !0,
+                          autoplay: 1,
+                          width: "100%",
+                          children:[(0,l.jsx)("source",{
+                            // type:"video/webm",
+                            src:data?.posterUrl
+                          })]
+                        }),
+                      ]
+                    })
+                  ))
+                ]
+              })
+            ]
+          }),
           (0, l.jsxs)("div", {
             className: (0, c.cn)(
               "grid grid-cols-[repeat(3,calc(100vw-2.5rem))] grid-rows-[1fr_auto] gap-x-4 overflow-x-auto [grid-auto-flow:column] md:grid-cols-[repeat(3,50vw)] lg:grid-cols-3",
@@ -1605,10 +1625,409 @@
               children:[
                 (0,l.jsxs)("div",{
                   className:"aBGGrid computer-effect",
-                  id:"__next",
-                  children:[
-                    // (0,l.jsxs)(ax,{})
-                  ]
+                  // children:[
+                  //   (0,l.jsxs)("section",{
+                  //     className:"sc-773c9270-13 dQpOqj",
+                  //     style:{minHeight:"150vh"},
+                  //     children:[
+                  //       (0,l.jsxs)("div",{
+                  //         className:"sc-5d598e6d-0 eHtTfe",
+                  //         children:[
+                  //           (0,l.jsxs)("div",{
+                  //             className:"sc-773c9270-11 gTOziX",
+                  //             style:{
+                  //               position:"absolute",
+                  //               top:"17.9vh",
+                  //               left:"0px",
+                  //               right:"0px",
+                  //               opacity:1,
+                  //               willChange:"opacity"
+                  //             },
+                  //             children:[
+                  //               (0,l.jsxs)("div",{
+                  //                 className:"sc-773c9270-15 gebuxj",
+                  //                 children:[
+                  //                   (0,l.jsxs)("div",{
+                  //                     className:"sc-609e9d63-0 hDAxdn",
+                  //                     children:[
+                  //                       (0,l.jsxs)("button",{
+                  //                         className:"sc-773c9270-2 gvavjf",
+                  //                         children:[
+                  //                           (0,l.jsxs)("svg",{
+                  //                             width:"18",
+                  //                             height:"18",
+                  //                             viewBox:"0 0 24 24",
+                  //                             fill:"none",
+                  //                             xmlns:"http://www.w3.org/2000/svg",
+                  //                             children:[
+                  //                               (0,l.jsxs)("path",{
+                  //                                 d:"M8.98883 17.9652C8.44583 18.297 7.74902 17.9063 7.74902 17.2699V6.73023C7.74902 6.09386 8.44583 5.70307 8.98883 6.0349L17.6122 11.3047C18.1321 11.6225 18.1321 12.3776 17.6122 12.6954L8.98883 17.9652Z",
+                  //                                 fill:"#fff"
+                  //                               })
+                  //                             ]
+                  //                           }),
+                  //                           (0,l.jsxs)("span",{
+                  //                             className:"sc-773c9270-1 inHyGA",
+                  //                             children:"Watch the guided tour"
+                  //                           }),
+                  //                           (0,l.jsxs)("span",{
+                  //                             className:"sc-773c9270-0 dDUspq"
+                  //                           }),
+                  //                         ]
+                  //                       })
+                  //                     ]
+                  //                   }),
+                  //                   (0,l.jsxs)("h1",{
+                  //                     className:"sc-3bc7f5d9-0 sc-773c9270-19 hSMyB cxITtp",
+                  //                     children:[
+                  //                       (0,l.jsxs)("div",{
+                  //                         className:"sc-609e9d63-0 feLUXT",
+                  //                         children:[
+                  //                           (0,l.jsxs)("span",{
+                  //                             children:"Finance is "
+                  //                           }),
+                  //                           (0,l.jsxs)("span",{
+                  //                             children:"finally effortless."
+                  //                           })
+                  //                         ]
+                  //                       })
+                  //                     ]
+                  //                   }),
+                  //                   (0,l.jsxs)("div",{
+                  //                     className:"sc-609e9d63-0 hDzWBF",
+                  //                     children:[
+                  //                       (0,l.jsxs)("div",{
+                  //                         style:{
+                  //                           opacity:1,
+                  //                           willChange:"opacity"
+                  //                         },
+                  //                         children:[
+                  //                           (0,l.jsxs)("div",{
+                  //                             className:"sc-3bc61693-1 fvMpCT",
+                  //                             children:[
+                  //                               (0,l.jsxs)("button",{
+                  //                                 className:"sc-3bc61693-0 dVxJKg",
+                  //                                 ariaLabel:"Submit request",
+                  //                                 children:[
+                  //                                   "Press",
+                  //                                   (0,l.jsxs)("span",{
+                  //                                     "data-keys":true,
+                  //                                     className:"sc-4b8cb7c5-0 gQIGML",
+                  //                                     style:{gap: "8px", color: "rgb(38, 39, 47)"},
+                  //                                     children:[
+                  //                                       (0,l.jsxs)("span",{
+                  //                                         className:"sc-4b8cb7c5-1 hWeDhJ",
+                  //                                         style:{width:" 16px", height: "16px"},
+                  //                                         children:[
+                  //                                           (0,l.jsxs)("svg",{
+                  //                                             width:16,
+                  //                                             height:16,
+                  //                                             style:{opacity: 0},
+                  //                                             children:[
+                  //                                               (0,l.jsxs)("react",{
+                  //                                                 x:2,
+                  //                                                 y:2,
+                  //                                                 width:12,
+                  //                                                 height:12,
+                  //                                                 fill:"#fff",
+                  //                                               }),
+                  //                                               (0,l.jsxs)("use",{
+                  //                                                 xlinkHref:"/keys/key-t.svg#KEY-T"
+                  //                                               })
+                  //                                             ]
+                  //                                           })
+                  //                                         ]
+                  //                                       })
+                  //                                     ]
+                  //                                   }),
+                  //                                   "anytime to start your trial"
+                  //                                 ]
+                  //                               })
+                  //                             ]
+                  //                           }),
+                  //                           (0,l.jsxs)("div",{
+                  //                             className:"sc-3bc61693-2 jHGHyb",
+                  //                             children:[
+                  //                               (0,l.jsxs)("button",{
+                  //                                 "aria-label":"Start your free trial",
+                  //                                 className:"sc-411481a2-1 sc-411481a2-2 htPaCs bAlVqm",
+                  //                                 children:"Start your free trial"
+                  //                               })
+                  //                             ]
+                  //                           })
+                  //                         ]
+                  //                       })
+                                        
+                  //                     ]
+                  //                   })
+                  //                 ]
+                  //               })
+                  //             ]
+                  //           }),
+                  //           (0,l.jsxs)("div",{
+                  //             className:"sc-773c9270-20 jPSkUp",
+                  //             style:{
+                  //               animation:"4s ease 0.3s 1 normal forwards running fadein"
+                  //             },
+                  //             children:[
+                  //               (0,l.jsxs)("div",{
+                  //                 tabindex:-1,
+                  //                 className:"sc-773c9270-21 fdmMdP",
+                  //                 style:{
+                  //                   transform:"translateY(0px)"
+                  //                 },
+                  //                 children:[
+                  //                   (0,l.jsxs)("div",{
+                  //                     className:"sc-773c9270-22 bbqbZH",
+                  //                     style:{
+                  //                       transform:"translateY(38vh);"
+                  //                     },
+                  //                     children:[
+                  //                       (0,l.jsxs)("div",{
+                  //                         className:"sc-773c9270-10 ktrLKJ"
+                  //                       }),
+                  //                       (0,l.jsxs)("img",{
+                  //                         srcset:"/dd/marketing/_next/static/media/macbook_1x.dfe0dcce.jpg 1x,/dd/marketing/_next/static/media/macbook_2x.943dda57.jpg 1.5x,/dd/marketing/_next/static/media/macbook_4x.299ca224.jpg 2x,",
+                  //                         src:"/dd/marketing/_next/static/media/macbook_4x.299ca224.jpg",
+                  //                         width:760,
+                  //                         height:410,
+                  //                         loading:'eager',
+                  //                         className:"sc-5b600b70-0 eYVVsC sc-773c9270-23 djewpw"                
+                  //                       }),
+                  //                       (0,l.jsxs)("div",{
+                  //                         className:"sc-773c9270-25 dEBaCt",
+                  //                         children:[
+                  //                           (0,l.jsxs)("img",{
+                  //                             srcset:"/dd/marketing/_next/static/media/screen-1_1x.71b44f17.jpg 1x,/dd/marketing/_next/static/media/screen-1_2x.82b0b05b.jpg 1.5x,/dd/marketing/_next/static/media/screen-1_4x.5ab54123.jpg 2x,",
+                  //                             src:"/dd/marketing/_next/static/media/screen-1_4x.5ab54123.jpg",
+                  //                             width:760,
+                  //                             height:410,
+                  //                             loading:'eager',
+                  //                             className:"sc-5b600b70-0 eYVVsC sc-773c9270-24 dsqokr"                
+                  //                           }),
+                  //                         ]
+                  //                       }),
+                  //                       (0,l.jsxs)("div",{
+                  //                         className:"sc-773c9270-26 eVYjzT",
+                  //                         children:[
+                  //                           (0,l.jsxs)("img",{
+                  //                             srcset:"/dd/marketing/_next/static/media/key-lights.e51a9404.svg 1x,",
+                  //                             src:"/dd/marketing/_next/static/media/key-lights.e51a9404.svg",
+                  //                             width:760,
+                  //                             height:410,
+                  //                             loading:'eager',
+                  //                             className:"sc-5b600b70-0 eYVVsC"                
+                  //                           }),
+                  //                         ]
+                  //                       }),
+                  //                     ]
+                  //                   })
+                  //                 ]
+                  //               }),
+                  //               (0,l.jsxs)("div",{
+                  //                 "data-component":"sticky",
+                  //                 children:[
+                  //                   (0,l.jsxs)("div",{
+                  //                     className:"sc-818cefdc-0 fcEFvA",
+                  //                     height:"1650px",
+                  //                     children:[
+                  //                       (0,l.jsxs)("div",{
+                  //                         className:"sc-818cefdc-1 fefEVY",
+                  //                         children:[
+                  //                           (0,l.jsxs)("div",{
+                  //                             className:"sc-818cefdc-2 iEfcYU",
+                  //                             children:[
+                  //                               (0,l.jsxs)("div",{
+                  //                                   "aria-hidden":"true",
+                  //                                   tabindex:-1,
+                  //                                   className:"sc-773c9270-17 heIrlK",
+                  //                                   children:[
+                  //                                     (0,l.jsxs)("div",{
+                  //                                       className:"sc-773c9270-18 hDAIRi",
+                  //                                       style:{transform: "translateY(38vh)"},
+                  //                                       children:[
+                  //                                         (0,l.jsxs)("div",{
+                  //                                           className:"sc-773c9270-27 fxRIMW",
+                  //                                           style:{
+                  //                                             transform: "translate3d(0px, -76px, 190px) rotateX(-56.5deg) scale3d(0.86, 0.66, 1); opacity: 0;"
+                  //                                           }
+                  //                                         }),
+                  //                                         (0,l.jsxs)("div",{
+                  //                                           className:"sc-773c9270-27 gzDnuz",
+                  //                                           style:{
+                  //                                             top: "1px",
+                  //                                             boxShadow: "rgb(11, 11, 15) 0px -30px 40px 0px; opacity: 0"
+                  //                                           }
+                  //                                         }),
+                  //                                         (0,l.jsxs)("div",{
+                  //                                           className:"sc-773c9270-28 fXnmev",
+                  //                                           style:{
+                  //                                             transform: "translate3d(0px, -62px, 190px) rotateX(-56.5deg) scale3d(0.825, 0.765, 1)"
+                  //                                           },
+                  //                                           children:[
+                  //                                             (0,l.jsxs)("div",{
+                  //                                               style:{
+                  //                                                 width: "100%",
+                  //                                                 height: "100%"
+                  //                                               },
+                  //                                               children:[
+                  //                                                 (0,l.jsxs)("div",{
+                  //                                                   className:"sc-213d6256-0 ewehIP",
+                  //                                                   style:{
+                  //                                                     borderTopLeftRadius: "11px", borderTopRightRadius: "11px"
+                  //                                                   },
+                  //                                                   children:[
+                  //                                                     (0,l.jsxs)("img",{
+                  //                                                       srcset:"/dd/marketing/_next/static/media/home-UI_1x.84d28fcb.png 1x,/dd/marketing/_next/static/media/home-UI_2x.93e459b8.png 1.5x,/dd/marketing/_next/static/media/home-UI_4x.2c3d07f7.png 2x,",
+                  //                                                       src:"/dd/marketing/_next/static/media/home-UI_4x.2c3d07f7.png",
+                  //                                                       alt:"Fey home page",
+                  //                                                       width:750,
+                  //                                                       height:469,
+                  //                                                       loading:"eager",
+                  //                                                       className:"sc-5b600b70-0 eYVVsC",style:{height: "100%"}
+                  //                                                     }),
+                  //                                                     (0,l.jsxs)("div",{
+                  //                                                       "aria-hidden":true,
+                  //                                                       className:"sc-fe3fc0e9-0 gtaQZm",
+                  //                                                       children:[
+                  //                                                         (0,l.jsxs)("div",{
+                  //                                                           children:[
+                  //                                                             (0,l.jsxs)("div",{
+                  //                                                               className:"sc-fe3fc0e9-1 jUagDB",
+                  //                                                               children:"Hello, Warren"
+                  //                                                             }),
+                  //                                                             (0,l.jsxs)("div",{
+                  //                                                               className:"sc-fe3fc0e9-2 fsaWiu",
+                  //                                                               children:"Wednesday, May 15"
+                  //                                                             })
+                  //                                                           ]
+                  //                                                         })
+                  //                                                       ]
+                  //                                                     }),
+                  //                                                     (0,l.jsxs)("div",{
+                  //                                                       style:{
+                  //                                                         position: "absolute",
+                  //                                                         top: "0px",
+                  //                                                         left: "0px",
+                  //                                                         opacity: 0,
+                  //                                                         visibility: "hidden",
+                  //                                                         transition: "opacity 0.25s ease 0s"
+                  //                                                       },
+                  //                                                       children:[
+                  //                                                         (0,l.jsxs)("img",{
+                  //                                                           srcset:"/dd/marketing/_next/static/media/canvas-UI_1x.125fd4b0.png 1x,/dd/marketing/_next/static/media/canvas-UI_2x.4c680c4e.png 1.5x,/dd/marketing/_next/static/media/canvas-UI_4x.331c4e23.png 2x,",
+                  //                                                           src:"/dd/marketing/_next/static/media/canvas-UI_4x.331c4e23.png",
+                  //                                                           alt:"Fey canvas",
+                  //                                                           width:750,
+                  //                                                           height:469,
+                  //                                                           loading:"eager",
+                  //                                                           className:"sc-5b600b70-0 eYVVsC",
+                  //                                                           style:{height:"100%"}
+                  //                                                         })
+                  //                                                       ]
+                  //                                                     })
+                  //                                                   ]
+                  //                                                 })
+                  //                                               ]
+                  //                                             })
+                  //                                           ]
+                  //                                         })
+                  //                                       ]
+                  //                                     })
+                  //                                   ]
+                  //                               })
+                  //                             ]
+                  //                           }),
+                  //                           (0,l.jsxs)("div",{
+                  //                             style:{
+                  //                               position: "relative",
+                  //                               zIndex: 1
+                  //                             },
+                  //                             children:[
+                  //                               (0,l.jsxs)("div",{
+                  //                                 className:"sc-773c9270-14 ikyhQs",
+                  //                                 children:[
+                  //                                   (0,l.jsxs)("div",{
+                  //                                     className:"sc-773c9270-16 nzMxf",
+                  //                                     children:[
+                  //                                       (0,l.jsxs)("div",{
+                  //                                         style:{
+                  //                                           position: "relative",
+                  //                                           top: "18vh",
+                  //                                           opacity: -1.98
+                  //                                         },
+                  //                                         children:[
+                  //                                           (0,l.jsxs)("h2",{
+                  //                                             className:"sc-3bc7f5d9-1 kAqBZg",
+                  //                                             style:{
+                  //                                               whiteSpace: "nowrap"
+                  //                                             },
+                  //                                             children:"See the big picture."
+                  //                                           }),
+                  //                                           (0,l.jsxs)("p",{
+                  //                                             className:"sc-1578630c-0 hAirhA",
+                  //                                             children:"Fey offers a streamlined view of real-time market data, effortlessly giving you the big picture on your favorite companies."
+                  //                                           })
+                  //                                         ]
+                  //                                       })
+                  //                                     ]
+                  //                                   })
+                  //                                 ]
+                  //                               })
+                  //                             ]
+                  //                           })
+                  //                         ]
+                  //                       })
+                  //                     ]
+                  //                   })
+                  //                 ]
+                  //               })
+                  //             ]
+                  //           }),
+                  //           (0,l.jsxs)("div",{
+                  //             className:"sc-773c9270-12 hhyVgY",
+                  //             children:[
+                  //               (0,l.jsxs)("div",{
+                  //                 className:"sc-773c9270-14 ikyhQs",
+                  //                 children:[
+                  //                   (0,l.jsxs)("div",{
+                  //                     className:"sc-773c9270-15 gebuxj",
+                  //                     children:[
+                  //                       (0,l.jsxs)("h2",{
+                  //                         className:"sc-3bc7f5d9-1 kAqBZg",
+                  //                         children:"Simplify the complex."
+                  //                       }),
+                  //                       (0,l.jsxs)("h2",{
+                  //                         className:"sc-3bc7f5d9-1 kAqBZg",
+                  //                         children:"Reduce the noise."
+                  //                       }),
+                  //                       (0,l.jsxs)("p",{
+                  //                         className:"sc-1578630c-0 hAirhA",
+                  //                         children:"Fey curates essential insights from industry giants, ensuring you get a clear view without clutter — all packed within an intuitive interface."
+                  //                       })
+                  //                     ]
+                  //                   })
+                  //                 ]
+                  //               }),
+                  //               (0,l.jsxs)("div",{
+                  //                 className:"sc-773c9270-29 ciXlXs",
+                  //                 children:[
+                  //                   (0,l.jsxs)("div",{
+                  //                     "aria-hidden":true,
+                  //                     className:"sc-773c9270-30 dLApBT",
+                  //                     children:[
+
+                  //                     ]
+                  //                   })
+                  //                 ]
+                  //               })
+                  //             ]
+                  //           })
+                  //         ]
+                  //       })
+                  //     ]
+                  //   })
+                  // ]
                 })
               ]
             })
@@ -3143,35 +3562,37 @@
       }
       function b(e) {
         let { tokens: t = [], className: a } = e;
-        return (0, l.jsx)(l.Fragment, {
-          children:
-            t.length > 0 &&
-            (0, l.jsx)(n.Z, {
-              id:"beforeCarousel",
-              className: (0, s.cn)("-my-4 w-full px-2 py-4", a),
-              children: (0, l.jsx)("div", {
-                className: (0, s.cn)(
-                  "flex",
-                  "w-[1190px] gap-2 lg:w-auto lg:gap-4"
-                ),
-                children: t
-                  .slice(0, 4)
-                  .map((e) =>
-                    (0, l.jsx)(
-                      v,
-                      {
-                        token: e,
-                        className: (0, s.cn)(
-                          "w-[290px]",
-                          "lg:w-[calc(25%-3/4*1rem)]"
-                        ),
-                      },
-                      e.id
-                    )
+        return [
+          (0, l.jsx)(l.Fragment, {
+            children:
+              t.length > 0 &&
+              (0, l.jsx)(n.Z, {
+                id:"beforeCarousel",
+                className: (0, s.cn)("-my-4 w-full px-2 py-4", a),
+                children: (0, l.jsx)("div", {
+                  className: (0, s.cn)(
+                    "flex",
+                    "w-[1190px] gap-2 lg:w-auto lg:gap-4"
                   ),
+                  children: t
+                    .slice(0, 4)
+                    .map((e) =>
+                      (0, l.jsx)(
+                        v,
+                        {
+                          token: e,
+                          className: (0, s.cn)(
+                            "w-[290px]",
+                            "lg:w-[calc(25%-3/4*1rem)]"
+                          ),
+                        },
+                        e.id
+                      )
+                    ),
+                }),
               }),
-            }),
-        });
+          }),
+        ];
       }
     },
     23557: function (e, t, a) {
