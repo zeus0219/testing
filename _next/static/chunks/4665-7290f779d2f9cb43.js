@@ -1,6 +1,93 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [4665],
   {
+    62274: function (e, t) {
+      "use strict";
+      function r() {
+        return "";
+      }
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        Object.defineProperty(t, "getDeploymentIdQueryOrEmptyString", {
+          enumerable: !0,
+          get: function () {
+            return r;
+          },
+        });
+    },
+    68144: function () {
+      "trimStart" in String.prototype ||
+        (String.prototype.trimStart = String.prototype.trimLeft),
+        "trimEnd" in String.prototype ||
+          (String.prototype.trimEnd = String.prototype.trimRight),
+        "description" in Symbol.prototype ||
+          Object.defineProperty(Symbol.prototype, "description", {
+            configurable: !0,
+            get: function () {
+              var e = /\((.*)\)/.exec(this.toString());
+              return e ? e[1] : void 0;
+            },
+          }),
+        Array.prototype.flat ||
+          ((Array.prototype.flat = function (e, t) {
+            return (
+              (t = this.concat.apply([], this)),
+              e > 1 && t.some(Array.isArray) ? t.flat(e - 1) : t
+            );
+          }),
+          (Array.prototype.flatMap = function (e, t) {
+            return this.map(e, t).flat();
+          })),
+        Promise.prototype.finally ||
+          (Promise.prototype.finally = function (e) {
+            if ("function" != typeof e) return this.then(e, e);
+            var t = this.constructor || Promise;
+            return this.then(
+              function (r) {
+                return t.resolve(e()).then(function () {
+                  return r;
+                });
+              },
+              function (r) {
+                return t.resolve(e()).then(function () {
+                  throw r;
+                });
+              }
+            );
+          }),
+        Object.fromEntries ||
+          (Object.fromEntries = function (e) {
+            return Array.from(e).reduce(function (e, t) {
+              return (e[t[0]] = t[1]), e;
+            }, {});
+          }),
+        Array.prototype.at ||
+          (Array.prototype.at = function (e) {
+            var t = Math.trunc(e) || 0;
+            if ((t < 0 && (t += this.length), !(t < 0 || t >= this.length)))
+              return this[t];
+          });
+    },
+    85304: function (e, t, r) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        Object.defineProperty(t, "addBasePath", {
+          enumerable: !0,
+          get: function () {
+            return u;
+          },
+        });
+      let n = r(51502),
+        o = r(4292);
+      function u(e, t) {
+        return (0, o.normalizePathTrailingSlash)((0, n.addPathPrefix)(e, ""));
+      }
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
     41161: function (e, t) {
       "use strict";
       function r(e) {
@@ -52,6 +139,30 @@
           Object.assign(t.default, t),
           (e.exports = t.default));
     },
+    83920: function (e, t, r) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        Object.defineProperty(t, "callServer", {
+          enumerable: !0,
+          get: function () {
+            return o;
+          },
+        });
+      let n = r(72756);
+      async function o(e, t) {
+        let r = (0, n.getServerActionDispatcher)();
+        if (!r) throw Error("Invariant: missing action dispatcher.");
+        return new Promise((n, o) => {
+          r({ actionId: e, actionArgs: t, resolve: n, reject: o });
+        });
+      }
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
     45581: function (e, t, r) {
       "use strict";
       let n, o;
@@ -64,13 +175,14 @@
         });
       let u = r(68517),
         a = r(53388);
-      // r(68144);
+      r(68144);
       let l = u._(r(55094)),
         i = a._(r(15039)),
         c = r(17997),
         s = r(57196);
       r(25879);
       let f = u._(r(33447)),
+        d = r(83920),
         p = r(84689),
         h = r(29281),
         y = window.console.error;
@@ -130,7 +242,7 @@
               },
             }),
             u = (0, c.createFromReadableStream)(r, {
-              // callServer: d.callServer,
+              callServer: d.callServer,
             });
           return S.set(e, u), u;
         })(t);
@@ -194,7 +306,7 @@
     },
     17438: function (e, t, r) {
       "use strict";
-      Object.defineProperty(t, "__esModule", { value: !0 });
+      Object.defineProperty(t, "__esModule", { value: !0 }), r(62274);
       {
         let e = r.u;
         r.u = function () {
@@ -203,6 +315,154 @@
           return encodeURI(e(...r));
         };
       }
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
+    16606: function (e, t, r) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        Object.defineProperty(t, "actionAsyncStorage", {
+          enumerable: !0,
+          get: function () {
+            return n;
+          },
+        });
+      let n = (0, r(61517).createAsyncLocalStorage)();
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
+    89294: function (e, t, r) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        Object.defineProperty(t, "AppRouterAnnouncer", {
+          enumerable: !0,
+          get: function () {
+            return a;
+          },
+        });
+      let n = r(15039),
+        o = r(68946),
+        u = "next-route-announcer";
+      function a(e) {
+        let { tree: t } = e,
+          [r, a] = (0, n.useState)(null);
+        (0, n.useEffect)(
+          () => (
+            a(
+              (function () {
+                var e;
+                let t = document.getElementsByName(u)[0];
+                if (
+                  null == t
+                    ? void 0
+                    : null == (e = t.shadowRoot)
+                    ? void 0
+                    : e.childNodes[0]
+                )
+                  return t.shadowRoot.childNodes[0];
+                {
+                  let e = document.createElement(u);
+                  e.style.cssText = "position:absolute";
+                  let t = document.createElement("div");
+                  return (
+                    (t.ariaLive = "assertive"),
+                    (t.id = "__next-route-announcer__"),
+                    (t.role = "alert"),
+                    (t.style.cssText =
+                      "position:absolute;border:0;height:1px;margin:-1px;padding:0;width:1px;clip:rect(0 0 0 0);overflow:hidden;white-space:nowrap;word-wrap:normal"),
+                    e.attachShadow({ mode: "open" }).appendChild(t),
+                    document.body.appendChild(e),
+                    t
+                  );
+                }
+              })()
+            ),
+            () => {
+              let e = document.getElementsByTagName(u)[0];
+              (null == e ? void 0 : e.isConnected) &&
+                document.body.removeChild(e);
+            }
+          ),
+          []
+        );
+        let [l, i] = (0, n.useState)(""),
+          c = (0, n.useRef)();
+        return (
+          (0, n.useEffect)(() => {
+            let e = "";
+            if (document.title) e = document.title;
+            else {
+              let t = document.querySelector("h1");
+              t && (e = t.innerText || t.textContent || "");
+            }
+            void 0 !== c.current && c.current !== e && i(e), (c.current = e);
+          }, [t]),
+          r ? (0, o.createPortal)(l, r) : null
+        );
+      }
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
+    86851: function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        (function (e, t) {
+          for (var r in t)
+            Object.defineProperty(e, r, { enumerable: !0, get: t[r] });
+        })(t, {
+          RSC_HEADER: function () {
+            return r;
+          },
+          ACTION: function () {
+            return n;
+          },
+          NEXT_ROUTER_STATE_TREE: function () {
+            return o;
+          },
+          NEXT_ROUTER_PREFETCH_HEADER: function () {
+            return u;
+          },
+          NEXT_URL: function () {
+            return a;
+          },
+          RSC_CONTENT_TYPE_HEADER: function () {
+            return l;
+          },
+          RSC_VARY_HEADER: function () {
+            return i;
+          },
+          FLIGHT_PARAMETERS: function () {
+            return c;
+          },
+          NEXT_RSC_UNION_QUERY: function () {
+            return s;
+          },
+          NEXT_DID_POSTPONE_HEADER: function () {
+            return f;
+          },
+        });
+      let r = "RSC",
+        n = "Next-Action",
+        o = "Next-Router-State-Tree",
+        u = "Next-Router-Prefetch",
+        a = "Next-Url",
+        l = "text/x-component",
+        i = r + ", " + o + ", " + u + ", " + a,
+        c = [[r], [o], [u]],
+        s = "_rsc",
+        f = "x-nextjs-postponed";
       ("function" == typeof t.default ||
         ("object" == typeof t.default && null !== t.default)) &&
         void 0 === t.default.__esModule &&
@@ -239,9 +499,12 @@
         c = r(99055),
         s = r(48844),
         f = r(95728),
+        d = r(85304),
+        p = r(89294),
         h = r(20906),
         y = r(98691),
         _ = r(76059),
+        b = r(86851),
         v = r(48704),
         g = r(91781),
         m = new Map(),
@@ -251,7 +514,11 @@
       }
       let E = {};
       function R(e) {
-        return null;
+        let t = new URL(e, location.origin);
+        return t.searchParams.delete(b.NEXT_RSC_UNION_QUERY), t;
+      }
+      function S(e) {
+        return e.origin !== window.location.origin;
       }
       function j(e) {
         let { appRouterState: t, sync: r } = e;
@@ -326,7 +593,15 @@
           ),
           I = (0, n.useCallback)(
             (e, t, r) => {
-              return null;
+              let n = new URL((0, d.addBasePath)(e), location.href);
+              return w({
+                type: u.ACTION_NAVIGATE,
+                url: n,
+                isExternalUrl: S(n),
+                locationSearch: location.search,
+                shouldScroll: null == r || r,
+                navigateType: t,
+              });
             },
             [w]
           );
@@ -344,6 +619,19 @@
             forward: () => window.history.forward(),
             prefetch: (e, t) => {
               if ((0, f.isBot)(window.navigator.userAgent)) return;
+              let r = new URL((0, d.addBasePath)(e), window.location.href);
+              S(r) ||
+                (0, n.startTransition)(() => {
+                  var e;
+                  w({
+                    type: u.ACTION_PREFETCH,
+                    url: r,
+                    kind:
+                      null != (e = null == t ? void 0 : t.kind)
+                        ? e
+                        : u.PrefetchKind.FULL,
+                  });
+                });
             },
             replace: (e, t) => {
               void 0 === t && (t = {}),
@@ -440,8 +728,8 @@
             h.RedirectBoundary,
             null,
             $,
-            F.subTreeData
-            // n.default.createElement(p.AppRouterAnnouncer, { tree: L })
+            F.subTreeData,
+            n.default.createElement(p.AppRouterAnnouncer, { tree: L })
           );
         return n.default.createElement(
           n.default.Fragment,
@@ -665,6 +953,33 @@
               a
             )
           : n.default.createElement(n.default.Fragment, null, a);
+      }
+      ("function" == typeof t.default ||
+        ("object" == typeof t.default && null !== t.default)) &&
+        void 0 === t.default.__esModule &&
+        (Object.defineProperty(t.default, "__esModule", { value: !0 }),
+        Object.assign(t.default, t),
+        (e.exports = t.default));
+    },
+    19205: function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", { value: !0 }),
+        (function (e, t) {
+          for (var r in t)
+            Object.defineProperty(e, r, { enumerable: !0, get: t[r] });
+        })(t, {
+          DYNAMIC_ERROR_CODE: function () {
+            return r;
+          },
+          DynamicServerError: function () {
+            return n;
+          },
+        });
+      let r = "DYNAMIC_SERVER_USAGE";
+      class n extends Error {
+        constructor(e) {
+          super("Dynamic server usage: " + e), (this.digest = r);
+        }
       }
       ("function" == typeof t.default ||
         ("object" == typeof t.default && null !== t.default)) &&
@@ -1136,7 +1451,11 @@
             (this.size = e.size);
         }
       }
-      function h() {}
+      function h() {
+        (0, a.clientHookInServerComponentError)("useSearchParams");
+        let e = (0, n.useContext)(u.SearchParamsContext);
+        return (0, n.useMemo)(() => (e ? new p(e) : null), [e]);
+      }
       function y() {
         return (
           (0, a.clientHookInServerComponentError)("usePathname"),
@@ -1144,10 +1463,37 @@
         );
       }
       function _() {
+        (0, a.clientHookInServerComponentError)("useRouter");
+        let e = (0, n.useContext)(o.AppRouterContext);
+        if (null === e)
+          throw Error("invariant expected app router to be mounted");
         return e;
       }
       function b() {
-        return void 0;
+        (0, a.clientHookInServerComponentError)("useParams");
+        let e = (0, n.useContext)(o.GlobalLayoutRouterContext),
+          t = (0, n.useContext)(u.PathParamsContext);
+        return (0, n.useMemo)(
+          () =>
+            (null == e ? void 0 : e.tree)
+              ? (function e(t, r) {
+                  for (let n of (void 0 === r && (r = {}),
+                  Object.values(t[1]))) {
+                    let t = n[0],
+                      o = Array.isArray(t),
+                      u = o ? t[1] : t;
+                    !u ||
+                      u.startsWith("__PAGE__") ||
+                      (o && ("c" === t[2] || "oc" === t[2])
+                        ? (r[t[0]] = t[1].split("/"))
+                        : o && (r[t[0]] = t[1]),
+                      (r = e(n, r)));
+                  }
+                  return r;
+                })(e.tree)
+              : t,
+          [null == e ? void 0 : e.tree, t]
+        );
       }
       function v(e) {
         void 0 === e && (e = "children"),
@@ -1468,6 +1814,7 @@
           },
         });
       let u = r(4390),
+        a = r(16606),
         l = r(15139),
         i = "NEXT_REDIRECT";
       function c(e, t, r) {
@@ -1479,25 +1826,25 @@
       }
       function s(e, t) {
         void 0 === t && (t = "replace");
-        // let r = a.actionAsyncStorage.getStore();
-        // throw c(
-        //   e,
-        //   t,
-        //   (null == r ? void 0 : r.isAction)
-        //     ? l.RedirectStatusCode.SeeOther
-        //     : l.RedirectStatusCode.TemporaryRedirect
-        // );
+        let r = a.actionAsyncStorage.getStore();
+        throw c(
+          e,
+          t,
+          (null == r ? void 0 : r.isAction)
+            ? l.RedirectStatusCode.SeeOther
+            : l.RedirectStatusCode.TemporaryRedirect
+        );
       }
       function f(e, t) {
         void 0 === t && (t = "replace");
-        // let r = a.actionAsyncStorage.getStore();
-        // throw c(
-        //   e,
-        //   t,
-        //   (null == r ? void 0 : r.isAction)
-        //     ? l.RedirectStatusCode.SeeOther
-        //     : l.RedirectStatusCode.PermanentRedirect
-        // );
+        let r = a.actionAsyncStorage.getStore();
+        throw c(
+          e,
+          t,
+          (null == r ? void 0 : r.isAction)
+            ? l.RedirectStatusCode.SeeOther
+            : l.RedirectStatusCode.PermanentRedirect
+        );
       }
       function d(e) {
         if ("string" != typeof (null == e ? void 0 : e.digest)) return !1;
@@ -1857,45 +2204,55 @@
             return s;
           },
         });
-        async function s(e, t, r, s, f) {
-        // let d = {
-        //   [n.RSC_HEADER]: "1",
-        //   [n.NEXT_ROUTER_STATE_TREE]: encodeURIComponent(JSON.stringify(t)),
-        // };
-        // f === a.PrefetchKind.AUTO && (d[n.NEXT_ROUTER_PREFETCH_HEADER] = "1"),
-        //   r && (d[n.NEXT_URL] = r);
-        // let p = (0, l.hexHash)(
-        //   [
-        //     d[n.NEXT_ROUTER_PREFETCH_HEADER] || "0",
-        //     d[n.NEXT_ROUTER_STATE_TREE],
-        //     d[n.NEXT_URL],
-        //   ].join(",")
-        // );
-        // try {
-        //   let t = new URL(e);
-        //   t.searchParams.set(n.NEXT_RSC_UNION_QUERY, p);
-        //   let r = await fetch(t, { credentials: "same-origin", headers: d }),
-        //     a = (0, o.urlToUrlWithoutFlightMarker)(r.url),
-        //     l = r.redirected ? a : void 0,
-        //     f = r.headers.get("content-type") || "",
-        //     h = !!r.headers.get(n.NEXT_DID_POSTPONE_HEADER);
-        //   if (f !== n.RSC_CONTENT_TYPE_HEADER || !r.ok)
-        //     return e.hash && (a.hash = e.hash), c(a.toString());
-        //   let [y, _] = await i(Promise.resolve(r), {
-        //   });
-        //   if (s !== y) return c(r.url);
-        //   return [_, l, h];
-        // } catch (t) {
-        //   return (
-        //     console.error(
-        //       "Failed to fetch RSC payload for " +
-        //         e +
-        //         ". Falling back to browser navigation.",
-        //       t
-        //     ),
-        //     [e.toString(), void 0]
-        //   );
-        // }
+      let n = r(86851),
+        o = r(72756),
+        u = r(83920),
+        a = r(30423),
+        l = r(78170),
+        { createFromFetch: i } = r(17997);
+      function c(e) {
+        return [(0, o.urlToUrlWithoutFlightMarker)(e).toString(), void 0];
+      }
+      async function s(e, t, r, s, f) {
+        let d = {
+          [n.RSC_HEADER]: "1",
+          [n.NEXT_ROUTER_STATE_TREE]: encodeURIComponent(JSON.stringify(t)),
+        };
+        f === a.PrefetchKind.AUTO && (d[n.NEXT_ROUTER_PREFETCH_HEADER] = "1"),
+          r && (d[n.NEXT_URL] = r);
+        let p = (0, l.hexHash)(
+          [
+            d[n.NEXT_ROUTER_PREFETCH_HEADER] || "0",
+            d[n.NEXT_ROUTER_STATE_TREE],
+            d[n.NEXT_URL],
+          ].join(",")
+        );
+        try {
+          let t = new URL(e);
+          t.searchParams.set(n.NEXT_RSC_UNION_QUERY, p);
+          let r = await fetch(t, { credentials: "same-origin", headers: d }),
+            a = (0, o.urlToUrlWithoutFlightMarker)(r.url),
+            l = r.redirected ? a : void 0,
+            f = r.headers.get("content-type") || "",
+            h = !!r.headers.get(n.NEXT_DID_POSTPONE_HEADER);
+          if (f !== n.RSC_CONTENT_TYPE_HEADER || !r.ok)
+            return e.hash && (a.hash = e.hash), c(a.toString());
+          let [y, _] = await i(Promise.resolve(r), {
+            callServer: u.callServer,
+          });
+          if (s !== y) return c(r.url);
+          return [_, l, h];
+        } catch (t) {
+          return (
+            console.error(
+              "Failed to fetch RSC payload for " +
+                e +
+                ". Falling back to browser navigation.",
+              t
+            ),
+            [e.toString(), void 0]
+          );
+        }
       }
       ("function" == typeof t.default ||
         ("object" == typeof t.default && null !== t.default)) &&
@@ -2575,9 +2932,38 @@
             return c;
           },
         });
-      let i = new (r(3848).PromiseQueue)(5);
+      let n = r(6608),
+        o = r(81557),
+        u = r(30423),
+        a = r(75279),
+        l = r(86851),
+        i = new (r(3848).PromiseQueue)(5);
       function c(e, t) {
-        return 
+        (0, a.prunePrefetchCache)(e.prefetchCache);
+        let { url: r } = t;
+        r.searchParams.delete(l.NEXT_RSC_UNION_QUERY);
+        let c = (0, n.createHrefFromUrl)(r, !1),
+          s = e.prefetchCache.get(c);
+        if (
+          s &&
+          (s.kind === u.PrefetchKind.TEMPORARY &&
+            e.prefetchCache.set(c, { ...s, kind: t.kind }),
+          !(s.kind === u.PrefetchKind.AUTO && t.kind === u.PrefetchKind.FULL))
+        )
+          return e;
+        let f = i.enqueue(() =>
+          (0, o.fetchServerResponse)(r, e.tree, e.nextUrl, e.buildId, t.kind)
+        );
+        return (
+          e.prefetchCache.set(c, {
+            treeAtTimeOfPrefetch: e.tree,
+            data: f,
+            kind: t.kind,
+            prefetchTime: Date.now(),
+            lastUsedTime: null,
+          }),
+          e
+        );
       }
       ("function" == typeof t.default ||
         ("object" == typeof t.default && null !== t.default)) &&
@@ -2732,7 +3118,10 @@
             return v;
           },
         });
-      let a = r(6608),
+      let n = r(83920),
+        o = r(86851),
+        u = r(85304),
+        a = r(6608),
         l = r(92861),
         i = r(68513),
         c = r(19389),
@@ -2740,9 +3129,61 @@
         f = r(75277),
         d = r(84091),
         p = r(72756),
+        h = r(17954),
         { createFromFetch: y, encodeReply: _ } = r(17997);
-        async function b(e, t) {}
-
+      async function b(e, t) {
+        let r,
+          { actionId: a, actionArgs: l } = t,
+          i = await _(l),
+          c = (0, h.extractPathFromFlightRouterState)(e.tree),
+          s = e.nextUrl && e.nextUrl !== c,
+          f = await fetch("", {
+            method: "POST",
+            headers: {
+              Accept: o.RSC_CONTENT_TYPE_HEADER,
+              [o.ACTION]: a,
+              [o.NEXT_ROUTER_STATE_TREE]: encodeURIComponent(
+                JSON.stringify(e.tree)
+              ),
+              ...(s ? { [o.NEXT_URL]: e.nextUrl } : {}),
+            },
+            body: i,
+          }),
+          d = f.headers.get("x-action-redirect");
+        try {
+          let e = JSON.parse(
+            f.headers.get("x-action-revalidated") || "[[],0,0]"
+          );
+          r = { paths: e[0] || [], tag: !!e[1], cookie: e[2] };
+        } catch (e) {
+          r = { paths: [], tag: !1, cookie: !1 };
+        }
+        let p = d
+          ? new URL(
+              (0, u.addBasePath)(d),
+              new URL(e.canonicalUrl, window.location.href)
+            )
+          : void 0;
+        if (f.headers.get("content-type") === o.RSC_CONTENT_TYPE_HEADER) {
+          let e = await y(Promise.resolve(f), { callServer: n.callServer });
+          if (d) {
+            let [, t] = null != e ? e : [];
+            return {
+              actionFlightData: t,
+              redirectLocation: p,
+              revalidatedParts: r,
+            };
+          }
+          let [t, [, o]] = null != e ? e : [];
+          return {
+            actionResult: t,
+            actionFlightData: o,
+            redirectLocation: p,
+            revalidatedParts: r,
+          };
+        }
+        return { redirectLocation: p, revalidatedParts: r };
+      }
       function v(e, t) {
         let { resolve: r, reject: n } = t,
           o = {},
@@ -3060,13 +3501,24 @@
             return l;
           },
         });
-      let o = r(70596);
+      let n = r(19205),
+        o = r(70596);
       class u extends Error {
         constructor(...e) {
           super(...e), (this.code = "NEXT_STATIC_GEN_BAILOUT");
         }
       }
-      function a(e, t) {}
+      function a(e, t) {
+        let { dynamic: r, link: n } = t || {};
+        return (
+          "Page" +
+          (r ? ' with `dynamic = "' + r + '"`' : "") +
+          " couldn't be rendered statically because it used `" +
+          e +
+          "`." +
+          (n ? " See more info here: " + n : "")
+        );
+      }
       let l = (e, t) => {
         let { dynamic: r, link: l } = void 0 === t ? {} : t,
           i = o.staticGenerationAsyncStorage.getStore();
@@ -3083,7 +3535,12 @@
           (i.revalidate = 0),
           i.isStaticGeneration)
         ) {
-          
+          let t = new n.DynamicServerError(c);
+          throw (
+            ((i.dynamicUsageDescription = e),
+            (i.dynamicUsageStack = t.stack),
+            t)
+          );
         }
         return !1;
       };
