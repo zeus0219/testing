@@ -381,7 +381,7 @@
               e.removeAttribute(t);
               return;
           }
-          e.setAttribute(t, "" + n);
+          e.setAttribute(t,""+ (n));
         }
       }
       function eH(e, t, n, r) {
