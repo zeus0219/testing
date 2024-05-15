@@ -11088,6 +11088,9 @@
             (e[eC] = t.current),
             (cb.current = s9),
             sE(e),
+            
+            // t.containerInfo = <div>{t.containerInfo}</div>,
+
             new cS(t)
           );
         }),

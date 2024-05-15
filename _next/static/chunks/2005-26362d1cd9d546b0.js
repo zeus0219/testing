@@ -66,6 +66,7 @@
         h = n(25879),
         c = n(65238),
         d = n(60407),
+        f = n(85304),
         p = n(30423),
         m = new Set();
       function g(t, e, n, i, r, o) {
@@ -237,12 +238,10 @@
                 null == j ? void 0 : j.domainLocales
               );
           X.href =
-            e;
-          // X.href =
-          //   e ||
-          //   (0, f.addBasePath)(
-          //     (0, l.addLocale)(I, t, null == j ? void 0 : j.defaultLocale)
-          //   );
+            e ||
+            (0, f.addBasePath)(
+              (0, l.addLocale)(I, t, null == j ? void 0 : j.defaultLocale)
+            );
         }
         return C
           ? i.default.cloneElement(o, X)

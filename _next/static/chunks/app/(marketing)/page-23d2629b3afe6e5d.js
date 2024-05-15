@@ -1605,6 +1605,7 @@
               children:[
                 (0,l.jsxs)("div",{
                   className:"aBGGrid computer-effect",
+                  id:"__next",
                   children:[
                     // (0,l.jsxs)(ax,{})
                   ]

@@ -94,6 +94,7 @@
         var t, r;
         (t = self.__next_s),
           (r = () => {
+            console.log(e,'eeee');
             e();
           }),
           t && t.length
@@ -109,7 +110,7 @@
                             "children" !== e && o.setAttribute(e, n[e]);
                         r
                           ? ((o.src = r),
-                            (o.onload = () => e()),
+                            (o.onload = () =>{ e()}),
                             (o.onerror = t))
                           : n && ((o.innerHTML = n.children), setTimeout(e)),
                           document.head.appendChild(o);
@@ -251,6 +252,7 @@
       let T = i.default.StrictMode;
       function w(e) {
         let { children: t } = e;
+        console.log(t,'ttttttttttttttt');
         return t;
       }
       function C(e) {
@@ -276,6 +278,8 @@
             )
           ),
           r = { onRecoverableError: f.default };
+          console.log(0, w,777777);
+
         "__next_error__" === document.documentElement.id
           ? l.default.createRoot(_, r).render(t)
           : i.default.startTransition(() =>
@@ -295,7 +299,8 @@
         r(17438),
         (0, r(41161).appBootstrap)(() => {
           let { hydrate: e } = r(45581);
-          r(72756), r(80596), e();
+          console.log(r(45581),'ffffffddddddd');
+           e();
         }),
         ("function" == typeof t.default ||
           ("object" == typeof t.default && null !== t.default)) &&
