@@ -216,7 +216,7 @@
             bulletPoints: o,
             imgClassName: d = "",
             className: u,
-            videoUrl,
+            // videoUrl,
             headerText
           } = e;
           return (0, l.jsxs)("div", {
@@ -244,7 +244,7 @@
                       children:[
                         (0, l.jsx)("source", {
                           type: "video/webm",
-                          src:videoUrl,
+                          // src:videoUrl,
                         })
                       ]
                     }),
