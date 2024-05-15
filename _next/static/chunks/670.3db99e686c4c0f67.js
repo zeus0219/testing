@@ -9651,7 +9651,7 @@ if (cid) {
               error: t,
             }) => {
               let r = this.client.core.history.pending;
-              r.length > 0 &&
+              r?.length > 0 &&
                 r
                   .filter(
                     (t) =>

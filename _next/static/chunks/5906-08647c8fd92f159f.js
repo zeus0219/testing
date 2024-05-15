@@ -430,7 +430,7 @@
                 className: "p-2 pt-3.5 font-mono text-sm text-highlight",
                 children: "Top Coins",
               }),
-              r.length > 0
+              r?.length > 0
                 ? r.map((e) =>
                     (0, l.jsxs)(
                       M(),
