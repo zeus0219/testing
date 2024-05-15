@@ -233,8 +233,18 @@
                       style:{fontSize:"0.75rem"},
                       children:a
                     }),
+                    (0,l.jsx)("img",{
+                      src:"/images/poster.png",
+                      width:'100%',
+                      className:"rounded md:mt-11 mb-5",
+                      onMouseEnter:((e)=>{
+                        $(e.target).hide();
+                        $(e.target).next().show();
+                        $(e.target).next().attr("src","videos/live-text-editor.mp4")
+                      })
+                    }),
                     (0, l.jsx)("video", {
-                      className:"rounded-list md:mt-11 mb-5",
+                      className:"rounded-list md:mt-11 mb-5 hidden",
                       controls: !1,
                       height: "0",
                       loop: !0,
@@ -515,8 +525,25 @@
                           style:{fontSize:"0.725rem;"},
                           children:data?.description
                         }),
-                        (0,l.jsx)("video",{
+                        (0,l.jsx)("img",{
+                          src:data?.posterUrl,
+                          width:'100%',
+                          style:{
+                            color:"red",
+                            border: "2 solid white"
+
+                          },
                           className:"rounded md:mt-11 mb-5",
+                          id:`poster_${index}`,
+                          onMouseEnter:(()=>{
+                            $(`#poster_${index}`).hide()
+                            $(`#video_${index}`).show();
+                            $(`#video_${index}`).attr("src",data?.videoUrl);
+                          }),  
+                        }),
+                        (0,l.jsx)("video",{
+                          className:"rounded md:mt-11 mb-5 hidden",
+                          id:`video_${index}`,
                           controls: !1,
                           height: "0",
                           loop: !0,
@@ -524,8 +551,8 @@
                           autoplay: 1,
                           width: "100%",
                           children:[(0,l.jsx)("source",{
-                            // type:"video/webm",
-                            src:data?.posterUrl
+                            type:"video/webm",
+                            // src:data?.posterUrl
                           })]
                         }),
                       ]
