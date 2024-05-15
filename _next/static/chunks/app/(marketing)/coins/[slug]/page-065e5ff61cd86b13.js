@@ -12592,7 +12592,7 @@
       function or(e) {
         let { coin: a, className: t = "" } = e,
           { data: n } = (0, et.ZP)(
-            $.Y ? null : "".concat($.T, "/public/coins/").concat(a.id),
+            $.Y ? null : "".concat($.T, "/_public/coins/").concat(a.id),
             async (e) => {
               let { coin: a } = await (0, q.Z)(e);
               return {

@@ -387,7 +387,7 @@
             );
           })(n, 500),
           { data: c } = (0, k.ZP)(
-            a.length > 0 ? "/public/coins/search?q=".concat(a) : null,
+            a.length > 0 ? "/_public/coins/search?q=".concat(a) : null,
             N.Z
           );
         (0, o.useEffect)(() => {

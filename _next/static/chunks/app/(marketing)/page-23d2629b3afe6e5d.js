@@ -2809,7 +2809,7 @@
         let { pools: a, poolType: i } = e,
           { data: c } = (function (e) {
             let { fallbackData: t, refreshInterval: a, poolType: l } = e;
-            return (0, M.ZP)("/public/coins/".concat(l, "-pools"), k.Z, {
+            return (0, M.ZP)("/_public/coins/".concat(l, "-pools"), k.Z, {
               fallbackData: t,
               refreshInterval: a,
             });
