@@ -2872,7 +2872,7 @@
           if (n) {
             var t = n;
             if (!lm(e, n)) {
-              if (lh(e)) throw Error(f(418));
+              // if (lh(e)) throw Error(f(418));
               n = rC(t.nextSibling);
               var r = ls;
               n && lm(e, n)
@@ -2880,7 +2880,7 @@
                 : ((e.flags = (-4097 & e.flags) | 2), (lf = !1), (ls = e));
             }
           } else {
-            if (lh(e)) throw Error(f(418));
+            // if (lh(e)) throw Error(f(418));
             (e.flags = (-4097 & e.flags) | 2), (lf = !1), (ls = e);
           }
         }
@@ -7932,7 +7932,7 @@
                   (n.memoizedState = a),
                   256 & n.flags)
                 ) {
-                  (l = a6(Error(f(423)), n)), (n = uv(e, n, r, t, l));
+                  // (l = a6(Error(f(423)), n)), (n = uv(e, n, r, t, l));
                   break e;
                 }
                 if (r !== l) {

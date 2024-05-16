@@ -1449,7 +1449,7 @@
                 };
               }),
               3800,
-              u(Error("Failed to load client build manifest"))
+              // u(Error("Failed to load client build manifest"))
             );
       }
       function h(e, t) {
