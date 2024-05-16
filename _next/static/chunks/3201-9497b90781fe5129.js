@@ -1437,8 +1437,7 @@
               },
             });
         };
-      var ea = a(57124),
-        en = a(28967),
+      var en = a(28967),
         er = a(67381),
         el = a.n(er);
       let ei = { image: 25, animation: 100, either: 10 },
@@ -1705,24 +1704,25 @@
                         }),
                       r
                         ? M &&
-                          (0, n.jsx)(
-                            ea.v0,
-                            {
-                              onDragEnter: (e) => {
-                                B("dragenter" === e.type);
-                              },
-                              onDragEnd: (e) => {
-                                B(!1);
-                              },
-                              onDrop: () => {
-                                console.log("dropped"), P(!0), B(!1);
-                              },
-                              className:
-                                "absolute inset-0 z-10 overflow-hidden ",
-                              uppy: M,
-                            },
-                            x
-                          )
+                        null
+                          // (0, n.jsx)(
+                          //   ea.v0,
+                          //   {
+                          //     onDragEnter: (e) => {
+                          //       B("dragenter" === e.type);
+                          //     },
+                          //     onDragEnd: (e) => {
+                          //       B(!1);
+                          //     },
+                          //     onDrop: () => {
+                          //       console.log("dropped"), P(!0), B(!1);
+                          //     },
+                          //     className:
+                          //       "absolute inset-0 z-10 overflow-hidden ",
+                          //     uppy: M,
+                          //   },
+                          //   x
+                          // )
                         : (0, n.jsx)("div", {
                             className: "jsx-d7d0e4db55c22a26",
                             children: "Please provide a parent Id",
