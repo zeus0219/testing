@@ -381,7 +381,11 @@
               e.removeAttribute(t);
               return;
           }
-          e.setAttribute(t,""+ (n));
+          try {
+            e.setAttribute(t,""+ (typeof n === "number" ?Math.abs(n) :n ));
+          } catch (error) {
+            console.log(e,t,n,'44444444')
+          }
         }
       }
       function eH(e, t, n, r) {
