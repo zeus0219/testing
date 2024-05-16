@@ -5419,11 +5419,11 @@ if (cid) {
           );
         }
         onOpen(e) {
-          (e.onmessage = (e) => this.onPayload(e)),
-            (e.onclose = (e) => this.onClose(e)),
-            (this.socket = e),
-            (this.registering = !1),
-            this.events.emit("open");
+          // (e.onmessage = (e) => this.onPayload(e)),
+          //   (e.onclose = (e) => this.onClose(e)),
+          //   (this.socket = e),
+          //   (this.registering = !1),
+          //   this.events.emit("open");
         }
         onClose(e) {
           (this.socket = void 0),
