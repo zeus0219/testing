@@ -76,8 +76,7 @@
             return u;
           },
         });
-      let n = r(51502),
-        o = r(4292);
+      var n = r(51502),o = r(4292);
       function u(e, t) {
         return (0, o.normalizePathTrailingSlash)((0, n.addPathPrefix)(e, ""));
       }
@@ -93,20 +92,20 @@
       function r(e) {
         var t, r;
         (t = self.__next_s),
-          (r = () => {
-            console.log(e,'eeee');
+          (r = function(){
             e();
           }),
           t && t.length
             ? t
-                .reduce((e, t) => {
-                  let [r, n] = t;
+                .reduce(function(e, t){
+                  // var [r, n] = t;
+                  var r = t[0], n = t[1]
                   return e.then(
-                    () =>
-                      new Promise((e, t) => {
-                        let o = document.createElement("script");
+                    function(){
+                      new Promise(function(e, t){
+                        var o = document.createElement("script");
                         if (n)
-                          for (let e in n)
+                          for (var e in n)
                             "children" !== e && o.setAttribute(e, n[e]);
                         r
                           ? ((o.src = r),
@@ -115,6 +114,7 @@
                           : n && ((o.innerHTML = n.children), setTimeout(e)),
                           document.head.appendChild(o);
                       })
+                    }
                   );
                 }, Promise.resolve())
                 .catch((e) => {

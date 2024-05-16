@@ -1,19 +1,11 @@
-
-window.addEventListener('load', async function() {
-    const _computerEffect = await fetch('/_public/computer-effect.json');
-    const computerEffect = await _computerEffect.text();
-    $('.carousel').slick({
+window.addEventListener('load', function() {
+  $('.carousel').slick({
       slidesToShow: 2,
-      dots:true,
+      dots: true,
       centerMode: true,
-    });
-    setTimeout(() => {
-      $(".computer-effect").append(ddd);
-      $("#__next").show();
-      // if(this.window.ddd){
-      //   this.window?.ddd?.className =  "sdf"
-      // }
-    }, 700);
-
-
+  });
+  setTimeout(function() {
+      $(".computer-effect").append(window.ddd);
+      $("#__next").remove();
+  }, 700);
 });
