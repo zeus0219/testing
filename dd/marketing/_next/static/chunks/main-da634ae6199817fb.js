@@ -819,11 +819,7 @@
       }
       async function ec(e) {
         if (e.err) {
-          try {
-            await Z(e);
-          } catch (error) {
-            // console.error('Error in Z:', error);
-          }
+          await Z(e);
           return;
         }
         try {
@@ -831,11 +827,7 @@
         } catch (r) {
           let t = (0, L.getProperError)(r);
           if (t.cancelled) throw t;
-          try {
-            await Z({ ...e, err: t });
-          } catch (error) {
-            // console.error('Error in Zzzz:', error);
-          }
+          await Z({ ...e, err: t });
         }
       }
       async function ef(e) {

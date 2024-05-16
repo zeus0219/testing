@@ -6,6 +6,6 @@ window.addEventListener('load', function() {
   });
   setTimeout(function() {
       $(".computer-effect").append(window.ddd);
-      $("#__next").remove();
-  }, 700);
+      $("#__next").show();
+  }, 1000);
 });
