@@ -542,97 +542,97 @@
           constructor(t, e) {
             super(),
               (this.options = e),
-              (this.#i = t),
-              (this.#s = null),
+              (this.i__0 = t),
+              (this.s__0 = null),
               this.bindMethods(),
               this.setOptions(e);
           }
-          #i;
-          #u = void 0;
-          #o = void 0;
-          #c = void 0;
-          #a;
-          #h;
-          #s;
-          #l;
-          #f;
-          #d;
-          #p;
-          #y;
-          #v;
-          #b = new Set();
+          i__0;
+          u__0 = void 0;
+          o__0 = void 0;
+          c__0 = void 0;
+          a__0;
+          h__0;
+          s__0;
+          l__0;
+          f__0;
+          d__0;
+          p__0;
+          y__0;
+          v__0;
+          b__0 = new Set();
           bindMethods() {
             this.refetch = this.refetch.bind(this);
           }
           onSubscribe() {
             1 === this.listeners.size &&
-              (this.#u.addObserver(this),
-              h(this.#u, this.options) ? this.#R() : this.updateResult(),
-              this.#m());
+              (this.u__0.addObserver(this),
+              h(this.u__0, this.options) ? this.R__0() : this.updateResult(),
+              this.m__0());
           }
           onUnsubscribe() {
             this.hasListeners() || this.destroy();
           }
           shouldFetchOnReconnect() {
-            return l(this.#u, this.options, this.options.refetchOnReconnect);
+            return l(this.u__0, this.options, this.options.refetchOnReconnect);
           }
           shouldFetchOnWindowFocus() {
-            return l(this.#u, this.options, this.options.refetchOnWindowFocus);
+            return l(this.u__0, this.options, this.options.refetchOnWindowFocus);
           }
           destroy() {
             (this.listeners = new Set()),
-              this.#O(),
-              this.#g(),
-              this.#u.removeObserver(this);
+              this.O__0(),
+              this.g__0(),
+              this.u__0.removeObserver(this);
           }
           setOptions(t, e) {
             let n = this.options,
-              r = this.#u;
+              r = this.u__0;
             if (
-              ((this.options = this.#i.defaultQueryOptions(t)),
+              ((this.options = this.i__0.defaultQueryOptions(t)),
               void 0 !== this.options.enabled &&
                 "boolean" != typeof this.options.enabled)
             )
               throw Error("Expected enabled to be a boolean");
-            this.#w(),
-              this.#u.setOptions(this.options),
+            this.w__0(),
+              this.u__0.setOptions(this.options),
               n._defaulted &&
                 !(0, i.VS)(this.options, n) &&
-                this.#i
+                this.i__0
                   .getQueryCache()
                   .notify({
                     type: "observerOptionsUpdated",
-                    query: this.#u,
+                    query: this.u__0,
                     observer: this,
                   });
             let s = this.hasListeners();
-            s && f(this.#u, r, this.options, n) && this.#R(),
+            s && f(this.u__0, r, this.options, n) && this.R__0(),
               this.updateResult(e),
               s &&
-                (this.#u !== r ||
+                (this.u__0 !== r ||
                   this.options.enabled !== n.enabled ||
                   this.options.staleTime !== n.staleTime) &&
-                this.#S();
-            let u = this.#E();
+                this.S__0();
+            let u = this.E__0();
             s &&
-              (this.#u !== r ||
+              (this.u__0 !== r ||
                 this.options.enabled !== n.enabled ||
-                u !== this.#v) &&
+                u !== this.v__0) &&
               this.#Q(u);
           }
           getOptimisticResult(t) {
-            let e = this.#i.getQueryCache().build(this.#i, t),
+            let e = this.i__0.getQueryCache().build(this.i__0, t),
               n = this.createResult(e, t);
             return (
               (0, i.VS)(this.getCurrentResult(), n) ||
-                ((this.#c = n),
-                (this.#h = this.options),
-                (this.#a = this.#u.state)),
+                ((this.c__0 = n),
+                (this.h__0 = this.options),
+                (this.a__0 = this.u__0.state)),
               n
             );
           }
           getCurrentResult() {
-            return this.#c;
+            return this.c__0;
           }
           trackResult(t, e) {
             let n = {};
@@ -648,80 +648,80 @@
             );
           }
           trackProp(t) {
-            this.#b.add(t);
+            this.b__0.add(t);
           }
           getCurrentQuery() {
-            return this.#u;
+            return this.u__0;
           }
           refetch({ ...t } = {}) {
             return this.fetch({ ...t });
           }
           fetchOptimistic(t) {
-            let e = this.#i.defaultQueryOptions(t),
-              n = this.#i.getQueryCache().build(this.#i, e);
+            let e = this.i__0.defaultQueryOptions(t),
+              n = this.i__0.getQueryCache().build(this.i__0, e);
             return (
               (n.isFetchingOptimistic = !0),
               n.fetch().then(() => this.createResult(n, e))
             );
           }
           fetch(t) {
-            return this.#R({ ...t, cancelRefetch: t.cancelRefetch ?? !0 }).then(
-              () => (this.updateResult(), this.#c)
+            return this.R__0({ ...t, cancelRefetch: t.cancelRefetch ?? !0 }).then(
+              () => (this.updateResult(), this.c__0)
             );
           }
-          #R(t) {
-            this.#w();
-            let e = this.#u.fetch(this.options, t);
+          R__0(t) {
+            this.w__0();
+            let e = this.u__0.fetch(this.options, t);
             return t?.throwOnError || (e = e.catch(i.ZT)), e;
           }
-          #S() {
+          S__0() {
             if (
-              (this.#O(),
-              i.sk || this.#c.isStale || !(0, i.PN)(this.options.staleTime))
+              (this.O__0(),
+              i.sk || this.c__0.isStale || !(0, i.PN)(this.options.staleTime))
             )
               return;
-            let t = (0, i.Kp)(this.#c.dataUpdatedAt, this.options.staleTime);
-            this.#p = setTimeout(() => {
-              this.#c.isStale || this.updateResult();
+            let t = (0, i.Kp)(this.c__0.dataUpdatedAt, this.options.staleTime);
+            this.p__0 = setTimeout(() => {
+              this.c__0.isStale || this.updateResult();
             }, t + 1);
           }
-          #E() {
+          E__0() {
             return (
               ("function" == typeof this.options.refetchInterval
-                ? this.options.refetchInterval(this.#u)
+                ? this.options.refetchInterval(this.u__0)
                 : this.options.refetchInterval) ?? !1
             );
           }
           #Q(t) {
-            this.#g(),
-              (this.#v = t),
+            this.g__0(),
+              (this.v__0 = t),
               !i.sk &&
                 !1 !== this.options.enabled &&
-                (0, i.PN)(this.#v) &&
-                0 !== this.#v &&
-                (this.#y = setInterval(() => {
+                (0, i.PN)(this.v__0) &&
+                0 !== this.v__0 &&
+                (this.y__0 = setInterval(() => {
                   (this.options.refetchIntervalInBackground ||
                     u.j.isFocused()) &&
-                    this.#R();
-                }, this.#v));
+                    this.R__0();
+                }, this.v__0));
           }
-          #m() {
-            this.#S(), this.#Q(this.#E());
+          m__0() {
+            this.S__0(), this.#Q(this.E__0());
           }
-          #O() {
-            this.#p && (clearTimeout(this.#p), (this.#p = void 0));
+          O__0() {
+            this.p__0 && (clearTimeout(this.p__0), (this.p__0 = void 0));
           }
-          #g() {
-            this.#y && (clearInterval(this.#y), (this.#y = void 0));
+          g__0() {
+            this.y__0 && (clearInterval(this.y__0), (this.y__0 = void 0));
           }
           createResult(t, e) {
             let n;
-            let r = this.#u,
+            let r = this.u__0,
               s = this.options,
-              u = this.#c,
-              o = this.#a,
-              a = this.#h,
-              l = t !== r ? t.state : this.#o,
+              u = this.c__0,
+              o = this.a__0,
+              a = this.h__0,
+              l = t !== r ? t.state : this.o__0,
               { state: p } = t,
               { error: y, errorUpdatedAt: v, fetchStatus: b, status: R } = p,
               m = !1;
@@ -735,16 +735,16 @@
                 "isRestoring" === e._optimisticResults && (b = "idle");
             }
             if (e.select && void 0 !== p.data) {
-              if (u && p.data === o?.data && e.select === this.#l) n = this.#f;
+              if (u && p.data === o?.data && e.select === this.l__0) n = this.f__0;
               else
                 try {
-                  (this.#l = e.select),
+                  (this.l__0 = e.select),
                     (n = e.select(p.data)),
                     (n = (0, i.oE)(u?.data, n, e)),
-                    (this.#f = n),
-                    (this.#s = null);
+                    (this.f__0 = n),
+                    (this.s__0 = null);
                 } catch (t) {
-                  this.#s = t;
+                  this.s__0 = t;
                 }
             } else n = p.data;
             if (
@@ -761,20 +761,20 @@
               else if (
                 ((t =
                   "function" == typeof e.placeholderData
-                    ? e.placeholderData(this.#d?.state.data, this.#d)
+                    ? e.placeholderData(this.d__0?.state.data, this.d__0)
                     : e.placeholderData),
                 e.select && void 0 !== t)
               )
                 try {
-                  (t = e.select(t)), (this.#s = null);
+                  (t = e.select(t)), (this.s__0 = null);
                 } catch (t) {
-                  this.#s = t;
+                  this.s__0 = t;
                 }
               void 0 !== t &&
                 ((R = "success"), (n = (0, i.oE)(u?.data, t, e)), (m = !0));
             }
-            this.#s &&
-              ((y = this.#s), (n = this.#f), (v = Date.now()), (R = "error"));
+            this.s__0 &&
+              ((y = this.s__0), (n = this.f__0), (v = Date.now()), (R = "error"));
             let O = "fetching" === b,
               g = "pending" === R,
               w = "error" === R,
@@ -810,55 +810,55 @@
             };
           }
           updateResult(t) {
-            let e = this.#c,
-              n = this.createResult(this.#u, this.options);
+            let e = this.c__0,
+              n = this.createResult(this.u__0, this.options);
             if (
-              ((this.#a = this.#u.state),
-              (this.#h = this.options),
-              void 0 !== this.#a.data && (this.#d = this.#u),
+              ((this.a__0 = this.u__0.state),
+              (this.h__0 = this.options),
+              void 0 !== this.a__0.data && (this.d__0 = this.u__0),
               (0, i.VS)(n, e))
             )
               return;
-            this.#c = n;
+            this.c__0 = n;
             let r = {};
             t?.listeners !== !1 &&
               (() => {
                 if (!e) return !0;
                 let { notifyOnChangeProps: t } = this.options,
                   n = "function" == typeof t ? t() : t;
-                if ("all" === n || (!n && !this.#b.size)) return !0;
-                let r = new Set(n ?? this.#b);
+                if ("all" === n || (!n && !this.b__0.size)) return !0;
+                let r = new Set(n ?? this.b__0);
                 return (
                   this.options.throwOnError && r.add("error"),
-                  Object.keys(this.#c).some(
-                    (t) => this.#c[t] !== e[t] && r.has(t)
+                  Object.keys(this.c__0).some(
+                    (t) => this.c__0[t] !== e[t] && r.has(t)
                   )
                 );
               })() &&
               (r.listeners = !0),
-              this.#C({ ...r, ...t });
+              this.C__0({ ...r, ...t });
           }
-          #w() {
-            let t = this.#i.getQueryCache().build(this.#i, this.options);
-            if (t === this.#u) return;
-            let e = this.#u;
-            (this.#u = t),
-              (this.#o = t.state),
+          w__0() {
+            let t = this.i__0.getQueryCache().build(this.i__0, this.options);
+            if (t === this.u__0) return;
+            let e = this.u__0;
+            (this.u__0 = t),
+              (this.o__0 = t.state),
               this.hasListeners() &&
                 (e?.removeObserver(this), t.addObserver(this));
           }
           onQueryUpdate() {
-            this.updateResult(), this.hasListeners() && this.#m();
+            this.updateResult(), this.hasListeners() && this.m__0();
           }
-          #C(t) {
+          C__0(t) {
             s.V.batch(() => {
               t.listeners &&
                 this.listeners.forEach((t) => {
-                  t(this.#c);
+                  t(this.c__0);
                 }),
-                this.#i
+                this.i__0
                   .getQueryCache()
-                  .notify({ query: this.#u, type: "observerResultsUpdated" });
+                  .notify({ query: this.u__0, type: "observerResultsUpdated" });
             });
           }
         };

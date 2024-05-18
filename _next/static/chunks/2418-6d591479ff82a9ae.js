@@ -4482,11 +4482,11 @@
             let e = "pending" === this.state.status;
             try {
               if (!e) {
-                this.#i({ type: "pending", variables: t }),
+                this.i__0({ type: "pending", variables: t }),
                   await this.n_nn.config.onMutate?.(t, this);
                 let e = await this.options.onMutate?.(t);
                 e !== this.state.context &&
-                  this.#i({ type: "pending", context: e, variables: t });
+                  this.i__0({ type: "pending", context: e, variables: t });
               }
               let n = await ((this.r_rr = (0, o.Mz)({
                 fn: () =>
@@ -4494,13 +4494,13 @@
                     ? this.options.mutationFn(t)
                     : Promise.reject(Error("No mutationFn found")),
                 onFail: (t, e) => {
-                  this.#i({ type: "failed", failureCount: t, error: e });
+                  this.i__0({ type: "failed", failureCount: t, error: e });
                 },
                 onPause: () => {
-                  this.#i({ type: "pause" });
+                  this.i__0({ type: "pause" });
                 },
                 onContinue: () => {
-                  this.#i({ type: "continue" });
+                  this.i__0({ type: "continue" });
                 },
                 retry: this.options.retry ?? 0,
                 retryDelay: this.options.retryDelay,
@@ -4523,7 +4523,7 @@
                   this
                 ),
                 await this.options.onSettled?.(n, null, t, this.state.context),
-                this.#i({ type: "success", data: n }),
+                this.i__0({ type: "success", data: n }),
                 n
               );
             } catch (e) {
@@ -4552,11 +4552,11 @@
                   e)
                 );
               } finally {
-                this.#i({ type: "error", error: e });
+                this.i__0({ type: "error", error: e });
               }
             }
           }
-          #i(t) {
+          i__0(t) {
             (this.state = ((e) => {
               switch (t.type) {
                 case "failed":
@@ -4639,14 +4639,14 @@
       });
       var r = n(36076),
         i = class {
-          #o;
+          o__0;
           destroy() {
             this.clearGcTimeout();
           }
           scheduleGc() {
             this.clearGcTimeout(),
               (0, r.PN)(this.gcTime) &&
-                (this.#o = setTimeout(() => {
+                (this.o__0 = setTimeout(() => {
                   this.optionalRemove();
                 }, this.gcTime));
           }
@@ -4654,7 +4654,7 @@
             this.gcTime = Math.max(this.gcTime || 0, t ?? (r.sk ? 1 / 0 : 3e5));
           }
           clearGcTimeout() {
-            this.#o && (clearTimeout(this.#o), (this.#o = void 0));
+            this.o__0 && (clearTimeout(this.o__0), (this.o__0 = void 0));
           }
         };
     },
@@ -4671,16 +4671,16 @@
         a = n(94699),
         s = n(36076),
         u = class extends a.l {
-          #a;
-          #s = void 0;
-          #u;
-          #c;
+          a__0;
+          s__0 = void 0;
+          u__0;
+          c__0;
           constructor(t, e) {
             super(),
-              (this.#a = t),
+              (this.a__0 = t),
               this.setOptions(e),
               this.bindMethods(),
-              this.#l();
+              this.l__0();
           }
           bindMethods() {
             (this.mutate = this.mutate.bind(this)),
@@ -4688,50 +4688,50 @@
           }
           setOptions(t) {
             let e = this.options;
-            (this.options = this.#a.defaultMutationOptions(t)),
+            (this.options = this.a__0.defaultMutationOptions(t)),
               (0, s.VS)(this.options, e) ||
-                this.#a
+                this.a__0
                   .getMutationCache()
                   .notify({
                     type: "observerOptionsUpdated",
-                    mutation: this.#u,
+                    mutation: this.u__0,
                     observer: this,
                   }),
               e?.mutationKey &&
               this.options.mutationKey &&
               (0, s.Ym)(e.mutationKey) !== (0, s.Ym)(this.options.mutationKey)
                 ? this.reset()
-                : this.#u?.setOptions(this.options);
+                : this.u__0?.setOptions(this.options);
           }
           onUnsubscribe() {
-            this.hasListeners() || this.#u?.removeObserver(this);
+            this.hasListeners() || this.u__0?.removeObserver(this);
           }
           onMutationUpdate(t) {
-            this.#l(), this.#d(t);
+            this.l__0(), this.d__0(t);
           }
           getCurrentResult() {
-            return this.#s;
+            return this.s__0;
           }
           reset() {
-            this.#u?.removeObserver(this),
-              (this.#u = void 0),
-              this.#l(),
-              this.#d();
+            this.u__0?.removeObserver(this),
+              (this.u__0 = void 0),
+              this.l__0(),
+              this.d__0();
           }
           mutate(t, e) {
             return (
-              (this.#c = e),
-              this.#u?.removeObserver(this),
-              (this.#u = this.#a
+              (this.c__0 = e),
+              this.u__0?.removeObserver(this),
+              (this.u__0 = this.a__0
                 .getMutationCache()
-                .build(this.#a, this.options)),
-              this.#u.addObserver(this),
-              this.#u.execute(t)
+                .build(this.a__0, this.options)),
+              this.u__0.addObserver(this),
+              this.u__0.execute(t)
             );
           }
-          #l() {
-            let t = this.#u?.state ?? (0, i.R)();
-            this.#s = {
+          l__0() {
+            let t = this.u__0?.state ?? (0, i.R)();
+            this.s__0 = {
               ...t,
               isPending: "pending" === t.status,
               isSuccess: "success" === t.status,
@@ -4741,20 +4741,20 @@
               reset: this.reset,
             };
           }
-          #d(t) {
+          d__0(t) {
             o.V.batch(() => {
-              if (this.#c && this.hasListeners()) {
-                let e = this.#s.variables,
-                  n = this.#s.context;
+              if (this.c__0 && this.hasListeners()) {
+                let e = this.s__0.variables,
+                  n = this.s__0.context;
                 t?.type === "success"
-                  ? (this.#c.onSuccess?.(t.data, e, n),
-                    this.#c.onSettled?.(t.data, null, e, n))
+                  ? (this.c__0.onSuccess?.(t.data, e, n),
+                    this.c__0.onSettled?.(t.data, null, e, n))
                   : t?.type === "error" &&
-                    (this.#c.onError?.(t.error, e, n),
-                    this.#c.onSettled?.(void 0, t.error, e, n));
+                    (this.c__0.onError?.(t.error, e, n),
+                    this.c__0.onSettled?.(void 0, t.error, e, n));
               }
               this.listeners.forEach((t) => {
-                t(this.#s);
+                t(this.s__0);
               });
             });
           }
