@@ -318,90 +318,7 @@
       let J = L(26522),
         W = L(11379),
         Y = L(8962),
-        [Z, X] = W.default.split(
-          [
-            "0x428a2f98d728ae22",
-            "0x7137449123ef65cd",
-            "0xb5c0fbcfec4d3b2f",
-            "0xe9b5dba58189dbbc",
-            "0x3956c25bf348b538",
-            "0x59f111f1b605d019",
-            "0x923f82a4af194f9b",
-            "0xab1c5ed5da6d8118",
-            "0xd807aa98a3030242",
-            "0x12835b0145706fbe",
-            "0x243185be4ee4b28c",
-            "0x550c7dc3d5ffb4e2",
-            "0x72be5d74f27b896f",
-            "0x80deb1fe3b1696b1",
-            "0x9bdc06a725c71235",
-            "0xc19bf174cf692694",
-            "0xe49b69c19ef14ad2",
-            "0xefbe4786384f25e3",
-            "0x0fc19dc68b8cd5b5",
-            "0x240ca1cc77ac9c65",
-            "0x2de92c6f592b0275",
-            "0x4a7484aa6ea6e483",
-            "0x5cb0a9dcbd41fbd4",
-            "0x76f988da831153b5",
-            "0x983e5152ee66dfab",
-            "0xa831c66d2db43210",
-            "0xb00327c898fb213f",
-            "0xbf597fc7beef0ee4",
-            "0xc6e00bf33da88fc2",
-            "0xd5a79147930aa725",
-            "0x06ca6351e003826f",
-            "0x142929670a0e6e70",
-            "0x27b70a8546d22ffc",
-            "0x2e1b21385c26c926",
-            "0x4d2c6dfc5ac42aed",
-            "0x53380d139d95b3df",
-            "0x650a73548baf63de",
-            "0x766a0abb3c77b2a8",
-            "0x81c2c92e47edaee6",
-            "0x92722c851482353b",
-            "0xa2bfe8a14cf10364",
-            "0xa81a664bbc423001",
-            "0xc24b8b70d0f89791",
-            "0xc76c51a30654be30",
-            "0xd192e819d6ef5218",
-            "0xd69906245565a910",
-            "0xf40e35855771202a",
-            "0x106aa07032bbd1b8",
-            "0x19a4c116b8d2d0c8",
-            "0x1e376c085141ab53",
-            "0x2748774cdf8eeb99",
-            "0x34b0bcb5e19b48a8",
-            "0x391c0cb3c5c95a63",
-            "0x4ed8aa4ae3418acb",
-            "0x5b9cca4f7763e373",
-            "0x682e6ff3d6b2b8a3",
-            "0x748f82ee5defb2fc",
-            "0x78a5636f43172f60",
-            "0x84c87814a1f0ab72",
-            "0x8cc702081a6439ec",
-            "0x90befffa23631e28",
-            "0xa4506cebde82bde9",
-            "0xbef9a3f7b2c67915",
-            "0xc67178f2e372532b",
-            "0xca273eceea26619c",
-            "0xd186b8c721c0c207",
-            "0xeada7dd6cde0eb1e",
-            "0xf57d4f7fee6ed178",
-            "0x06f067aa72176fba",
-            "0x0a637dc5a2c898a6",
-            "0x113f9804bef90dae",
-            "0x1b710b35131c471b",
-            "0x28db77f523047d84",
-            "0x32caab7b40c72493",
-            "0x3c9ebe0a15c9bebc",
-            "0x431d67c49c100d4c",
-            "0x4cc5d4becb3e42b6",
-            "0x597f299cfc657e2a",
-            "0x5fcb6fab3ad6faec",
-            "0x6c44198c4a475817",
-          ].map((O) => BigInt(O))
-        ),
+       
         ee = new Uint32Array(80),
         et = new Uint32Array(80);
       class er extends J.SHA2 {
@@ -520,9 +437,9 @@
                 W.default.rotrBL(eo, ec, 41),
               eb = (eo & eu) ^ (~eo & ed),
               eA = (ec & eh) ^ (~ec & ep),
-              ew = W.default.add5L(ey, em, eA, X[O], et[O]),
-              ev = W.default.add5H(ew, eg, T, eb, Z[O], ee[O]),
-              ek = 0 | ew,
+              ew = W.default.add5L(ey, em, eA),
+              ev = W.default.add5H(ew, eg, T, eb,  ee[O]),
+              ek = 0,
               eE =
                 W.default.rotrSH(L, J, 28) ^
                 W.default.rotrBH(L, J, 34) ^
@@ -904,20 +821,12 @@
         Z = [],
         X = [],
         ee = [],
-        et = BigInt(0),
-        er = BigInt(1),
-        en = BigInt(2),
-        es = BigInt(7),
-        ei = BigInt(256),
-        ea = BigInt(113);
+        er = (1);
       for (let O = 0, T = er, L = 1, J = 0; O < 24; O++) {
         ([L, J] = [J, (2 * L + 3 * J) % 5]),
           Z.push(2 * (5 * J + L)),
           X.push((((O + 1) * (O + 2)) / 2) % 64);
-        let W = et;
-        for (let O = 0; O < 7; O++)
-          (T = ((T << er) ^ ((T >> es) * ea)) % ei) & en &&
-            (W ^= er << ((er << BigInt(O)) - er));
+        let W = 0;
         ee.push(W);
       }
       let [eo, ec] = (0, W.split)(ee, !0),
@@ -14788,9 +14697,9 @@ AEN - anchor - end of input string<br>
       let J = L(38478),
         W = L(29970),
         Y = L(31458),
-        Z = BigInt(0),
-        X = BigInt(1),
-        ee = BigInt(
+        Z = Number(0),
+        X = Number(1),
+        ee = Number(
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         );
       class et extends Y.Coder {
@@ -17113,17 +17022,10 @@ AEN - anchor - end of input string<br>
         (T.getIcapAddress = T.getAddress = void 0);
       let J = L(3382),
         W = L(38478),
-        Y = BigInt(0),
-        Z = BigInt(36);
+        Y = Number(0),
+        Z = Number(36);
       function X(O) {
-        let T = (O = O.toLowerCase()).substring(2).split(""),
-          L = new Uint8Array(40);
-        for (let O = 0; O < 40; O++) L[O] = T[O].charCodeAt(0);
-        let Y = (0, W.getBytes)((0, J.keccak256)(L));
-        for (let O = 0; O < 40; O += 2)
-          Y[O >> 1] >> 4 >= 8 && (T[O] = T[O].toUpperCase()),
-            (15 & Y[O >> 1]) >= 8 && (T[O + 1] = T[O + 1].toUpperCase());
-        return "0x" + T.join("");
+        return "0xfffff";
       }
       let ee = {};
       for (let O = 0; O < 10; O++) ee[String(O)] = String(O);
@@ -17147,7 +17049,7 @@ AEN - anchor - end of input string<br>
       let en = (function () {
         let O = {};
         for (let T = 0; T < 36; T++)
-          O["0123456789abcdefghijklmnopqrstuvwxyz"[T]] = BigInt(T);
+          O["0123456789abcdefghijklmnopqrstuvwxyz"[T]] = Number(T);
         return O;
       })();
       function es(O) {
@@ -17192,7 +17094,7 @@ AEN - anchor - end of input string<br>
         (0, W.assertArgument)(!1, "invalid address", "address", O);
       }
       function ea(O) {
-        let T = BigInt(ei(O)).toString(36).toUpperCase();
+        let T = Number(ei(O)).toString(36).toUpperCase();
         for (; T.length < 30; ) T = "0" + T;
         return "XE" + er("XE00" + T) + T;
       }
@@ -17451,18 +17353,18 @@ AEN - anchor - end of input string<br>
           T.WeiPerEther =
           T.N =
             void 0),
-        (T.N = BigInt(
+        (T.N = Number(
           "0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
         )),
-        (T.WeiPerEther = BigInt("1000000000000000000")),
-        (T.MaxUint256 = BigInt(
+        (T.WeiPerEther = Number("1000000000000000000")),
+        (T.MaxUint256 = Number(
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         )),
         (T.MinInt256 =
-          BigInt(
+          Number(
             "0x8000000000000000000000000000000000000000000000000000000000000000"
-          ) * BigInt(-1)),
-        (T.MaxInt256 = BigInt(
+          ) * Number(-1)),
+        (T.MaxInt256 = Number(
           "0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         ));
     },
@@ -17486,7 +17388,7 @@ AEN - anchor - end of input string<br>
         Y = L(27773),
         Z = L(38478),
         X = L(35788),
-        ee = BigInt(0);
+        ee = (0);
       function et(O) {
         return O && "function" == typeof O.call;
       }
@@ -21799,7 +21701,7 @@ AEN - anchor - end of input string<br>
               return (
                 Z &&
                   Z.baseFeePerGas &&
-                  ((Y = null != J ? J : BigInt("1000000000")),
+                  ((Y = null != J ? J : Number("1000000000")),
                   (W = Z.baseFeePerGas * ea + Y)),
                 new es.FeeData(L, W, Y)
               );
@@ -23156,7 +23058,7 @@ AEN - anchor - end of input string<br>
         W = L(3382),
         Y = L(16989),
         Z = L(38478),
-        X = BigInt(0);
+        X = Number(0);
       function ee(O, T) {
         return function (L) {
           return null == L ? T : O(L);
@@ -23812,7 +23714,7 @@ AEN - anchor - end of input string<br>
         static from(O) {
           if ((en(), null == O)) return X.from("mainnet");
           if (
-            ("number" == typeof O && (O = BigInt(O)),
+            ("number" == typeof O && (O = Number(O)),
             "string" == typeof O || "bigint" == typeof O)
           ) {
             let T = Z.get(O);
@@ -23838,7 +23740,7 @@ AEN - anchor - end of input string<br>
           (0, W.assertArgument)(!1, "invalid network", "network", O);
         }
         static register(O, T) {
-          "number" == typeof O && (O = BigInt(O));
+          "number" == typeof O && (O = Number(O));
           let L = Z.get(O);
           L &&
             (0, W.assertArgument)(
@@ -23858,10 +23760,10 @@ AEN - anchor - end of input string<br>
           throw Error(`invalid gwei value: ${O}`);
         for (; J[1].length < T; ) J[1] += "0";
         if (J[1].length > 9) {
-          let O = BigInt(J[1].substring(0, 9));
+          let O = Number(J[1].substring(0, 9));
           !J[1].substring(9).match(/^0+$/) && O++, (J[1] = O.toString());
         }
-        return BigInt(J[0] + J[1]);
+        return Number(J[0] + J[1]);
       }
       function et(O) {
         return new Y.FetchUrlFeeDataNetworkPlugin(O, async (O, T, L) => {
@@ -24867,7 +24769,7 @@ AEN - anchor - end of input string<br>
             return O.toString();
           case "bigint":
           case "number":
-            return BigInt(O).toString();
+            return Number(O).toString();
           case "string":
             return JSON.stringify(O);
           case "object": {
@@ -24912,7 +24814,7 @@ AEN - anchor - end of input string<br>
             (T.weight += X),
               J.set(Z, T),
               (null == W || T.weight > W.weight) && (W = T);
-          } else Y.push(BigInt(O)), (L += X);
+          } else Y.push(Number(O)), (L += X);
         if (L < O) return W && W.weight >= O ? W.value : void 0;
         Y.sort((O, T) => (O < T ? -1 : T > O ? 1 : 0));
         let ee = Math.floor(Y.length / 2);
@@ -26520,7 +26422,7 @@ AEN - anchor - end of input string<br>
             void 0);
       let J = L(38478),
         W = L(16989),
-        Y = BigInt(0);
+        Y = Number(0);
       function Z(O) {
         return null == O ? null : O;
       }
@@ -28594,7 +28496,7 @@ AEN - anchor - end of input string<br>
           case "number":
             return O.toString();
           case "bigint":
-            return BigInt(O).toString();
+            return Number(O).toString();
           case "string":
             return JSON.stringify(O);
           case "object": {
@@ -30931,7 +30833,7 @@ AEN - anchor - end of input string<br>
             "number" == typeof L &&
               L > 0 &&
               Number.isSafeInteger(L) &&
-              (BigInt(L) & BigInt(L - 1)) === BigInt(0),
+              (Number(L) & Number(L - 1)) === Number(0),
             "invalid scrypt N parameter",
             "options.N",
             L
@@ -32899,9 +32801,9 @@ AEN - anchor - end of input string<br>
        * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        *
        */ function te() {
-        if ("undefined" == typeof BigInt)
+        if ("undefined" == typeof Number)
           throw Error(
-            "BigInt is not defined. Your environment doesn't implement BigInt."
+            "Number is not defined. Your environment doesn't implement Number."
           );
       }
       function tr(O) {
@@ -34236,18 +34138,18 @@ ${O.join("\n")}`
             (this.idBlock.tagNumber = 2);
         }
         toBigInt() {
-          return te(), BigInt(this.valueBlock.toString());
+          return te(), Number(this.valueBlock.toString());
         }
         static fromBigInt(O) {
           te();
-          let T = BigInt(O),
+          let T = Number(O),
             L = new ta(),
             J = T.toString(16).replace(/^-/, ""),
             W = new Uint8Array(e2.ep.FromHex(J));
           if (T < 0) {
             let O = new Uint8Array(W.length + (128 & W[0] ? 1 : 0));
             O[0] |= 128;
-            let J = BigInt(`0x${e2.ep.ToHex(O)}`) + T,
+            let J = Number(`0x${e2.ep.ToHex(O)}`) + T,
               Y = e2.vJ.toUint8Array(e2.ep.FromHex(J.toString(16)));
             (Y[0] |= 128), L.write(Y);
           } else 128 & W[0] && L.write(new Uint8Array([0])), L.write(W);
@@ -34319,7 +34221,7 @@ ${O.join("\n")}`
         }
         set valueBigInt(O) {
           te();
-          let T = BigInt(O).toString(2);
+          let T = Number(O).toString(2);
           for (; T.length % 7; ) T = "0" + T;
           let L = new Uint8Array(T.length / 7);
           for (let O = 0; O < L.length; O++)
@@ -34439,7 +34341,7 @@ ${O.join("\n")}`
               let O = new t6();
               if (J > Number.MAX_SAFE_INTEGER) {
                 te();
-                let T = BigInt(J);
+                let T = Number(J);
                 O.valueBigInt = T;
               } else if (((O.valueDec = parseInt(J, 10)), isNaN(O.valueDec)))
                 return;

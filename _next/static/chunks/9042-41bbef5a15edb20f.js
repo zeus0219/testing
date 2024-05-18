@@ -64,9 +64,9 @@
             let { windows: a, windowSize: l } = n(e),
               f = t.ZERO,
               u = t.BASE,
-              h = BigInt(2 ** e - 1),
+              h = Number(2 ** e - 1),
               d = 2 ** e,
-              c = BigInt(e);
+              c = Number(e);
             for (let t = 0; t < a; t++) {
               let e = t * l,
                 n = Number(o & h);
