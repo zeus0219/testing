@@ -541,6 +541,7 @@
         a = class extends o.l {
           constructor(t, e) {
             super(),
+              this.b__0 = new Set(),
               (this.options = e),
               (this.i__0 = t),
               (this.s__0 = null),
@@ -560,7 +561,7 @@
           // p__0;
           // y__0;
           // v__0;
-          b__0 = new Set();
+
           bindMethods() {
             this.refetch = this.refetch.bind(this);
           }
