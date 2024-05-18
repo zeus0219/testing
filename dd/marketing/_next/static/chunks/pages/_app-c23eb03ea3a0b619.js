@@ -2576,9 +2576,9 @@
         }
         document.addEventListener("visibilitychange", u);
         let c = window.matchMedia("(prefers-color-scheme: dark)");
-        return c.addEventListener("change", l), () => {
-          document.removeEventListener("visibilitychange", u), c.removeEventListener("change", l);
-        };
+        // return c.addEventListener("change", l), () => {
+        //   document.removeEventListener("visibilitychange", u), c.removeEventListener("change", l);
+        // };
       }, []), null;
     }
     var b = r(93548),
