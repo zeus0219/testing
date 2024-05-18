@@ -2506,7 +2506,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
             if ("bigint" == typeof t.v) {
               if (0 === t.v || 27 === t.v) return 0;
               if (1 === t.v || 28 === t.v) return 1;
-              if (t.v >= 35n) return t.v % 2 === 0 ? 1 : 0;
+              if (t.v >= 35) return t.v % 2 === 0 ? 1 : 0;
             }
           })()),
           "legacy" === t.type &&
@@ -2957,11 +2957,11 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
               ];
               if (t) {
                 let e = (() => {
-                  if (t.v >= 35n)
-                    return (t.v - 35n) / 2 > 0
+                  if (t.v >= 35)
+                    return (t.v - 35) / 2 > 0
                       ? t.v
-                      : 27 + (35n === t.v ? 0 : 1);
-                  if (n > 0) return BigInt(2 * n) + BigInt(35n + t.v - 27);
+                      : 27 + (35 === t.v ? 0 : 1);
+                  if (n > 0) return BigInt(2 * n) + BigInt(35 + t.v - 27);
                   let e = 27 + (27 === t.v ? 0 : 1);
                   if (t.v !== e) throw new r.vl({ v: t.v });
                   return e;
