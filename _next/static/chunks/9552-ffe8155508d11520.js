@@ -30291,7 +30291,7 @@ AEN - anchor - end of input string<br>
             O
           );
         }
-        #tO() {
+        _tO() {
           let O = { address: this.address, privateKey: this.privateKey },
             T = this.mnemonic;
           return (
@@ -30308,12 +30308,12 @@ AEN - anchor - end of input string<br>
           );
         }
         async encrypt(O, T) {
-          return await (0, er.encryptKeystoreJson)(this.#tO(), O, {
+          return await (0, er.encryptKeystoreJson)(this._tO(), O, {
             progressCallback: T,
           });
         }
         encryptSync(O) {
-          return (0, er.encryptKeystoreJsonSync)(this.#tO(), O);
+          return (0, er.encryptKeystoreJsonSync)(this._tO(), O);
         }
         get extendedKey() {
           return (
