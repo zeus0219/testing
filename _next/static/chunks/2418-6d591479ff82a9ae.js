@@ -4639,7 +4639,6 @@
       });
       var r = n(36076),
         i = class {
-          o__0;
           destroy() {
             this.clearGcTimeout();
           }
