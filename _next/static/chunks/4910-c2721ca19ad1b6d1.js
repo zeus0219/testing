@@ -132,12 +132,9 @@
       var r = n(94699),
         i = n(36076),
         s = new (class extends r.l {
-          #r = !0;
-          #e;
-          #n;
           constructor() {
             super(),
-              (this.#n = (t) => {
+              (this.n__3 = (t) => {
                 if (!i.sk && window.addEventListener) {
                   let e = () => t(!0),
                     n = () => t(!1);
@@ -153,25 +150,25 @@
               });
           }
           onSubscribe() {
-            this.#e || this.setEventListener(this.#n);
+            this.e__2 || this.setEventListener(this.n__3);
           }
           onUnsubscribe() {
-            this.hasListeners() || (this.#e?.(), (this.#e = void 0));
+            this.hasListeners() || (this.e__2?.(), (this.e__2 = void 0));
           }
           setEventListener(t) {
-            (this.#n = t),
-              this.#e?.(),
-              (this.#e = t(this.setOnline.bind(this)));
+            (this.n__3 = t),
+              this.e__2?.(),
+              (this.e__2 = t(this.setOnline.bind(this)));
           }
           setOnline(t) {
-            this.#r !== t &&
-              ((this.#r = t),
+            this.r__1 !== t &&
+              ((this.r__1 = t),
               this.listeners.forEach((e) => {
                 e(t);
               }));
           }
           isOnline() {
-            return this.#r;
+            return this.r__1;
           }
         })();
     },

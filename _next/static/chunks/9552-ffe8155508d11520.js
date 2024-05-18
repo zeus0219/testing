@@ -14376,19 +14376,17 @@ AEN - anchor - end of input string<br>
       }
       T.Coder = en;
       class es {
-        #r;
-        #n;
         constructor() {
-          (this.#r = []), (this.#n = 0);
+          (this.r_2 = []), (this.n_2 = 0);
         }
         get data() {
-          return (0, J.concat)(this.#r);
+          return (0, J.concat)(this.r_2);
         }
         get length() {
-          return this.#n;
+          return this.n_2;
         }
         #s(O) {
-          return this.#r.push(O), (this.#n += O.length), O.length;
+          return this.r_2.push(O), (this.n_2 += O.length), O.length;
         }
         appendWriter(O) {
           return this.#s((0, J.getBytesCopy)(O.data));
@@ -14405,12 +14403,12 @@ AEN - anchor - end of input string<br>
           return this.#s(er(O));
         }
         writeUpdatableValue() {
-          let O = this.#r.length;
+          let O = this.r_2.length;
           return (
-            this.#r.push(W),
-            (this.#n += T.WordSize),
+            this.r_2.push(W),
+            (this.n_2 += T.WordSize),
             (T) => {
-              this.#r[O] = er(T);
+              this.r_2[O] = er(T);
             }
           );
         }
@@ -14418,69 +14416,64 @@ AEN - anchor - end of input string<br>
       T.Writer = es;
       class ei {
         allowLoose;
-        #r;
-        #i;
-        #a;
-        #o;
-        #l;
         constructor(O, T, L) {
           (0, J.defineProperties)(this, { allowLoose: !!T }),
-            (this.#r = (0, J.getBytesCopy)(O)),
-            (this.#a = 0),
-            (this.#o = null),
-            (this.#l = null != L ? L : 1024),
-            (this.#i = 0);
+            (this.r__2 = (0, J.getBytesCopy)(O)),
+            (this.a__2 = 0),
+            (this.o__2 = null),
+            (this.l__2 = null != L ? L : 1024),
+            (this.i__2 = 0);
         }
         get data() {
-          return (0, J.hexlify)(this.#r);
+          return (0, J.hexlify)(this.r__2);
         }
         get dataLength() {
-          return this.#r.length;
+          return this.r__2.length;
         }
         get consumed() {
-          return this.#i;
+          return this.i__2;
         }
         get bytes() {
-          return new Uint8Array(this.#r);
+          return new Uint8Array(this.r__2);
         }
         #c(O) {
-          if (this.#o) return this.#o.#c(O);
-          (this.#a += O),
+          if (this.o__2) return this.o__2.#c(O);
+          (this.a__2 += O),
             (0, J.assert)(
-              this.#l < 1 || this.#a <= this.#l * this.dataLength,
+              this.l__2 < 1 || this.a__2 <= this.l__2 * this.dataLength,
               `compressed ABI data exceeds inflation ratio of ${
-                this.#l
+                this.l__2
               } ( see: https://github.com/ethers-io/ethers.js/issues/4537 )`,
               "BUFFER_OVERRUN",
               {
-                buffer: (0, J.getBytesCopy)(this.#r),
-                offset: this.#i,
+                buffer: (0, J.getBytesCopy)(this.r__2),
+                offset: this.i__2,
                 length: O,
-                info: { bytesRead: this.#a, dataLength: this.dataLength },
+                info: { bytesRead: this.a__2, dataLength: this.dataLength },
               }
             );
         }
         #u(O, L, W) {
           let Y = Math.ceil(L / T.WordSize) * T.WordSize;
           return (
-            this.#i + Y > this.#r.length &&
-              (this.allowLoose && W && this.#i + L <= this.#r.length
+            this.i__2 + Y > this.r__2.length &&
+              (this.allowLoose && W && this.i__2 + L <= this.r__2.length
                 ? (Y = L)
                 : (0, J.assert)(!1, "data out-of-bounds", "BUFFER_OVERRUN", {
-                    buffer: (0, J.getBytesCopy)(this.#r),
-                    length: this.#r.length,
-                    offset: this.#i + Y,
+                    buffer: (0, J.getBytesCopy)(this.r__2),
+                    length: this.r__2.length,
+                    offset: this.i__2 + Y,
                   })),
-            this.#r.slice(this.#i, this.#i + Y)
+            this.r__2.slice(this.i__2, this.i__2 + Y)
           );
         }
         subReader(O) {
-          let T = new ei(this.#r.slice(this.#i + O), this.allowLoose, this.#l);
-          return (T.#o = this), T;
+          let T = new ei(this.r__2.slice(this.i__2 + O), this.allowLoose, this.l__2);
+          return (T.o__2 = this), T;
         }
         readBytes(O, T) {
           let L = this.#u(0, O, !!T);
-          return this.#c(O), (this.#i += L.length), L.slice(0, O);
+          return this.#c(O), (this.i__2 += L.length), L.slice(0, O);
         }
         readValue() {
           return (0, J.toBigInt)(this.readBytes(T.WordSize));
@@ -28273,46 +28266,32 @@ AEN - anchor - end of input string<br>
         );
       }
       class eP {
-        #eW;
-        #eY;
-        #r;
-        #eZ;
-        #eX;
-        #e0;
-        #e1;
-        #e2;
-        #e3;
-        #er;
-        #e4;
-        #e8;
-        #e6;
-        #e5;
         get type() {
-          return this.#eW;
+          return this._eW;
         }
         set type(O) {
           switch (O) {
             case null:
-              this.#eW = null;
+              this._eW = null;
               break;
             case 0:
             case "legacy":
-              this.#eW = 0;
+              this._eW = 0;
               break;
             case 1:
             case "berlin":
             case "eip-2930":
-              this.#eW = 1;
+              this._eW = 1;
               break;
             case 2:
             case "london":
             case "eip-1559":
-              this.#eW = 2;
+              this._eW = 2;
               break;
             case 3:
             case "cancun":
             case "eip-4844":
-              this.#eW = 3;
+              this._eW = 3;
               break;
             default:
               (0, Z.assertArgument)(
@@ -28337,33 +28316,33 @@ AEN - anchor - end of input string<br>
           return null;
         }
         get to() {
-          let O = this.#eY;
+          let O = this._eY;
           return null == O && 3 === this.type ? W.ZeroAddress : O;
         }
         set to(O) {
-          this.#eY = null == O ? null : (0, J.getAddress)(O);
+          this._eY = null == O ? null : (0, J.getAddress)(O);
         }
         get nonce() {
-          return this.#eZ;
+          return this._eZ;
         }
         set nonce(O) {
-          this.#eZ = (0, Z.getNumber)(O, "value");
+          this._eZ = (0, Z.getNumber)(O, "value");
         }
         get gasLimit() {
-          return this.#eX;
+          return this._eX;
         }
         set gasLimit(O) {
-          this.#eX = (0, Z.getBigInt)(O);
+          this._eX = (0, Z.getBigInt)(O);
         }
         get gasPrice() {
-          let O = this.#e0;
+          let O = this._e0;
           return null == O && (0 === this.type || 1 === this.type) ? et : O;
         }
         set gasPrice(O) {
-          this.#e0 = null == O ? null : (0, Z.getBigInt)(O, "gasPrice");
+          this._e0 = null == O ? null : (0, Z.getBigInt)(O, "gasPrice");
         }
         get maxPriorityFeePerGas() {
-          let O = this.#e1;
+          let O = this._e1;
           return null == O
             ? 2 === this.type || 3 === this.type
               ? et
@@ -28371,11 +28350,11 @@ AEN - anchor - end of input string<br>
             : O;
         }
         set maxPriorityFeePerGas(O) {
-          this.#e1 =
+          this._e1 =
             null == O ? null : (0, Z.getBigInt)(O, "maxPriorityFeePerGas");
         }
         get maxFeePerGas() {
-          let O = this.#e2;
+          let O = this._e2;
           return null == O
             ? 2 === this.type || 3 === this.type
               ? et
@@ -28383,34 +28362,34 @@ AEN - anchor - end of input string<br>
             : O;
         }
         set maxFeePerGas(O) {
-          this.#e2 = null == O ? null : (0, Z.getBigInt)(O, "maxFeePerGas");
+          this._e2 = null == O ? null : (0, Z.getBigInt)(O, "maxFeePerGas");
         }
         get data() {
-          return this.#r;
+          return this._r;
         }
         set data(O) {
-          this.#r = (0, Z.hexlify)(O);
+          this._r = (0, Z.hexlify)(O);
         }
         get value() {
-          return this.#e3;
+          return this._e3;
         }
         set value(O) {
-          this.#e3 = (0, Z.getBigInt)(O, "value");
+          this._e3 = (0, Z.getBigInt)(O, "value");
         }
         get chainId() {
-          return this.#er;
+          return this._er;
         }
         set chainId(O) {
-          this.#er = (0, Z.getBigInt)(O);
+          this._er = (0, Z.getBigInt)(O);
         }
         get signature() {
-          return this.#e4 || null;
+          return this._e4 || null;
         }
         set signature(O) {
-          this.#e4 = null == O ? null : Y.Signature.from(O);
+          this._e4 = null == O ? null : Y.Signature.from(O);
         }
         get accessList() {
-          let O = this.#e8 || null;
+          let O = this._e8 || null;
           return null == O
             ? 1 === this.type || 2 === this.type || 3 === this.type
               ? []
@@ -28418,17 +28397,17 @@ AEN - anchor - end of input string<br>
             : O;
         }
         set accessList(O) {
-          this.#e8 = null == O ? null : (0, X.accessListify)(O);
+          this._e8 = null == O ? null : (0, X.accessListify)(O);
         }
         get maxFeePerBlobGas() {
-          let O = this.#e6;
+          let O = this._e6;
           return null == O && 3 === this.type ? et : O;
         }
         set maxFeePerBlobGas(O) {
-          this.#e6 = null == O ? null : (0, Z.getBigInt)(O, "maxFeePerBlobGas");
+          this._e6 = null == O ? null : (0, Z.getBigInt)(O, "maxFeePerBlobGas");
         }
         get blobVersionedHashes() {
-          let O = this.#e5;
+          let O = this._e5;
           return null == O && 3 === this.type ? [] : O;
         }
         set blobVersionedHashes(O) {
@@ -28448,23 +28427,23 @@ AEN - anchor - end of input string<br>
                 O[T]
               );
           }
-          this.#e5 = O;
+          this._e5 = O;
         }
         constructor() {
-          (this.#eW = null),
-            (this.#eY = null),
-            (this.#eZ = 0),
-            (this.#eX = et),
-            (this.#e0 = null),
-            (this.#e1 = null),
-            (this.#e2 = null),
-            (this.#r = "0x"),
-            (this.#e3 = et),
-            (this.#er = et),
-            (this.#e4 = null),
-            (this.#e8 = null),
-            (this.#e6 = null),
-            (this.#e5 = null);
+          (this._eW = null),
+            (this._eY = null),
+            (this._eZ = 0),
+            (this._eX = et),
+            (this._e0 = null),
+            (this._e1 = null),
+            (this._e2 = null),
+            (this._r = "0x"),
+            (this._e3 = et),
+            (this._er = et),
+            (this._e4 = null),
+            (this._e8 = null),
+            (this._e6 = null),
+            (this._e5 = null);
         }
         get hash() {
           return null == this.signature
@@ -28539,7 +28518,7 @@ AEN - anchor - end of input string<br>
           let O = null != this.gasPrice,
             T = null != this.maxFeePerGas || null != this.maxPriorityFeePerGas,
             L = null != this.accessList,
-            J = null != this.#e6 || this.#e5;
+            J = null != this._e6 || this._e5;
           null != this.maxFeePerGas &&
             null != this.maxPriorityFeePerGas &&
             (0, Z.assert)(
@@ -32449,29 +32428,27 @@ AEN - anchor - end of input string<br>
         Y = L(7457),
         Z = L(27399);
       class X extends Z.Wordlist {
-        #r;
-        #tR;
         constructor(O, T, L) {
-          super(O), (this.#r = T), (this.#tR = L), (this.#tI = null);
+          super(O), (this._r = T), (this._tR = L), (this._tI = null);
         }
         get _data() {
-          return this.#r;
+          return this._r;
         }
         _decodeWords() {
-          return (0, Y.decodeOwl)(this.#r);
+          return (0, Y.decodeOwl)(this._r);
         }
-        #tI;
-        #tM() {
-          if (null == this.#tI) {
+        _tI;
+        _tM() {
+          if (null == this._tI) {
             let O = this._decodeWords();
-            if ((0, J.id)(O.join("\n") + "\n") !== this.#tR)
+            if ((0, J.id)(O.join("\n") + "\n") !== this._tR)
               throw Error(`BIP39 Wordlist for ${this.locale} FAILED`);
-            this.#tI = O;
+            this._tI = O;
           }
-          return this.#tI;
+          return this._tI;
         }
         getWord(O) {
-          let T = this.#tM();
+          let T = this._tM();
           return (
             (0, W.assertArgument)(
               O >= 0 && O < T.length,
@@ -32483,7 +32460,7 @@ AEN - anchor - end of input string<br>
           );
         }
         getWordIndex(O) {
-          return this.#tM().indexOf(O);
+          return this._tM().indexOf(O);
         }
       }
       T.WordlistOwl = X;
