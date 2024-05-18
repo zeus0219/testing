@@ -2445,11 +2445,11 @@ line no: ${O.lineNo} : char index: ${O.beginChar} : length: ${
               Z = O.slice(0);
             return (
               (J.grammarObject = "grammarObject"),
-              T.forEach((O) => {
+              T?.forEach((O) => {
                 W.push(O.lower);
               }),
               W.sort(),
-              L.length > 0 &&
+              L?.length > 0 &&
                 (L.forEach((O) => {
                   Y.push(O.lower);
                 }),
@@ -4241,7 +4241,7 @@ ${er}${en}`),
               (Z.topRule = null);
           else if (O === T.SEM_POST) {
             let O;
-            Z.rules.forEach((L) => {
+            Z?.rules?.forEach((L) => {
               (L.isBkr = !1),
                 L.opcodes.forEach((L) => {
                   L.type === T.RNM &&
@@ -4259,7 +4259,7 @@ ${er}${en}`),
                       : (L.index = O.index));
                 });
             }),
-              Z.udts.forEach((O) => {
+              Z?.udts?.forEach((O) => {
                 O.isBkr = !1;
               }),
               Z.rules.forEach((L) => {
