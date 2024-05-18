@@ -2081,11 +2081,11 @@ line no: ${O.lineNo} : char index: ${O.beginChar} : length: ${
             return L;
           },
           er = function (O) {
-            O.forEach((O) => {
+            O?.forEach((O) => {
               let T = [],
                 L = [],
                 W = 0;
-              O.opcodes.forEach((O) => {
+              O?.opcodes?.forEach((O) => {
                 O.type === J.ALT && 1 === O.children.length
                   ? L.push(null)
                   : O.type === J.CAT && 1 === O.children.length
