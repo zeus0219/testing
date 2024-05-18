@@ -14944,8 +14944,6 @@ AEN - anchor - end of input string<br>
         eh = RegExp("^([a-zA-Z$_][a-zA-Z0-9$_]*)$"),
         ed = RegExp("^(address|bool|bytes([0-9]*)|string|u?int([0-9]*))$");
       class ep {
-        i__0;
-        h__0;
         get offset() {
           return this.i__0;
         }
@@ -15198,13 +15196,6 @@ AEN - anchor - end of input string<br>
         eI = "_FunctionInternal",
         eM = "_StructInternal";
       class eU {
-        name;
-        type;
-        baseType;
-        indexed;
-        components;
-        arrayLength;
-        arrayChildren;
         constructor(O, T, L, W, Y, Z, X, ee) {
           if (
             ((0, J.assertPrivate)(O, eP, "ParamType"),
@@ -15433,8 +15424,6 @@ AEN - anchor - end of input string<br>
       }
       T.ParamType = eU;
       class eL {
-        type;
-        inputs;
         constructor(O, T, L) {
           (0, J.assertPrivate)(O, eP, "Fragment"),
             (L = Object.freeze(L.slice())),
@@ -15506,7 +15495,6 @@ AEN - anchor - end of input string<br>
       }
       T.Fragment = eL;
       class eD extends eL {
-        name;
         constructor(O, T, L, W) {
           super(O, T, W),
             (0, J.assertArgument)(
@@ -15563,7 +15551,6 @@ AEN - anchor - end of input string<br>
       }
       T.ErrorFragment = eF;
       class eK extends eD {
-        anonymous;
         constructor(O, T, L, W) {
           super(O, "event", T, L),
             Object.defineProperty(this, eC, { value: eT }),
@@ -15619,8 +15606,6 @@ AEN - anchor - end of input string<br>
       }
       T.EventFragment = eK;
       class ej extends eL {
-        payable;
-        gas;
         constructor(O, T, L, W, Y) {
           super(O, T, L),
             Object.defineProperty(this, eC, { value: eN }),
@@ -15684,7 +15669,6 @@ AEN - anchor - end of input string<br>
       }
       T.ConstructorFragment = ej;
       class eH extends eL {
-        payable;
         constructor(O, T, L) {
           super(O, "fallback", T),
             Object.defineProperty(this, eC, { value: eR }),
@@ -15778,11 +15762,6 @@ AEN - anchor - end of input string<br>
       }
       T.FallbackFragment = eH;
       class e$ extends eD {
-        constant;
-        outputs;
-        stateMutability;
-        payable;
-        gas;
         constructor(O, T, L, W, Y, Z) {
           super(O, "function", T, W),
             Object.defineProperty(this, eC, { value: eI }),
@@ -16094,11 +16073,6 @@ AEN - anchor - end of input string<br>
       let ee = L(4411),
         et = L(29970);
       class er {
-        fragment;
-        name;
-        signature;
-        topic;
-        args;
         constructor(O, T, L) {
           let J = O.name,
             W = O.format();
@@ -16113,12 +16087,6 @@ AEN - anchor - end of input string<br>
       }
       T.LogDescription = er;
       class en {
-        fragment;
-        name;
-        args;
-        signature;
-        selector;
-        value;
         constructor(O, T, L, J) {
           let W = O.name,
             Z = O.format();
@@ -16134,11 +16102,6 @@ AEN - anchor - end of input string<br>
       }
       T.TransactionDescription = en;
       class es {
-        fragment;
-        name;
-        args;
-        signature;
-        selector;
         constructor(O, T, L) {
           let J = O.name,
             W = O.format();
@@ -16153,8 +16116,6 @@ AEN - anchor - end of input string<br>
       }
       T.ErrorDescription = es;
       class ei {
-        hash;
-        _isIndexed;
         static isIndexed(O) {
           return !!(O && O._isIndexed);
         }
@@ -16199,14 +16160,6 @@ AEN - anchor - end of input string<br>
           },
         };
       class ec {
-        fragments;
-        deploy;
-        fallback;
-        receive;
-        f__0;
-        g__0;
-        y__0;
-        m__0;
         constructor(O) {
           let T = [];
           (T = "string" == typeof O ? JSON.parse(O) : O),
@@ -17555,8 +17508,6 @@ AEN - anchor - end of input string<br>
         }
       }
       class ea {
-        v__0;
-        fragment;
         constructor(O, T, L) {
           if (
             ((0, Z.defineProperties)(this, { fragment: T }),
@@ -18039,12 +17990,6 @@ AEN - anchor - end of input string<br>
       }
       let eB = ["then"];
       class eO {
-        target;
-        interface;
-        runner;
-        filters;
-        [ey];
-        fallback;
         constructor(O, T, L, Y) {
           let ee;
           (0, Z.assertArgument)(
@@ -18504,7 +18449,6 @@ AEN - anchor - end of input string<br>
       }
       T.ContractTransactionReceipt = X;
       class ee extends J.TransactionResponse {
-        k__0;
         constructor(O, T, L) {
           super(L, T), (this.k__0 = O);
         }
@@ -18515,7 +18459,6 @@ AEN - anchor - end of input string<br>
       }
       T.ContractTransactionResponse = ee;
       class et extends W.EventPayload {
-        log;
         constructor(O, T, L, J) {
           super(O, T, L), (0, W.defineProperties)(this, { log: J });
         }
@@ -18970,10 +18913,6 @@ AEN - anchor - end of input string<br>
         return (0, W.zeroPadValue)((0, W.toBeArray)(O), 32);
       }
       class ei {
-        E__0;
-        S__0;
-        P__0;
-        x__0;
         get r() {
           return this.E__0;
         }
@@ -19166,7 +19105,6 @@ AEN - anchor - end of input string<br>
         W = L(38478),
         Y = L(94003);
       class Z {
-        C__0;
         constructor(O) {
           (0, W.assertArgument)(
             32 === (0, W.dataLength)(O),
@@ -21120,8 +21058,6 @@ AEN - anchor - end of input string<br>
           : { base: O };
       }
       class em {
-        primaryType;
-        B__0;
         get types() {
           return JSON.parse(this.B__0);
         }
@@ -21461,7 +21397,6 @@ AEN - anchor - end of input string<br>
         );
       }
       class eh {
-        name;
         constructor(O) {
           (0, ee.defineProperties)(this, { name: O });
         }
@@ -21534,18 +21469,6 @@ AEN - anchor - end of input string<br>
       T.UnmanagedSubscriber = eh;
       let em = { cacheTimeout: 250, pollingInterval: 4e3 };
       class eb {
-        R__0;
-        I__0;
-        M__0;
-        U__0;
-        L__0;
-        D__0;
-        TT__0;
-        F__0;
-        K__0;
-        j__0;
-        H__0;
-        w__0;
         constructor(O, T) {
           if (((this.w__0 = Object.assign({}, em, T || {})), "any" === O))
             (this.D__0 = !0), (this.L__0 = null);
@@ -22594,7 +22517,6 @@ AEN - anchor - end of input string<br>
         return await (0, Y.resolveProperties)(L);
       }
       class et {
-        provider;
         constructor(O) {
           (0, Y.defineProperties)(this, { provider: O || null });
         }
@@ -22710,7 +22632,6 @@ AEN - anchor - end of input string<br>
       }
       T.AbstractSigner = et;
       class er extends et {
-        address;
         constructor(O, T) {
           super(T), (0, Y.defineProperties)(this, { address: O });
         }
@@ -22894,7 +22815,6 @@ AEN - anchor - end of input string<br>
         );
       }
       class et {
-        name;
         constructor(O) {
           (0, X.defineProperties)(this, { name: O });
         }
@@ -22927,11 +22847,6 @@ AEN - anchor - end of input string<br>
           RegExp("^eip155:[0-9]+/(erc[0-9]+):(.*)$", "i"),
         ];
       class ea {
-        provider;
-        address;
-        name;
-        Y__0;
-        Z__0;
         constructor(O, T, L) {
           (0, X.defineProperties)(this, { provider: O, address: T, name: L }),
             (this.Y__0 = null),
@@ -23811,9 +23726,6 @@ AEN - anchor - end of input string<br>
         Y = L(21165),
         Z = new Map();
       class X {
-        _et;
-        _er;
-        I__0;
         constructor(O, T) {
           (this._et = O),
             (this._er = (0, W.getBigInt)(T)),
@@ -24050,7 +23962,6 @@ AEN - anchor - end of input string<br>
         W = L(38478),
         Y = "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e";
       class Z {
-        name;
         constructor(O) {
           (0, J.defineProperties)(this, { name: O });
         }
@@ -24060,13 +23971,6 @@ AEN - anchor - end of input string<br>
       }
       T.NetworkPlugin = Z;
       class X extends Z {
-        effectiveBlock;
-        txBase;
-        txCreate;
-        txDataZero;
-        txDataNonzero;
-        txAccessListStorageKey;
-        txAccessListAddress;
         constructor(O, T) {
           null == O && (O = 0),
             super(`org.ethers.network.plugins.GasCost#${O || 0}`);
@@ -24096,8 +24000,6 @@ AEN - anchor - end of input string<br>
       }
       T.GasCostPlugin = X;
       class ee extends Z {
-        address;
-        targetNetwork;
         constructor(O, T) {
           super("org.ethers.plugins.network.Ens"),
             (0, J.defineProperties)(this, {
@@ -24111,7 +24013,6 @@ AEN - anchor - end of input string<br>
       }
       T.EnsPlugin = ee;
       class et extends Z {
-        _en;
         get feeDataFunc() {
           return this._en;
         }
@@ -24127,8 +24028,6 @@ AEN - anchor - end of input string<br>
       }
       T.FeeDataNetworkPlugin = et;
       class er extends Z {
-        _es;
-        _ei;
         get url() {
           return this._es;
         }
@@ -24189,7 +24088,6 @@ AEN - anchor - end of input string<br>
         (0, J.assertArgument)(!1, "unsupported network", "network", O);
       }
       class et extends Z.JsonRpcProvider {
-        apiKey;
         constructor(O, T) {
           null == O && (O = "mainnet");
           let L = Y.Network.from(O);
@@ -24299,7 +24197,6 @@ AEN - anchor - end of input string<br>
         (0, J.assertArgument)(!1, "unsupported network", "network", O);
       }
       class et extends Z.JsonRpcProvider {
-        apiKey;
         constructor(O, T) {
           null == O && (O = "mainnet");
           let L = Y.Network.from(O);
@@ -24349,7 +24246,6 @@ AEN - anchor - end of input string<br>
       let J = L(38478),
         W = L(88997);
       class Y extends W.JsonRpcApiPollingProvider {
-        _ea;
         constructor(O, T) {
           (0, J.assertArgument)(
             O && O.request,
@@ -24478,7 +24374,6 @@ AEN - anchor - end of input string<br>
       }
       let ei = "org.ethers.plugins.provider.Etherscan";
       class ea extends et.NetworkPlugin {
-        baseUrl;
         constructor(O) {
           super(ei), (0, Z.defineProperties)(this, { baseUrl: O });
         }
@@ -24490,9 +24385,6 @@ AEN - anchor - end of input string<br>
       let eo = ["enableCcipRead"],
         ec = 1;
       class eu extends X.AbstractProvider {
-        network;
-        apiKey;
-        _eo;
         constructor(O, T) {
           let L = null != T ? T : null;
           super();
@@ -25055,12 +24947,6 @@ AEN - anchor - end of input string<br>
         return L;
       }
       class eg extends W.AbstractProvider {
-        quorum;
-        eventQuorum;
-        eventWorkers;
-        _el;
-        _ec;
-        _eu;
         constructor(O, T, L) {
           super(T, L),
             (this._el = O.map((O) =>
@@ -25403,8 +25289,6 @@ AEN - anchor - end of input string<br>
         (0, J.assertArgument)(!1, "unsupported network", "network", O);
       }
       class er extends X.WebSocketProvider {
-        projectId;
-        projectSecret;
         constructor(O, T) {
           let L = new en(O, T),
             W = L._getConnection();
@@ -25426,8 +25310,6 @@ AEN - anchor - end of input string<br>
       }
       T.InfuraWebSocketProvider = er;
       class en extends Z.JsonRpcProvider {
-        projectId;
-        projectSecret;
         constructor(O, T, L) {
           null == O && (O = "mainnet");
           let W = Y.Network.from(O);
@@ -25523,7 +25405,6 @@ AEN - anchor - end of input string<br>
         pollingInterval: 4e3,
       };
       class ed extends et.AbstractSigner {
-        address;
         constructor(O, T) {
           super(O),
             (T = (0, W.getAddress)(T)),
@@ -25692,13 +25573,6 @@ AEN - anchor - end of input string<br>
       }
       T.JsonRpcSigner = ed;
       class ep extends ee.AbstractProvider {
-        w__0;
-        _ey;
-        _em;
-        _eb;
-        _eA;
-        _ew;
-        _ev;
         __ek() {
           if (this._eb) return;
           let O =
@@ -26182,7 +26056,6 @@ AEN - anchor - end of input string<br>
       }
       T.JsonRpcApiProvider = ep;
       class eg extends ep {
-        _eE;
         constructor(O, T) {
           super(O, T), (this._eE = 4e3);
         }
@@ -26203,7 +26076,6 @@ AEN - anchor - end of input string<br>
       }
       T.JsonRpcApiPollingProvider = eg;
       class ey extends eg {
-        _eS;
         constructor(O, T, L) {
           null == O && (O = "http://localhost:8545"),
             super(T, L),
@@ -26290,8 +26162,6 @@ AEN - anchor - end of input string<br>
         (0, J.assertArgument)(!1, "unsupported network", "network", O);
       }
       class et extends Z.JsonRpcProvider {
-        applicationId;
-        applicationSecret;
         constructor(O, T, L) {
           null == O && (O = "mainnet");
           let W = Y.Network.from(O);
@@ -26379,7 +26249,6 @@ AEN - anchor - end of input string<br>
         (0, J.assertArgument)(!1, "unsupported network", "network", O);
       }
       class et extends Z.JsonRpcProvider {
-        token;
         constructor(O, T) {
           null == O && (O = "mainnet");
           let L = Y.Network.from(O);
@@ -26424,8 +26293,6 @@ AEN - anchor - end of input string<br>
         W = L(38478),
         Y = L(88997);
       class Z {
-        _eP;
-        v__0;
         get filter() {
           return JSON.parse(this.v__0);
         }
@@ -26500,7 +26367,6 @@ AEN - anchor - end of input string<br>
       }
       T.SocketPendingSubscriber = ee;
       class et extends Z {
-        _eO;
         get logFilter() {
           return JSON.parse(this._eO);
         }
@@ -26513,9 +26379,6 @@ AEN - anchor - end of input string<br>
       }
       T.SocketEventSubscriber = et;
       class er extends Y.JsonRpcApiProvider {
-        _eT;
-        R__0;
-        _eN;
         constructor(O, T) {
           let L = Object.assign({}, null != T ? T : {});
           (0, W.assertArgument)(
@@ -26620,8 +26483,6 @@ AEN - anchor - end of input string<br>
       let J = L(43778),
         W = L(27329);
       class Y extends W.SocketProvider {
-        _eS;
-        _eR;
         get websocket() {
           if (null == this._eR) throw Error("websocket closed");
           return this._eR;
@@ -26674,9 +26535,6 @@ AEN - anchor - end of input string<br>
         return null == O ? null : O.toString();
       }
       class ee {
-        gasPrice;
-        maxFeePerGas;
-        maxPriorityFeePerGas;
         constructor(O, T, L) {
           (0, J.defineProperties)(this, {
             gasPrice: Z(O),
@@ -26719,24 +26577,6 @@ AEN - anchor - end of input string<br>
       }
       (T.FeeData = ee), (T.copyRequest = et);
       class er {
-        provider;
-        number;
-        hash;
-        timestamp;
-        parentHash;
-        parentBeaconBlockRoot;
-        nonce;
-        difficulty;
-        gasLimit;
-        gasUsed;
-        stateRoot;
-        receiptsRoot;
-        blobGasUsed;
-        excessBlobGas;
-        miner;
-        extraData;
-        baseFeePerGas;
-        _eI;
         constructor(O, T) {
           (this._eI = O.transactions.map((O) =>
             "string" != typeof O ? new ei(O, T) : O
@@ -26877,16 +26717,6 @@ AEN - anchor - end of input string<br>
       }
       T.Block = er;
       class en {
-        provider;
-        transactionHash;
-        blockHash;
-        blockNumber;
-        removed;
-        address;
-        data;
-        topics;
-        index;
-        transactionIndex;
         constructor(O, T) {
           this.provider = T;
           let L = Object.freeze(O.topics.slice());
@@ -26971,24 +26801,6 @@ AEN - anchor - end of input string<br>
       }
       T.Log = en;
       class es {
-        provider;
-        to;
-        from;
-        contractAddress;
-        hash;
-        index;
-        blockHash;
-        blockNumber;
-        logsBloom;
-        gasUsed;
-        blobGasUsed;
-        cumulativeGasUsed;
-        gasPrice;
-        blobGasPrice;
-        type;
-        status;
-        root;
-        _eM;
         constructor(O, T) {
           this._eM = Object.freeze(O.logs.map((O) => new en(O, T)));
           let L = Y;
@@ -27100,27 +26912,7 @@ AEN - anchor - end of input string<br>
       }
       T.TransactionReceipt = es;
       class ei {
-        provider;
-        blockNumber;
-        blockHash;
-        index;
-        hash;
-        type;
-        to;
-        from;
-        nonce;
-        gasLimit;
-        gasPrice;
-        maxPriorityFeePerGas;
-        maxFeePerGas;
-        maxFeePerBlobGas;
-        data;
-        value;
-        chainId;
-        signature;
-        accessList;
-        blobVersionedHashes;
-        _eU;
+        
         constructor(O, T) {
           (this.provider = T),
             (this.blockNumber = null != O.blockNumber ? O.blockNumber : null),
@@ -27439,9 +27231,6 @@ AEN - anchor - end of input string<br>
       let J = L(38478),
         W = L(70690);
       class Y extends W.AbstractSigner {
-        signer;
-        _eL;
-        _eD;
         constructor(O) {
           super(O.provider),
             (0, J.defineProperties)(this, { signer: O }),
@@ -27501,12 +27290,6 @@ AEN - anchor - end of input string<br>
         return JSON.parse(JSON.stringify(O));
       }
       class Z {
-        _eP;
-        _e_;
-        _eF;
-        _eK;
-        _ew;
-        _ej;
         constructor(O) {
           (this._eP = O),
             (this._e_ = null),
@@ -27580,7 +27363,6 @@ AEN - anchor - end of input string<br>
       }
       T.FilterIdSubscriber = Z;
       class X extends Z {
-        _eV;
         constructor(O, T) {
           super(O), (this._eV = Y(T));
         }
@@ -27634,10 +27416,7 @@ AEN - anchor - end of input string<br>
       }
       T.getPollingSubscriber = Y;
       class Z {
-        _eP;
-        _eF;
-        _eG;
-        _eJ;
+        
         constructor(O) {
           (this._eP = O), (this._eF = null), (this._eG = 4e3), (this._eJ = -2);
         }
@@ -27682,9 +27461,7 @@ AEN - anchor - end of input string<br>
       }
       T.PollingBlockSubscriber = Z;
       class X {
-        _eP;
-        _eH;
-        _eK;
+        
         constructor(O) {
           (this._eP = O),
             (this._eK = !1),
@@ -27711,8 +27488,7 @@ AEN - anchor - end of input string<br>
       }
       T.OnBlockSubscriber = X;
       class ee extends X {
-        _ez;
-        _eQ;
+        
         constructor(O, T) {
           super(O), (this._ez = T), (this._eQ = -2);
         }
@@ -27730,7 +27506,7 @@ AEN - anchor - end of input string<br>
       }
       T.PollingBlockTagSubscriber = ee;
       class et extends X {
-        v__0;
+        
         constructor(O, T) {
           super(O), (this.v__0 = W(T));
         }
@@ -27740,7 +27516,7 @@ AEN - anchor - end of input string<br>
       }
       T.PollingOrphanSubscriber = et;
       class er extends X {
-        _eq;
+        
         constructor(O, T) {
           super(O), (this._eq = T);
         }
@@ -27751,11 +27527,7 @@ AEN - anchor - end of input string<br>
       }
       T.PollingTransactionSubscriber = er;
       class en {
-        _eP;
-        v__0;
-        _eF;
-        _eK;
-        _eJ;
+        
         constructor(O, T) {
           (this._eP = O),
             (this.v__0 = W(T)),
@@ -28242,20 +28014,6 @@ AEN - anchor - end of input string<br>
         );
       }
       class eP {
-        _eW;
-        _eY;
-        _r;
-        _eZ;
-        _eX;
-        _e0;
-        _e1;
-        _e2;
-        _e3;
-        _er;
-        _e4;
-        _e8;
-        _e6;
-        _e5;
         get type() {
           return this._eW;
         }
@@ -28964,9 +28722,6 @@ AEN - anchor - end of input string<br>
         (T.EventPayload = void 0);
       let J = L(43980);
       class W {
-        filter;
-        emitter;
-        e__7;
         constructor(O, T, L) {
           (this.e__7 = T),
             (0, J.defineProperties)(this, { emitter: O, filter: L });
@@ -29087,11 +28842,7 @@ AEN - anchor - end of input string<br>
         return L + J;
       }
       class eu {
-        format;
-        _tA;
-        _tw;
-        _tv;
-        _value;
+        
         constructor(O, T, L) {
           (0, W.assertPrivate)(O, en, "FixedNumber"),
             (this._tw = T),
@@ -30335,8 +30086,7 @@ AEN - anchor - end of input string<br>
         Z = L(16989),
         X = L(38478);
       class ee extends Y.AbstractSigner {
-        address;
-        _tB;
+        
         constructor(O, T) {
           super(T),
             (0, X.assertArgument)(
@@ -30513,14 +30263,7 @@ AEN - anchor - end of input string<br>
         return J;
       }
       class ep extends ee.BaseWallet {
-        publicKey;
-        fingerprint;
-        parentFingerprint;
-        mnemonic;
-        chainCode;
-        path;
-        index;
-        depth;
+        
         constructor(O, T, L, W, Y, X, ee, et, er) {
           super(T, er),
             (0, Z.assertPrivate)(O, eu, "HDNodeWallet"),
@@ -30747,13 +30490,7 @@ AEN - anchor - end of input string<br>
       }
       T.HDNodeWallet = ep;
       class eg extends W.VoidSigner {
-        publicKey;
-        fingerprint;
-        parentFingerprint;
-        chainCode;
-        path;
-        index;
-        depth;
+        
         constructor(O, T, L, W, Y, X, ee, et, er) {
           super(T, er),
             (0, Z.assertPrivate)(O, eu, "HDNodeVoidWallet"),
@@ -31410,10 +31147,7 @@ AEN - anchor - end of input string<br>
       }
       let er = {};
       class en {
-        phrase;
-        password;
-        wordlist;
-        entropy;
+        
         constructor(O, T, L, J, Z) {
           null == J && (J = ""),
             null == Z && (Z = Y.LangEn.wordlist()),
@@ -31813,8 +31547,6 @@ AEN - anchor - end of input string<br>
         Y = L(7457),
         Z = L(27399);
       class X extends Z.Wordlist {
-        _r;
-        _tR;
         constructor(O, T, L) {
           super(O), (this._r = T), (this._tR = L), (this._tI = null);
         }
@@ -31859,7 +31591,6 @@ AEN - anchor - end of input string<br>
       let J = L(98346),
         W = L(14248);
       class Y extends J.WordlistOwl {
-        _tU;
         constructor(O, T, L, J) {
           super(O, T, J), (this._tU = L);
         }
@@ -31878,7 +31609,6 @@ AEN - anchor - end of input string<br>
         (T.Wordlist = void 0);
       let J = L(38478);
       class W {
-        locale;
         constructor(O) {
           (0, J.defineProperties)(this, { locale: O });
         }
@@ -31910,13 +31640,6 @@ AEN - anchor - end of input string<br>
         Y = L(30558),
         Z = L(92472),
         X = class extends Z.F {
-          _tL;
-          _tD;
-          _t_;
-          _tF;
-          _tK;
-          _tj;
-          _tH;
           constructor(O) {
             super(),
               (this._tH = !1),
@@ -32295,9 +32018,6 @@ AEN - anchor - end of input string<br>
           constructor(O = {}) {
             super(), (this.config = O), (this._tG = []), (this._tJ = 0);
           }
-          _tG;
-          _tJ;
-          _tz;
           build(O, T, L) {
             let J = new en.m({
               mutationCache: this,
