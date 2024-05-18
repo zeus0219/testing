@@ -30382,7 +30382,7 @@ AEN - anchor - end of input string<br>
         derivePath(O) {
           return ed(this, O);
         }
-        static #tT(O, T) {
+        static _tT(O, T) {
           (0, Z.assertArgument)(
             (0, Z.isBytesLike)(O),
             "invalid seed",
@@ -30465,11 +30465,11 @@ AEN - anchor - end of input string<br>
             null == L && (L = T.defaultPath),
             null == W && (W = X.LangEn.wordlist());
           let Y = et.Mnemonic.fromEntropy((0, J.randomBytes)(16), O, W);
-          return ep.#tT(Y.computeSeed(), Y).derivePath(L);
+          return ep._tT(Y.computeSeed(), Y).derivePath(L);
         }
         static fromMnemonic(O, L) {
           return (
-            L || (L = T.defaultPath), ep.#tT(O.computeSeed(), O).derivePath(L)
+            L || (L = T.defaultPath), ep._tT(O.computeSeed(), O).derivePath(L)
           );
         }
         static fromPhrase(O, L, J, W) {
@@ -30477,10 +30477,10 @@ AEN - anchor - end of input string<br>
             null == J && (J = T.defaultPath),
             null == W && (W = X.LangEn.wordlist());
           let Y = et.Mnemonic.fromPhrase(O, L, W);
-          return ep.#tT(Y.computeSeed(), Y).derivePath(J);
+          return ep._tT(Y.computeSeed(), Y).derivePath(J);
         }
         static fromSeed(O) {
-          return ep.#tT(O, null);
+          return ep._tT(O, null);
         }
       }
       T.HDNodeWallet = ep;
@@ -31295,7 +31295,7 @@ AEN - anchor - end of input string<br>
           let T = { address: this.address, privateKey: this.privateKey };
           return (0, ee.encryptKeystoreJsonSync)(T, O);
         }
-        static #tN(O) {
+        static _tN(O) {
           if (
             ((0, W.assertArgument)(
               O,
@@ -31333,7 +31333,7 @@ AEN - anchor - end of input string<br>
                 (L && (L(0), await er(0)),
                 (J = (0, X.decryptCrowdsaleJson)(O, T)),
                 L && (L(1), await er(0))),
-            en.#tN(J)
+            en._tN(J)
           );
         }
         static fromEncryptedJsonSync(O, T) {
@@ -31349,7 +31349,7 @@ AEN - anchor - end of input string<br>
                   "json",
                   "[ REDACTED ]"
                 ),
-            en.#tN(L)
+            en._tN(L)
           );
         }
         static createRandom(O) {
