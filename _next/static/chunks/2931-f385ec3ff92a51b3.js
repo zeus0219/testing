@@ -217,7 +217,7 @@
           ]);
           if ("bigint" != typeof t.baseFeePerGas) throw new n.e5();
           let c = r - t.baseFeePerGas;
-          if (c < 0n) return 0n;
+          if (c < 0n) return 0;
           return c;
         }
       }

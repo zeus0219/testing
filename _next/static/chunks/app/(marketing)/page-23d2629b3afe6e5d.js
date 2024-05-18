@@ -4408,8 +4408,8 @@
               maxInitialBuy: BigInt(a.poolMaxInitialBuyWei || "0"),
               poolMinETH: BigInt(a.poolMinWei || "0"),
               poolContributionFeeBasisPoints: d.Ns.fairLaunchBasisPoints,
-              participant: [0n, 0n],
-              participantExcessRefundAvailable: 0n,
+              participant: [0, 0],
+              participantExcessRefundAvailable: 0,
               poolStartDate: a.poolStartDate,
               poolVestingInSeconds: a.poolVestingInSeconds,
               poolEndDate:

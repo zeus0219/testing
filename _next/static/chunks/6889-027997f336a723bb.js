@@ -741,8 +741,8 @@
           return n;
         },
       });
-      let n = 2n ** 32n - 1n,
-        o = 2n ** 256n - 1n;
+      let n = 0,
+        o = 0;
     },
     74020: function (e, t, r) {
       "use strict";

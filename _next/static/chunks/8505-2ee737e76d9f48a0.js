@@ -3720,7 +3720,7 @@ decimal.js/decimal.mjs:
         let [n, r = "0"] = e.split("."),
           i = n.startsWith("-");
         if ((i && (n = n.slice(1)), (r = r.replace(/(0+)$/, "")), 0 === t))
-          1 === Math.round(Number(`.${r}`)) && (n = `${BigInt(n) + 1n}`),
+          1 === Math.round(Number(`.${r}`)) && (n = `${BigInt(n) + 1}`),
             (r = "");
         else if (r.length > t) {
           let [e, i, s] = [r.slice(0, t - 1), r.slice(t - 1, t), r.slice(t)],
@@ -3729,7 +3729,7 @@ decimal.js/decimal.mjs:
             o > 9
               ? `${BigInt(e) + BigInt(1)}0`.padStart(e.length + 1, "0")
               : `${e}${o}`).length > t &&
-            ((r = r.slice(1)), (n = `${BigInt(n) + 1n}`)),
+            ((r = r.slice(1)), (n = `${BigInt(n) + 1}`)),
             (r = r.slice(0, t));
         } else r = r.padEnd(t, "0");
         return BigInt(`${i ? "-" : ""}${n}${r}`);

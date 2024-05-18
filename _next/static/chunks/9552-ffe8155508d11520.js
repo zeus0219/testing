@@ -14070,16 +14070,16 @@ AEN - anchor - end of input string<br>
         );
       }
       class em {
-        #e(O) {
+        e__e(O) {
           if (O.isArray())
             return new Z.ArrayCoder(
-              this.#e(O.arrayChildren),
+              this.e__e(O.arrayChildren),
               O.arrayLength,
               O.name
             );
           if (O.isTuple())
             return new ei.TupleCoder(
-              O.components.map((O) => this.#e(O)),
+              O.components.map((O) => this.e__e(O)),
               O.name
             );
           switch (O.baseType) {
@@ -14122,7 +14122,7 @@ AEN - anchor - end of input string<br>
           (0, J.assertArgument)(!1, "invalid type", "type", O.type);
         }
         getDefaultValue(O) {
-          let T = O.map((O) => this.#e(ea.ParamType.from(O)));
+          let T = O.map((O) => this.e__e(ea.ParamType.from(O)));
           return new ei.TupleCoder(T, "_").defaultValue();
         }
         encode(O, T) {
@@ -14131,13 +14131,13 @@ AEN - anchor - end of input string<br>
             O.length,
             "types/values length mismatch"
           );
-          let L = O.map((O) => this.#e(ea.ParamType.from(O))),
+          let L = O.map((O) => this.e__e(ea.ParamType.from(O))),
             Y = new ei.TupleCoder(L, "_"),
             Z = new W.Writer();
           return Y.encode(Z, T), Z.data;
         }
         decode(O, T, L) {
-          let J = O.map((O) => this.#e(ea.ParamType.from(O)));
+          let J = O.map((O) => this.e__e(ea.ParamType.from(O)));
           return new ei.TupleCoder(J, "_").decode(new W.Reader(T, L, eg));
         }
         static _setDefaultMaxInflation(O) {
