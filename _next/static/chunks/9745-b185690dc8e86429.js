@@ -2133,12 +2133,12 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
       function u(e, t = {}) {
         let { signed: n } = t;
         t.size && a(e, { size: t.size });
-        let r = BigInt(e);
+        let r = _BigInt(e);
         if (!n) return r;
         let i = (e.length - 2) / 2;
-        // return r <= (1 << (8n * BigInt(i) - 1)) - 1
+        // return r <= (1 << (8n * _BigInt(i) - 1)) - 1
         //   ? r
-        //   : r - BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1;
+        //   : r - _BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1;
       }
       function c(e, t = {}) {
         return Number(u(e, t));
@@ -2276,13 +2276,13 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
       function l(e, t = {}) {
         let n;
         let { signed: s, size: o } = t,
-          a = BigInt(e);
+          a = _BigInt(e);
           n = s;
         // o
         //   ? (n = s
-        //       ? (1 << (8n * BigInt(o) - 1)) - 1
-        //       : 2 ** (8n * BigInt(o)) - 1)
-        //   : "number" == typeof e && (n = BigInt(Number.MAX_SAFE_INTEGER));
+        //       ? (1 << (8n * _BigInt(o) - 1)) - 1
+        //       : 2 ** (8n * _BigInt(o)) - 1)
+        //   : "number" == typeof e && (n = _BigInt(Number.MAX_SAFE_INTEGER));
         let u = "bigint" == typeof n && s ? -n - 1 : 0;
         if ((n && a > n) || a < u) {
           let t = "bigint" == typeof e ? "n" : "";
@@ -2295,7 +2295,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           });
         }
         let c = `0x${(s && a < 0
-          ? (1 << BigInt(8 * o)) + BigInt(a)
+          ? (1 << _BigInt(8 * o)) + _BigInt(a)
           : a
         ).toString(16)}`;
         return o ? (0, i.vk)(c, { size: o }) : c;
@@ -2396,20 +2396,20 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         );
         return {
           ...e,
-          baseFeePerGas: e.baseFeePerGas ? BigInt(e.baseFeePerGas) : null,
-          blobGasUsed: e.blobGasUsed ? BigInt(e.blobGasUsed) : void 0,
-          difficulty: e.difficulty ? BigInt(e.difficulty) : void 0,
-          excessBlobGas: e.excessBlobGas ? BigInt(e.excessBlobGas) : void 0,
-          gasLimit: e.gasLimit ? BigInt(e.gasLimit) : void 0,
-          gasUsed: e.gasUsed ? BigInt(e.gasUsed) : void 0,
+          baseFeePerGas: e.baseFeePerGas ? _BigInt(e.baseFeePerGas) : null,
+          blobGasUsed: e.blobGasUsed ? _BigInt(e.blobGasUsed) : void 0,
+          difficulty: e.difficulty ? _BigInt(e.difficulty) : void 0,
+          excessBlobGas: e.excessBlobGas ? _BigInt(e.excessBlobGas) : void 0,
+          gasLimit: e.gasLimit ? _BigInt(e.gasLimit) : void 0,
+          gasUsed: e.gasUsed ? _BigInt(e.gasUsed) : void 0,
           hash: e.hash ? e.hash : null,
           logsBloom: e.logsBloom ? e.logsBloom : null,
           nonce: e.nonce ? e.nonce : null,
-          number: e.number ? BigInt(e.number) : null,
-          size: e.size ? BigInt(e.size) : void 0,
-          timestamp: e.timestamp ? BigInt(e.timestamp) : void 0,
+          number: e.number ? _BigInt(e.number) : null,
+          size: e.size ? _BigInt(e.size) : void 0,
+          timestamp: e.timestamp ? _BigInt(e.timestamp) : void 0,
           transactions: t,
-          totalDifficulty: e.totalDifficulty ? BigInt(e.totalDifficulty) : null,
+          totalDifficulty: e.totalDifficulty ? _BigInt(e.totalDifficulty) : null,
         };
       }
       let o = (0, r.$)("block", s);
@@ -2439,7 +2439,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         return {
           ...e,
           blockHash: e.blockHash ? e.blockHash : null,
-          blockNumber: e.blockNumber ? BigInt(e.blockNumber) : null,
+          blockNumber: e.blockNumber ? _BigInt(e.blockNumber) : null,
           logIndex: e.logIndex ? Number(e.logIndex) : null,
           transactionHash: e.transactionHash ? e.transactionHash : null,
           transactionIndex: e.transactionIndex
@@ -2479,16 +2479,16 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         let t = {
           ...e,
           blockHash: e.blockHash ? e.blockHash : null,
-          blockNumber: e.blockNumber ? BigInt(e.blockNumber) : null,
+          blockNumber: e.blockNumber ? _BigInt(e.blockNumber) : null,
           chainId: e.chainId ? (0, r.ly)(e.chainId) : void 0,
-          gas: e.gas ? BigInt(e.gas) : void 0,
-          gasPrice: e.gasPrice ? BigInt(e.gasPrice) : void 0,
+          gas: e.gas ? _BigInt(e.gas) : void 0,
+          gasPrice: e.gasPrice ? _BigInt(e.gasPrice) : void 0,
           maxFeePerBlobGas: e.maxFeePerBlobGas
-            ? BigInt(e.maxFeePerBlobGas)
+            ? _BigInt(e.maxFeePerBlobGas)
             : void 0,
-          maxFeePerGas: e.maxFeePerGas ? BigInt(e.maxFeePerGas) : void 0,
+          maxFeePerGas: e.maxFeePerGas ? _BigInt(e.maxFeePerGas) : void 0,
           maxPriorityFeePerGas: e.maxPriorityFeePerGas
-            ? BigInt(e.maxPriorityFeePerGas)
+            ? _BigInt(e.maxPriorityFeePerGas)
             : void 0,
           nonce: e.nonce ? (0, r.ly)(e.nonce) : void 0,
           to: e.to ? e.to : null,
@@ -2497,8 +2497,8 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
             : null,
           type: e.type ? s[e.type] : void 0,
           typeHex: e.type ? e.type : void 0,
-          value: e.value ? BigInt(e.value) : void 0,
-          v: e.v ? BigInt(e.v) : void 0,
+          value: e.value ? _BigInt(e.value) : void 0,
+          v: e.v ? _BigInt(e.v) : void 0,
         };
         return (
           (t.yParity = (() => {
@@ -2543,15 +2543,15 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
       function u(e) {
         let t = {
           ...e,
-          blockNumber: e.blockNumber ? BigInt(e.blockNumber) : null,
+          blockNumber: e.blockNumber ? _BigInt(e.blockNumber) : null,
           contractAddress: e.contractAddress ? e.contractAddress : null,
           cumulativeGasUsed: e.cumulativeGasUsed
-            ? BigInt(e.cumulativeGasUsed)
+            ? _BigInt(e.cumulativeGasUsed)
             : null,
           effectiveGasPrice: e.effectiveGasPrice
-            ? BigInt(e.effectiveGasPrice)
+            ? _BigInt(e.effectiveGasPrice)
             : null,
-          gasUsed: e.gasUsed ? BigInt(e.gasUsed) : null,
+          gasUsed: e.gasUsed ? _BigInt(e.gasUsed) : null,
           logs: e.logs ? e.logs.map((e) => (0, s.U)(e)) : null,
           to: e.to ? e.to : null,
           transactionIndex: e.transactionIndex
@@ -2561,8 +2561,8 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           type: e.type ? o.c8[e.type] || e.type : null,
         };
         return (
-          e.blobGasPrice && (t.blobGasPrice = BigInt(e.blobGasPrice)),
-          e.blobGasUsed && (t.blobGasUsed = BigInt(e.blobGasUsed)),
+          e.blobGasPrice && (t.blobGasPrice = _BigInt(e.blobGasPrice)),
+          e.blobGasUsed && (t.blobGasUsed = _BigInt(e.blobGasUsed)),
           t
         );
       }
@@ -2576,20 +2576,20 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         },
       });
       var r = n(81069);
-      let i = BigInt(1),
-        s = BigInt(32),
+      let i = _BigInt(4294967296 - 1),
+        s = _BigInt(32),
         o = (e, t, n) => (e << n) | (t >>> (32 - n)),
         a = (e, t, n) => (t << n) | (e >>> (32 - n)),
         u = (e, t, n) => (t << (n - 32)) | (e >>> (64 - n)),
         c = (e, t, n) => (e << (n - 32)) | (t >>> (64 - n));
       var l = n(57857);
       let [h, f, d] = [[], [], []],
-        p = BigInt(0),
-        b = BigInt(1),
-        g = BigInt(2),
-        m = BigInt(7),
-        y = BigInt(256),
-        v = BigInt(113);
+        p = _BigInt(0),
+        b = _BigInt(1),
+        g = _BigInt(2),
+        m = _BigInt(7),
+        y = _BigInt(256),
+        v = _BigInt(113);
       for (let e = 0, t = b, n = 1, r = 0; e < 24; e++) {
         ([n, r] = [r, (2 * n + 3 * r) % 5]),
           h.push(2 * (5 * r + n)),
@@ -2597,7 +2597,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         let i = p;
         for (let e = 0; e < 7; e++)
           (t = ((t << b) ^ ((t >> m) * v)) % y) & g &&
-            (i ^= b << ((b << BigInt(e)) - b));
+            (i ^= b << ((b << _BigInt(e)) - b));
         d.push(i);
       }
       let [w, x] = (function (e, t = !1) {
@@ -2961,7 +2961,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                     return (t.v - 35) / 2 > 0
                       ? t.v
                       : 27 + (35 === t.v ? 0 : 1);
-                  if (n > 0) return BigInt(2 * n) + BigInt(35 + t.v - 27);
+                  if (n > 0) return _BigInt(2 * n) + _BigInt(35 + t.v - 27);
                   let e = 27 + (27 === t.v ? 0 : 1);
                   if (t.v !== e) throw new r.vl({ v: t.v });
                   return e;
