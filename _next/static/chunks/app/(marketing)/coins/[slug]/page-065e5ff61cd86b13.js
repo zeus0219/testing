@@ -8129,7 +8129,7 @@
                 S("Enter an amount"), U(null);
                 return;
               }
-              let t = 0n;
+              let t = 0;
               try {
                 t = (0, aj.v)(F, a);
               } catch (e) {
@@ -8140,7 +8140,7 @@
                 S("Enter an amount"), U(null);
                 return;
               }
-              let n = C[r] || 0n,
+              let n = C[r] || 0,
                 s = "";
               n < t && (s = "Insufficient balance"),
                 i || (s = "Please connect your wallet"),
@@ -9705,12 +9705,12 @@
             {
               ...ag[m],
               balance: d[ap],
-              formattedBalance: (0, as.b)(d[ap] || 0n, 18),
+              formattedBalance: (0, as.b)(d[ap] || 0, 18),
             },
             ...o
               .map((e) => {
                 let a = d[e.address],
-                  t = (0, as.b)(a || 0n, e.decimals);
+                  t = (0, as.b)(a || 0, e.decimals);
                 return { ...e, balance: a, formattedBalance: t };
               })
               .sort(
@@ -11869,8 +11869,8 @@
             : parseFloat((Number(em) * (1 - L / 1e4)).toString())
                 .toPrecision(8)
                 .toString());
-        let eb = es[S] || 0n,
-          eh = es[_] || 0n,
+        let eb = es[S] || 0,
+          eh = es[_] || 0,
           eu = (0, as.b)(eb, (null == ei ? void 0 : ei.decimals) || 18),
           ey = (0, as.b)(eh, (null == ed ? void 0 : ed.decimals) || 18),
           ek =
@@ -13297,18 +13297,18 @@
           poolVestingInSeconds: g.Y ? 14400 : 600,
           poolPerTxnMinWei: (0, n.f)("0.0001").toString(),
         },
-        u = 20n,
-        x = 100n,
+        u = 20,
+        x = 100,
         C = {
-          minBuyAbsoluteBasisPoints: 50n,
-          minSellAbsoluteBasisPoints: 50n,
-          buyProportionBasisPoints: 1000n,
-          sellProportionBasisPoints: 1000n,
-          taxPeriodInDays: 30n,
-          fairLaunchBasisPoints: 1000n,
+          minBuyAbsoluteBasisPoints: 50,
+          minSellAbsoluteBasisPoints: 50,
+          buyProportionBasisPoints: 1000,
+          sellProportionBasisPoints: 1000,
+          taxPeriodInDays: 30,
+          fairLaunchBasisPoints: 1000,
         },
-        y = { basisPoints: 2000n, durationInBlocks: 3n },
-        k = 5n,
+        y = { basisPoints: 2000, durationInBlocks: 3 },
+        k = 5,
         D = {
           ...(0, b.rq)({
             [s.R.id]: {

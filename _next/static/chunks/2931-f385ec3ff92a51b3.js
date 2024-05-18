@@ -217,7 +217,7 @@
           ]);
           if ("bigint" != typeof t.baseFeePerGas) throw new n.e5();
           let c = r - t.baseFeePerGas;
-          if (c < 0n) return 0;
+          if (c < 0) return 0;
           return c;
         }
       }
@@ -474,7 +474,7 @@
                     if (v) {
                       if (
                         t > 1 &&
-                        (!v.blockNumber || b - v.blockNumber + 1n < t)
+                        (!v.blockNumber || b - v.blockNumber + 1 < t)
                       )
                         return;
                       m(() => o.resolve(v));
@@ -499,7 +499,7 @@
                         f.a,
                         "getTransactionReceipt"
                       )({ hash: a })),
-                      t > 1 && (!v.blockNumber || b - v.blockNumber + 1n < t))
+                      t > 1 && (!v.blockNumber || b - v.blockNumber + 1 < t))
                     )
                       return;
                     m(() => o.resolve(v));
@@ -537,14 +537,14 @@
                             "getTransactionReceipt"
                           )({ hash: r.hash })),
                           t > 1 &&
-                            (!v.blockNumber || b - v.blockNumber + 1n < t))
+                            (!v.blockNumber || b - v.blockNumber + 1 < t))
                         )
                           return;
                         let c = "replaced";
                         r.to === w.to && r.value === w.value
                           ? (c = "repriced")
                           : r.from === r.to &&
-                            0n === r.value &&
+                            0 === r.value &&
                             (c = "cancelled"),
                           m(() => {
                             o.onReplaced?.({
@@ -1154,7 +1154,7 @@
             t ? (0, l.s)(e, eo.f, "getBlockNumber")({ hash: t }) : void 0,
           ]),
           i = a?.blockNumber || r?.blockNumber;
-        return i ? n - i + 1n : 0n;
+        return i ? n - i + 1 : 0;
       }
       var ec = a(57335),
         el = a(97680),
@@ -1301,7 +1301,7 @@
                               if (n.number === u.number) return;
                               if (n.number - u.number > 1 && a)
                                 for (
-                                  let t = u?.number + 1n;
+                                  let t = u?.number + 1;
                                   t < n.number;
                                   t++
                                 ) {
@@ -1424,7 +1424,7 @@
                                         address: i,
                                         args: o,
                                         eventName: c,
-                                        fromBlock: n + 1n,
+                                        fromBlock: n + 1,
                                         toBlock: t,
                                         strict: a,
                                       })
@@ -1567,7 +1567,7 @@
                                         args: a,
                                         event: r,
                                         events: i,
-                                        fromBlock: s + 1n,
+                                        fromBlock: s + 1,
                                         toBlock: n,
                                       })
                                     : []),

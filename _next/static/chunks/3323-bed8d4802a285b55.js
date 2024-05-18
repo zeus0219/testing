@@ -786,7 +786,7 @@
           fairLaunchBasisPoints: 1000,
         },
         y = { basisPoints: 2000, durationInBlocks: 3 },
-        A = 5n,
+        A = 5,
         D = {
           ...(0, p.rq)({
             [r.R.id]: {

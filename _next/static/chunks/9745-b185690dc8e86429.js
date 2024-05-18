@@ -2136,9 +2136,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         let r = BigInt(e);
         if (!n) return r;
         let i = (e.length - 2) / 2;
-        // return r <= (1n << (8n * BigInt(i) - 1n)) - 1n
+        // return r <= (1 << (8n * BigInt(i) - 1)) - 1
         //   ? r
-        //   : r - BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1n;
+        //   : r - BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1;
       }
       function c(e, t = {}) {
         return Number(u(e, t));
@@ -2280,8 +2280,8 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           n = s;
         // o
         //   ? (n = s
-        //       ? (1n << (8n * BigInt(o) - 1n)) - 1n
-        //       : 2n ** (8n * BigInt(o)) - 1n)
+        //       ? (1 << (8n * BigInt(o) - 1)) - 1
+        //       : 2 ** (8n * BigInt(o)) - 1)
         //   : "number" == typeof e && (n = BigInt(Number.MAX_SAFE_INTEGER));
         let u = "bigint" == typeof n && s ? -n - 1 : 0;
         if ((n && a > n) || a < u) {
@@ -2295,7 +2295,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           });
         }
         let c = `0x${(s && a < 0
-          ? (1n << BigInt(8 * o)) + BigInt(a)
+          ? (1 << BigInt(8 * o)) + BigInt(a)
           : a
         ).toString(16)}`;
         return o ? (0, i.vk)(c, { size: o }) : c;
@@ -2504,9 +2504,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           (t.yParity = (() => {
             if (e.yParity) return Number(e.yParity);
             if ("bigint" == typeof t.v) {
-              if (0n === t.v || 27n === t.v) return 0;
-              if (1n === t.v || 28n === t.v) return 1;
-              if (t.v >= 35n) return t.v % 2n === 0n ? 1 : 0;
+              if (0 === t.v || 27n === t.v) return 0;
+              if (1 === t.v || 28n === t.v) return 1;
+              if (t.v >= 35n) return t.v % 2 === 0 ? 1 : 0;
             }
           })()),
           "legacy" === t.type &&
@@ -2832,7 +2832,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`gasPrice` is not a valid EIP-1559 Transaction attribute."
                   );
-                if (i && i > 2n ** 256n - 1n)
+                if (i && i > 2 ** 256n - 1)
                   throw new h.Hh({ maxFeePerGas: i });
                 if (n && i && n > i)
                   throw new h.cs({ maxFeePerGas: i, maxPriorityFeePerGas: n });
@@ -2851,9 +2851,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                 ];
               if (t) {
                 let e =
-                  0n === t.v
+                  0 === t.v
                     ? "0x"
-                    : 1n === t.v
+                    : 1 === t.v
                     ? (0, o.NC)(1)
                     : 27n === t.v
                     ? "0x"
@@ -2888,7 +2888,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`maxFeePerGas`/`maxPriorityFeePerGas` is not a valid EIP-2930 Transaction attribute."
                   );
-                if (r && r > 2n ** 256n - 1n)
+                if (r && r > 2 ** 256n - 1)
                   throw new h.Hh({ maxFeePerGas: r });
               })(e);
               let w = p(y),
@@ -2904,9 +2904,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                 ];
               if (t) {
                 let e =
-                  0n === t.v
+                  0 === t.v
                     ? "0x"
-                    : 1n === t.v
+                    : 1 === t.v
                     ? (0, o.NC)(1)
                     : 27n === t.v
                     ? "0x"
@@ -2940,7 +2940,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`maxFeePerGas`/`maxPriorityFeePerGas` is not a valid Legacy Transaction attribute."
                   );
-                if (r && r > 2n ** 256n - 1n)
+                if (r && r > 2 ** 256n - 1)
                   throw new h.Hh({ maxFeePerGas: r });
                 if (o)
                   throw new c.G(
@@ -2958,11 +2958,11 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
               if (t) {
                 let e = (() => {
                   if (t.v >= 35n)
-                    return (t.v - 35n) / 2n > 0
+                    return (t.v - 35n) / 2 > 0
                       ? t.v
-                      : 27n + (35n === t.v ? 0n : 1n);
+                      : 27n + (35n === t.v ? 0 : 1);
                   if (n > 0) return BigInt(2 * n) + BigInt(35n + t.v - 27n);
-                  let e = 27n + (27n === t.v ? 0n : 1n);
+                  let e = 27n + (27n === t.v ? 0 : 1);
                   if (t.v !== e) throw new r.vl({ v: t.v });
                   return e;
                 })();

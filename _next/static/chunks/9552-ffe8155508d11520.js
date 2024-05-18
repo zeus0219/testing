@@ -14202,7 +14202,7 @@ AEN - anchor - end of input string<br>
         throw ((L.error = T), L);
       }
       class ee extends Array {
-        #t;
+        t_t;
         constructor(...O) {
           let T = O[0],
             L = O[1],
@@ -14220,7 +14220,7 @@ AEN - anchor - end of input string<br>
             new Map()
           );
           if (
-            ((this.#t = Object.freeze(
+            ((this.t_t = Object.freeze(
               L.map((O, T) => {
                 let L = W[T];
                 return null != L && 1 === et.get(L) ? L : null;
@@ -14265,7 +14265,7 @@ AEN - anchor - end of input string<br>
           );
         }
         toObject() {
-          return this.#t.reduce(
+          return this.t_t.reduce(
             (O, T, L) => (
               (0, J.assert)(
                 null != T,
@@ -14287,7 +14287,7 @@ AEN - anchor - end of input string<br>
             T > this.length && (T = this.length);
           let L = [],
             J = [];
-          for (let W = O; W < T; W++) L.push(this[W]), J.push(this.#t[W]);
+          for (let W = O; W < T; W++) L.push(this[W]), J.push(this.t_t[W]);
           return new ee(Z, L, J);
         }
         filter(O, T) {
@@ -14296,7 +14296,7 @@ AEN - anchor - end of input string<br>
           for (let W = 0; W < this.length; W++) {
             let Y = this[W];
             Y instanceof Error && X(`index ${W}`, Y),
-              O.call(T, Y, W, this) && (L.push(Y), J.push(this.#t[W]));
+              O.call(T, Y, W, this) && (L.push(Y), J.push(this.t_t[W]));
           }
           return new ee(Z, L, J);
         }
@@ -14310,7 +14310,7 @@ AEN - anchor - end of input string<br>
           return L;
         }
         getValue(O) {
-          let T = this.#t.indexOf(O);
+          let T = this.t_t.indexOf(O);
           if (-1 === T) return;
           let L = this[T];
           return (

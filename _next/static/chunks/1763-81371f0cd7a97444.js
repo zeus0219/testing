@@ -1140,12 +1140,12 @@
             o = i.Ns.sellProportionBasisPoints,
             s = i.py[e.chainId],
             c = null == s ? void 0 : s.metadropTreasury,
-            d = 0n;
+            d = 0;
           if (e.buyTaxEnabled) {
             let n = (Number(r) / 1e4) * Number(e.projectBuyTaxBasisPoints);
             d = BigInt(Math.floor(Math.max(Number(t), n)));
           }
-          let u = 0n;
+          let u = 0;
           if (e.sellTaxEnabled) {
             let n = (Number(o) / 1e4) * Number(e.projectSellTaxBasisPoints);
             u = BigInt(Math.floor(Math.max(Number(a), n)));
@@ -1173,7 +1173,7 @@
           var n, t, l;
           let a =
               void 0 !== e.lpFundingWei && null !== e.lpFundingWei
-                ? String(2n * BigInt(e.lpFundingWei))
+                ? String(2 * BigInt(e.lpFundingWei))
                 : null,
             r =
               null !== (n = e.poolDurationInMinutes) && void 0 !== n

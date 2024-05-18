@@ -285,18 +285,18 @@
           poolVestingInSeconds: m.Y ? 14400 : 600,
           poolPerTxnMinWei: (0, r.f)("0.0001").toString(),
         },
-        g = 20n,
-        x = 100n,
+        g = 20,
+        x = 100,
         y = {
-          minBuyAbsoluteBasisPoints: 50n,
-          minSellAbsoluteBasisPoints: 50n,
-          buyProportionBasisPoints: 1000n,
-          sellProportionBasisPoints: 1000n,
-          taxPeriodInDays: 30n,
-          fairLaunchBasisPoints: 1000n,
+          minBuyAbsoluteBasisPoints: 50,
+          minSellAbsoluteBasisPoints: 50,
+          buyProportionBasisPoints: 1000,
+          sellProportionBasisPoints: 1000,
+          taxPeriodInDays: 30,
+          fairLaunchBasisPoints: 1000,
         },
-        w = { basisPoints: 2000n, durationInBlocks: 3n },
-        F = 5n,
+        w = { basisPoints: 2000, durationInBlocks: 3 },
+        F = 5,
         C = {
           ...(0, b.rq)({
             [n.R.id]: {

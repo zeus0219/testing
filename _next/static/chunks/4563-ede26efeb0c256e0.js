@@ -947,8 +947,8 @@
           return r;
         },
       });
-      let r = 2n ** 32n - 1n,
-        o = 2n ** 256n - 1n;
+      let r = 2 ** 32n - 1,
+        o = 2 ** 256n - 1;
     },
     29893: function (e, t, n) {
       "use strict";

@@ -20083,8 +20083,8 @@
           return n;
         },
       });
-      let n = 2n ** 32n - 1n,
-        i = 2n ** 256n - 1n;
+      let n = 2 ** 32n - 1,
+        i = 2 ** 256n - 1;
     },
     91873: function (e, t, r) {
       "use strict";

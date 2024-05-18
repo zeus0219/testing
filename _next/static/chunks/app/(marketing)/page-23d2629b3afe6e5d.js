@@ -4430,9 +4430,9 @@
                 a.poolStartDate &&
                 (0, m.E)(a.poolStartDate, a.poolVestingInSeconds),
               poolPhaseStatus: M(a),
-              lpFunding: BigInt(a.lpFundingWei || 0) - (a.burnLPTokens, 0n),
+              lpFunding: 0,
             }),
-            [k, L] = (0, f.useState)(0n),
+            [k, L] = (0, f.useState)(0),
             B =
               (0, p.Z)(null == g ? void 0 : g.balanceOf) !==
               (null == g ? void 0 : g.balanceOf),
@@ -4446,11 +4446,11 @@
                     (null == g ? void 0 : g.poolPhaseStatus) === "succeeded" ||
                     B,
                   t = await (0, c.K7)(a, g, I, {
-                    pendingETH: e ? 0n : k,
+                    pendingETH: e ? 0 : k,
                     ethPrice: x,
-                    unicryptFee: 0n,
+                    unicryptFee: 0,
                   });
-                e && L(0n), z({ ...N, ...g, ...t }), y(!1);
+                e && L(0), z({ ...N, ...g, ...t }), y(!1);
               })();
           }, [a, g, x, j, k, B]);
           let S = (0, s.G)(N.vestingEndDate),
@@ -4458,7 +4458,7 @@
             F =
               E &&
               (null == g ? void 0 : g.vestingEndDate) &&
-              1000n * E > (null == g ? void 0 : g.vestingEndDate.getTime()),
+              1000 * E > (null == g ? void 0 : g.vestingEndDate.getTime()),
             T = N.poolPhaseStatus;
           return (0, f.useMemo)(
             () => ({
@@ -4510,10 +4510,10 @@
                       return {
                         ...e,
                         [a.dripHolder]:
-                          BigInt(a.ethPooled || 0n) +
+                          BigInt(a.ethPooled || 0) +
                           (e[a.dripHolder]
-                            ? BigInt(e[a.dripHolder] || 0n)
-                            : 0n),
+                            ? BigInt(e[a.dripHolder] || 0)
+                            : 0),
                       };
                     }, {}),
               [null == l ? void 0 : l.length]
@@ -4770,7 +4770,7 @@
             eventName: i,
             chainId: c,
             swrOptions: o,
-            fromBlock: d = 0n,
+            fromBlock: d = 0,
             watch: u = !1,
           } = e,
           x = (0, s.Z)(),
@@ -4791,7 +4791,7 @@
                   console.log("Falling back to smaller batches");
                   let t = await h.getBlockNumber(),
                     a = [];
-                  for (let l = d; l < t; l += 2000n) a.push(e(l, l + 2000n));
+                  for (let l = d; l < t; l += 2000) a.push(e(l, l + 2000));
                   return (await Promise.all(a)).flat();
                 }
               }
