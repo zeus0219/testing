@@ -2458,7 +2458,7 @@ line no: ${O.lineNo} : char index: ${O.beginChar} : length: ${
               W.forEach((O) => {
                 J.callbacks[O] = !1;
               }),
-              L.length > 0 &&
+              L?.length > 0 &&
                 Y.forEach((O) => {
                   J.callbacks[O] = !1;
                 }),
@@ -4260,7 +4260,7 @@ ${er}${en}`),
                 });
             }),
               Z?.udts?.forEach((O) => {
-                O.isBkr = !1;
+                O.isBkr = !1; 
               }),
               Z.rules.forEach((L) => {
                 L.opcodes.forEach((J) => {
