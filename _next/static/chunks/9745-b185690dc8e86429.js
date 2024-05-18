@@ -2576,7 +2576,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         },
       });
       var r = n(81069);
-      let i = BigInt(4294967296 - 1),
+      let i = BigInt(1),
         s = BigInt(32),
         o = (e, t, n) => (e << n) | (t >>> (32 - n)),
         a = (e, t, n) => (t << n) | (e >>> (32 - n)),
