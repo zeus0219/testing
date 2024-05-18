@@ -31931,7 +31931,6 @@ AEN - anchor - end of input string<br>
           constructor(O = {}) {
             super(), (this.config = O), (this._tV = new Map());
           }
-          _tV;
           build(O, T, L) {
             let W = T.queryKey,
               Y = T.queryHash ?? (0, J.Rm)(W, T),
