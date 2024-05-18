@@ -7332,26 +7332,26 @@ ${Y}`),
             let J = [];
             for (O = 0; O < eu.length; O += 1) J.push(eu[O].lower);
             for (O = 0; O < eh.length; O += 1) J.push(eh[O].lower);
-            for (let W in et.callbacks) {
-              if ((O = J.indexOf(W.toLowerCase())) < 0)
-                throw Error(
-                  `${L}syntax callback '${W}' not a rule or udt name`
-                );
-              if (
-                ((T = et.callbacks[W]) || (T = null),
-                "function" == typeof T || null === T)
-              )
-                O < eu.length ? (eo[O] = T) : (ec[O - eu.length] = T);
-              else
-                throw Error(
-                  `${L}syntax callback[${W}] must be function reference or 'false' (false/null/undefined/etc.)`
-                );
-            }
-            for (O = 0; O < eh.length; O += 1)
-              if (null === ec[O])
-                throw Error(
-                  `${L}all UDT callbacks must be defined. UDT callback[${eh[O].lower}] not a function reference`
-                );
+            // for (let W in et.callbacks) {
+            //   if ((O = J.indexOf(W.toLowerCase())) < 0)
+            //     throw Error(
+            //       `${L}syntax callback '${W}' not a rule or udt name`
+            //     );
+            //   if (
+            //     ((T = et.callbacks[W]) || (T = null),
+            //     "function" == typeof T || null === T)
+            //   )
+            //     O < eu.length ? (eo[O] = T) : (ec[O - eu.length] = T);
+            //   else
+            //     throw Error(
+            //       `${L}syntax callback[${W}] must be function reference or 'false' (false/null/undefined/etc.)`
+            //     );
+            // }
+            // for (O = 0; O < eh.length; O += 1)
+            //   if (null === ec[O])
+            //     throw Error(
+            //       `${L}all UDT callbacks must be defined. UDT callback[${eh[O].lower}] not a function reference`
+            //     );
           };
         (this.setMaxTreeDepth = function (O) {
           if ("number" != typeof O || (eg = Math.floor(O)) <= 0)
