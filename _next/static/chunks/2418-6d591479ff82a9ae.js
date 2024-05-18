@@ -4670,10 +4670,6 @@
         a = n(94699),
         s = n(36076),
         u = class extends a.l {
-          a__0;
-          s__0 = void 0;
-          u__0;
-          c__0;
           constructor(t, e) {
             super(),
               (this.a__0 = t),

@@ -548,21 +548,7 @@
               this.bindMethods(),
               this.setOptions(e);
           }
-          // i__0;
-          // u__0 = void 0;
-          // o__0 = void 0;
-          // c__0 = void 0;
-          // a__0;
-          // h__0;
-          // s__0;
-          // l__0;
-          // f__0;
-          // d__0;
-          // p__0;
-          // y__0;
-          // v__0;
-
-          bindMethods() {
+         bindMethods() {
             this.refetch = this.refetch.bind(this);
           }
           onSubscribe() {
@@ -619,7 +605,7 @@
               (this.u__0 !== r ||
                 this.options.enabled !== n.enabled ||
                 u !== this.v__0) &&
-              this.#Q(u);
+              this.Q__0(u);
           }
           getOptimisticResult(t) {
             let e = this.i__0.getQueryCache().build(this.i__0, t),
@@ -693,7 +679,7 @@
                 : this.options.refetchInterval) ?? !1
             );
           }
-          #Q(t) {
+          Q__0(t) {
             this.g__0(),
               (this.v__0 = t),
               !i.sk &&
@@ -707,7 +693,7 @@
                 }, this.v__0));
           }
           m__0() {
-            this.S__0(), this.#Q(this.E__0());
+            this.S__0(), this.Q__0(this.E__0());
           }
           O__0() {
             this.p__0 && (clearTimeout(this.p__0), (this.p__0 = void 0));

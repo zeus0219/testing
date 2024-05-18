@@ -16375,7 +16375,7 @@ AEN - anchor - end of input string<br>
             O(this.y__0.get(J), L);
           }
         }
-        #A(O, T, L) {
+        __A(O, T, L) {
           if ((0, Y.isHexString)(O)) {
             let T = O.toLowerCase();
             for (let O of this.g__0.values()) if (T === O.topicHash) return O;
@@ -16411,16 +16411,16 @@ AEN - anchor - end of input string<br>
           return this.g__0.get(ee.EventFragment.from(O).format()) || null;
         }
         getEventName(O) {
-          let T = this.#A(O, null, !1);
+          let T = this.__A(O, null, !1);
           return (
             (0, Y.assertArgument)(T, "no matching event", "key", O), T.name
           );
         }
         hasEvent(O) {
-          return !!this.#A(O, null, !1);
+          return !!this.__A(O, null, !1);
         }
         getEvent(O, T) {
-          return this.#A(O, T || null, !0);
+          return this.__A(O, T || null, !0);
         }
         forEachEvent(O) {
           let T = Array.from(this.g__0.keys());
@@ -21245,9 +21245,9 @@ AEN - anchor - end of input string<br>
         }
         getEncoder(O) {
           let T = this.T__0.get(O);
-          return T || ((T = this.#N(O)), this.T__0.set(O, T)), T;
+          return T || ((T = this.__N(O)), this.T__0.set(O, T)), T;
         }
-        #N(O) {
+        __N(O) {
           {
             let T = ep(O);
             if (T) return T;
@@ -21621,7 +21621,7 @@ AEN - anchor - end of input string<br>
         set disableCcipRead(O) {
           this.H__0 = !!O;
         }
-        async #$(O) {
+        async __sp(O) {
           let T = this.w__0.cacheTimeout;
           if (T < 0) return await this._perform(O);
           let L = eu(O.method, O),
@@ -21734,7 +21734,7 @@ AEN - anchor - end of input string<br>
         }
         async getBlockNumber() {
           let O = (0, ee.getNumber)(
-            await this.#$({ method: "getBlockNumber" }),
+            await this.__sp({ method: "getBlockNumber" }),
             "%response"
           );
           return this.F__0 >= 0 && (this.F__0 = O), O;
@@ -21889,17 +21889,17 @@ AEN - anchor - end of input string<br>
                   gasPrice: L,
                   priorityFee: J,
                 } = await (0, ee.resolveProperties)({
-                  _block: this.#V("latest", !1),
+                  _block: this.__V("latest", !1),
                   gasPrice: (async () => {
                     try {
-                      let O = await this.#$({ method: "getGasPrice" });
+                      let O = await this.__sp({ method: "getGasPrice" });
                       return (0, ee.getBigInt)(O, "%response");
                     } catch (O) {}
                     return null;
                   })(),
                   priorityFee: (async () => {
                     try {
-                      let O = await this.#$({ method: "getPriorityFee" });
+                      let O = await this.__sp({ method: "getPriorityFee" });
                       return (0, ee.getBigInt)(O, "%response");
                     } catch (O) {}
                     return null;
@@ -21933,12 +21933,12 @@ AEN - anchor - end of input string<br>
           return (
             ec(T) && (T = await T),
             (0, ee.getBigInt)(
-              await this.#$({ method: "estimateGas", transaction: T }),
+              await this.__sp({ method: "estimateGas", transaction: T }),
               "%response"
             )
           );
         }
-        async #G(O, T, L) {
+        async __G(O, T, L) {
           (0, ee.assert)(
             L < eo,
             "CCIP read exceeded maximum redirections",
@@ -22020,7 +22020,7 @@ AEN - anchor - end of input string<br>
                 transaction: er,
               });
               try {
-                let O = await this.#G(er, T, L + 1);
+                let O = await this.__G(er, T, L + 1);
                 return (
                   this.emit("debug", {
                     action: "receiveCcipReadCallResult",
@@ -22043,7 +22043,7 @@ AEN - anchor - end of input string<br>
             throw O;
           }
         }
-        async #J(O) {
+        async __J(O) {
           let { value: T } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
             value: O,
@@ -22055,7 +22055,7 @@ AEN - anchor - end of input string<br>
             tx: this._getTransactionRequest(O),
             blockTag: this._getBlockTag(O.blockTag),
           });
-          return await this.#J(this.#G(T, L, O.enableCcipRead ? 0 : -1));
+          return await this.__J(this.__G(T, L, O.enableCcipRead ? 0 : -1));
         }
         async z__0(O, T, L) {
           let J = this._getAddress(T),
@@ -22063,8 +22063,8 @@ AEN - anchor - end of input string<br>
           return (
             ("string" != typeof J || "string" != typeof W) &&
               ([J, W] = await Promise.all([J, W])),
-            await this.#J(
-              this.#$(Object.assign(O, { address: J, blockTag: W }))
+            await this.__J(
+              this.__sp(Object.assign(O, { address: J, blockTag: W }))
             )
           );
         }
@@ -22107,9 +22107,9 @@ AEN - anchor - end of input string<br>
             throw Error("@TODO: the returned hash did not match");
           return this._wrapTransactionResponse(W, J).replaceableTransaction(T);
         }
-        async #V(O, T) {
+        async __V(O, T) {
           if ((0, ee.isHexString)(O, 32))
-            return await this.#$({
+            return await this.__sp({
               method: "getBlock",
               blockHash: O,
               includeTransactions: T,
@@ -22117,7 +22117,7 @@ AEN - anchor - end of input string<br>
           let L = this._getBlockTag(O);
           return (
             "string" != typeof L && (L = await L),
-            await this.#$({
+            await this.__sp({
               method: "getBlock",
               blockTag: L,
               includeTransactions: T,
@@ -22127,25 +22127,25 @@ AEN - anchor - end of input string<br>
         async getBlock(O, T) {
           let { network: L, params: J } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
-            params: this.#V(O, !!T),
+            params: this.__V(O, !!T),
           });
           return null == J ? null : this._wrapBlock(J, L);
         }
         async getTransaction(O) {
           let { network: T, params: L } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
-            params: this.#$({ method: "getTransaction", hash: O }),
+            params: this.__sp({ method: "getTransaction", hash: O }),
           });
           return null == L ? null : this._wrapTransactionResponse(L, T);
         }
         async getTransactionReceipt(O) {
           let { network: T, params: L } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
-            params: this.#$({ method: "getTransactionReceipt", hash: O }),
+            params: this.__sp({ method: "getTransactionReceipt", hash: O }),
           });
           if (null == L) return null;
           if (null == L.gasPrice && null == L.effectiveGasPrice) {
-            let T = await this.#$({ method: "getTransaction", hash: O });
+            let T = await this.__sp({ method: "getTransaction", hash: O });
             if (null == T)
               throw Error(
                 "report this; could not find tx or effectiveGasPrice"
@@ -22157,7 +22157,7 @@ AEN - anchor - end of input string<br>
         async getTransactionResult(O) {
           let { result: T } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
-            result: this.#$({ method: "getTransactionResult", hash: O }),
+            result: this.__sp({ method: "getTransactionResult", hash: O }),
           });
           return null == T ? null : (0, ee.hexlify)(T);
         }
@@ -22166,7 +22166,7 @@ AEN - anchor - end of input string<br>
           ec(T) && (T = await T);
           let { network: L, params: J } = await (0, ee.resolveProperties)({
             network: this.getNetwork(),
-            params: this.#$({ method: "getLogs", filter: T }),
+            params: this.__sp({ method: "getLogs", filter: T }),
           });
           return J.map((O) => this._wrapLog(O, L));
         }
@@ -22310,7 +22310,7 @@ AEN - anchor - end of input string<br>
               break;
             }
         }
-        async #Q(O, T) {
+        async Q__0(O, T) {
           let L = await eg(O, this);
           return (
             "event" === L.type &&
@@ -22362,7 +22362,7 @@ AEN - anchor - end of input string<br>
           );
         }
         async emit(O, ...T) {
-          let L = await this.#Q(O, T);
+          let L = await this.Q__0(O, T);
           if (!L || 0 === L.listeners.length) return !1;
           let J = L.listeners.length;
           return (
@@ -22380,7 +22380,7 @@ AEN - anchor - end of input string<br>
         }
         async listenerCount(O) {
           if (O) {
-            let T = await this.#Q(O);
+            let T = await this.Q__0(O);
             return T ? T.listeners.length : 0;
           }
           let T = 0;
@@ -22389,7 +22389,7 @@ AEN - anchor - end of input string<br>
         }
         async listeners(O) {
           if (O) {
-            let T = await this.#Q(O);
+            let T = await this.Q__0(O);
             return T ? T.listeners.map(({ listener: O }) => O) : [];
           }
           let T = [];
@@ -22398,7 +22398,7 @@ AEN - anchor - end of input string<br>
           return T;
         }
         async off(O, T) {
-          let L = await this.#Q(O);
+          let L = await this.Q__0(O);
           if (!L) return this;
           if (T) {
             let O = L.listeners.map(({ listener: O }) => O).indexOf(T);
@@ -22751,7 +22751,7 @@ AEN - anchor - end of input string<br>
         connect(O) {
           return new er(this.address, O);
         }
-        #W(O, T) {
+        __W(O, T) {
           (0, Y.assert)(
             !1,
             `VoidSigner cannot sign ${O}`,
@@ -22760,13 +22760,13 @@ AEN - anchor - end of input string<br>
           );
         }
         async signTransaction(O) {
-          this.#W("transactions", "signTransaction");
+          this.__W("transactions", "signTransaction");
         }
         async signMessage(O) {
-          this.#W("messages", "signMessage");
+          this.__W("messages", "signMessage");
         }
         async signTypedData(O, T, L) {
-          this.#W("typed-data", "signTypedData");
+          this.__W("typed-data", "signTypedData");
         }
       }
       T.VoidSigner = er;
@@ -22993,7 +22993,7 @@ AEN - anchor - end of input string<br>
             await this.Y__0
           );
         }
-        async #X(O, T) {
+        async __X(O, T) {
           T = (T || []).slice();
           let L = this.Z__0.interface;
           T.unshift((0, Z.namehash)(this.name));
@@ -23021,7 +23021,7 @@ AEN - anchor - end of input string<br>
         async getAddress(O) {
           if ((null == O && (O = 60), 60 === O))
             try {
-              let O = await this.#X("addr(bytes32)");
+              let O = await this.__X("addr(bytes32)");
               if (null == O || O === W.ZeroAddress) return null;
               return O;
             } catch (O) {
@@ -23030,7 +23030,7 @@ AEN - anchor - end of input string<br>
             }
           if (O >= 0 && O < 2147483648) {
             let T = O + 2147483648,
-              L = await this.#X("addr(bytes32,uint)", [T]);
+              L = await this.__X("addr(bytes32,uint)", [T]);
             if ((0, X.isHexString)(L, 20)) return (0, J.getAddress)(L);
           }
           let T = null;
@@ -23040,7 +23040,7 @@ AEN - anchor - end of input string<br>
               break;
             }
           if (null == T) return null;
-          let L = await this.#X("addr(bytes32,uint)", [O]);
+          let L = await this.__X("addr(bytes32,uint)", [O]);
           if (null == L || "0x" === L) return null;
           let Y = await T.decodeAddress(O, L);
           if (null != Y) return Y;
@@ -23050,11 +23050,11 @@ AEN - anchor - end of input string<br>
           });
         }
         async getText(O) {
-          let T = await this.#X("text(bytes32,string)", [O]);
+          let T = await this.__X("text(bytes32,string)", [O]);
           return null == T || "0x" === T ? null : T;
         }
         async getContentHash() {
-          let O = await this.#X("contenthash(bytes32)");
+          let O = await this.__X("contenthash(bytes32)");
           if (null == O || "0x" === O) return null;
           let T = O.match(
             /^0x(e3010170|e5010172)(([0-9a-f][0-9a-f])([0-9a-f][0-9a-f])([0-9a-f]*))$/
@@ -25167,15 +25167,15 @@ AEN - anchor - end of input string<br>
               return await O.getTransactionResult(T.hash);
           }
         }
-        #eh(O) {
+        __eh(O) {
           let T = Array.from(O).map((O) => O.config),
             L = this._el.slice();
           for (let O of (ee(L), L.sort((O, T) => O.priority - T.priority), L))
             if (!O._lastFatalError && -1 === T.indexOf(O)) return O;
           return null;
         }
-        #ed(O, T) {
-          let L = this.#eh(O);
+        __ed(O, T) {
+          let L = this.__eh(O);
           if (null == L) return null;
           let J = {
               config: L,
@@ -25206,7 +25206,7 @@ AEN - anchor - end of input string<br>
             J
           );
         }
-        async #ep() {
+        async __ep() {
           let O = this._eu;
           if (!O) {
             let T = [];
@@ -25240,7 +25240,7 @@ AEN - anchor - end of input string<br>
           }
           await O;
         }
-        async #ef(O, T) {
+        async __ef(O, T) {
           let L = [];
           for (let T of O)
             if (null != T.result) {
@@ -25295,7 +25295,7 @@ AEN - anchor - end of input string<br>
             });
           }
         }
-        async #eg(O, T) {
+        async __eg(O, T) {
           if (0 === O.size) throw Error("no runners?!");
           let L = [],
             W = 0;
@@ -25306,12 +25306,12 @@ AEN - anchor - end of input string<br>
             }
             !T.didBump && ((T.didBump = !0), W++);
           }
-          let Y = await this.#ef(O, T);
+          let Y = await this.__ef(O, T);
           if (void 0 !== Y) {
             if (Y instanceof Error) throw Y;
             return Y;
           }
-          for (let L = 0; L < W; L++) this.#ed(O, T);
+          for (let L = 0; L < W; L++) this.__ed(O, T);
           return (
             (0, J.assert)(L.length > 0, "quorum not met", "SERVER_ERROR", {
               request: "%sub-requests",
@@ -25321,7 +25321,7 @@ AEN - anchor - end of input string<br>
               },
             }),
             await Promise.race(L),
-            await this.#eg(O, T)
+            await this.__eg(O, T)
           );
         }
         async _perform(O) {
@@ -25363,14 +25363,14 @@ AEN - anchor - end of input string<br>
               throw W;
             return W;
           }
-          await this.#ep();
+          await this.__ep();
           let T = new Set(),
             L = 0;
           for (;;) {
-            let J = this.#ed(T, O);
+            let J = this.__ed(T, O);
             if (null == J || (L += J.config.weight) >= this.quorum) break;
           }
-          let W = await this.#eg(T, O);
+          let W = await this.__eg(T, O);
           for (let O of T)
             O.perform && null == O.result && O.config.lateResponses++;
           return W;
@@ -25730,7 +25730,7 @@ AEN - anchor - end of input string<br>
         _eA;
         _ew;
         _ev;
-        #ek() {
+        __ek() {
           if (this._eb) return;
           let O =
             1 === this._getOption("batchMaxCount")
@@ -25950,7 +25950,7 @@ AEN - anchor - end of input string<br>
                     ),
                     await eo(1e3);
                 }
-              this.#ek();
+              this.__ek();
             })());
         }
         async _waitUntilReady() {
@@ -26174,7 +26174,7 @@ AEN - anchor - end of input string<br>
                 payload: { method: O, params: T, id: L, jsonrpc: "2.0" },
               });
             });
-          return this.#ek(), J;
+          return this.__ek(), J;
         }
         async getSigner(O) {
           null == O && (O = 0);
@@ -29143,7 +29143,7 @@ AEN - anchor - end of input string<br>
         get value() {
           return this._tw;
         }
-        #tk(O) {
+        __tk(O) {
           (0, W.assertArgument)(
             this.format === O.format,
             "incompatible format; use fixedNumber.toFormat",
@@ -29151,38 +29151,38 @@ AEN - anchor - end of input string<br>
             O
           );
         }
-        #tE(O, T) {
+        __tE(O, T) {
           return new eu(en, (O = ea(O, this._tA, T)), this._tA);
         }
-        #tS(O, T) {
-          return this.#tk(O), this.#tE(this._tw + O._tw, T);
+        __tS(O, T) {
+          return this.__tk(O), this.__tE(this._tw + O._tw, T);
         }
         addUnsafe(O) {
-          return this.#tS(O);
+          return this.__tS(O);
         }
         add(O) {
-          return this.#tS(O, "add");
+          return this.__tS(O, "add");
         }
-        #tP(O, T) {
-          return this.#tk(O), this.#tE(this._tw - O._tw, T);
+        __tP(O, T) {
+          return this.__tk(O), this.__tE(this._tw - O._tw, T);
         }
         subUnsafe(O) {
-          return this.#tP(O);
+          return this.__tP(O);
         }
         sub(O) {
-          return this.#tP(O, "sub");
+          return this.__tP(O, "sub");
         }
-        #tx(O, T) {
-          return this.#tk(O), this.#tE((this._tw * O._tw) / this._tv, T);
+        __tx(O, T) {
+          return this.__tk(O), this.__tE((this._tw * O._tw) / this._tv, T);
         }
         mulUnsafe(O) {
-          return this.#tx(O);
+          return this.__tx(O);
         }
         mul(O) {
-          return this.#tx(O, "mul");
+          return this.__tx(O, "mul");
         }
         mulSignal(O) {
-          this.#tk(O);
+          this.__tk(O);
           let T = this._tw * O._tw;
           return (
             (0, W.assert)(
@@ -29191,25 +29191,25 @@ AEN - anchor - end of input string<br>
               "NUMERIC_FAULT",
               { operation: "mulSignal", fault: "underflow", value: this }
             ),
-            this.#tE(T / this._tv, "mulSignal")
+            this.__tE(T / this._tv, "mulSignal")
           );
         }
-        #tC(O, T) {
+        __tC(O, T) {
           return (
             (0, W.assert)(O._tw !== ee, "division by zero", "NUMERIC_FAULT", {
               operation: "div",
               fault: "divide-by-zero",
               value: this,
             }),
-            this.#tk(O),
-            this.#tE((this._tw * this._tv) / O._tw, T)
+            this.__tk(O),
+            this.__tE((this._tw * this._tv) / O._tw, T)
           );
         }
         divUnsafe(O) {
-          return this.#tC(O);
+          return this.__tC(O);
         }
         div(O) {
-          return this.#tC(O, "div");
+          return this.__tC(O, "div");
         }
         divSignal(O) {
           (0, W.assert)(O._tw !== ee, "division by zero", "NUMERIC_FAULT", {
@@ -29217,7 +29217,7 @@ AEN - anchor - end of input string<br>
             fault: "divide-by-zero",
             value: this,
           }),
-            this.#tk(O);
+            this.__tk(O);
           let T = this._tw * this._tv;
           return (
             (0, W.assert)(
@@ -29226,7 +29226,7 @@ AEN - anchor - end of input string<br>
               "NUMERIC_FAULT",
               { operation: "divSignal", fault: "underflow", value: this }
             ),
-            this.#tE(T / O._tw, "divSignal")
+            this.__tE(T / O._tw, "divSignal")
           );
         }
         cmp(O) {
@@ -29259,7 +29259,7 @@ AEN - anchor - end of input string<br>
           return (
             this._tw < ee && (O -= this._tv - et),
             (O = (this._tw / this._tv) * this._tv),
-            this.#tE(O, "floor")
+            this.__tE(O, "floor")
           );
         }
         ceiling() {
@@ -29267,7 +29267,7 @@ AEN - anchor - end of input string<br>
           return (
             this._tw > ee && (O += this._tv - et),
             (O = (this._tw / this._tv) * this._tv),
-            this.#tE(O, "ceiling")
+            this.__tE(O, "ceiling")
           );
         }
         round(O) {
@@ -31856,7 +31856,7 @@ AEN - anchor - end of input string<br>
           return (0, Y.decodeOwl)(this._r);
         }
         _tI;
-        #tM() {
+        __tM() {
           if (null == this._tI) {
             let O = this._decodeWords();
             if ((0, J.id)(O.join("\n") + "\n") !== this._tR)
@@ -31866,7 +31866,7 @@ AEN - anchor - end of input string<br>
           return this._tI;
         }
         getWord(O) {
-          let T = this.#tM();
+          let T = this.__tM();
           return (
             (0, W.assertArgument)(
               O >= 0 && O < T.length,
@@ -31878,7 +31878,7 @@ AEN - anchor - end of input string<br>
           );
         }
         getWordIndex(O) {
-          return this.#tM().indexOf(O);
+          return this.__tM().indexOf(O);
         }
       }
       T.WordlistOwl = X;
