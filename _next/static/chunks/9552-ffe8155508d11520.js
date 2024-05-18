@@ -14354,10 +14354,6 @@ AEN - anchor - end of input string<br>
       }
       (T.Result = ee), (T.checkResultErrors = et);
       class en {
-        name;
-        type;
-        localName;
-        dynamic;
         constructor(O, T, L, W) {
           (0, J.defineProperties)(
             this,
@@ -14376,8 +14372,6 @@ AEN - anchor - end of input string<br>
       }
       T.Coder = en;
       class es {
-        _r;
-        n__0;
         constructor() {
           (this._r = []), (this.n__0 = 0);
         }
@@ -14417,12 +14411,6 @@ AEN - anchor - end of input string<br>
       }
       T.Writer = es;
       class ei {
-        allowLoose;
-        _r;
-        i__0;
-        a__0;
-        o__0;
-        l__0;
         constructor(O, T, L) {
           (0, J.defineProperties)(this, { allowLoose: !!T }),
             (this._r = (0, J.getBytesCopy)(O)),
@@ -14527,7 +14515,6 @@ AEN - anchor - end of input string<br>
         (T.AnonymousCoder = void 0);
       let J = L(31458);
       class W extends J.Coder {
-        coder;
         constructor(O) {
           super(O.name, O.type, "_", O.dynamic), (this.coder = O);
         }
@@ -14638,8 +14625,6 @@ AEN - anchor - end of input string<br>
       }
       (T.pack = X), (T.unpack = ee);
       class et extends Y.Coder {
-        coder;
-        length;
         constructor(O, T, L) {
           super(
             "array",
@@ -14751,7 +14736,6 @@ AEN - anchor - end of input string<br>
         W = L(29970),
         Y = L(31458);
       class Z extends Y.Coder {
-        size;
         constructor(O, T) {
           let L = "bytes" + String(O);
           super(L, L, T, !1),
@@ -14812,8 +14796,6 @@ AEN - anchor - end of input string<br>
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         );
       class et extends Y.Coder {
-        size;
-        signed;
         constructor(O, T, L) {
           let W = (T ? "int" : "uint") + 8 * O;
           super(W, W, L, !1),
@@ -14881,7 +14863,6 @@ AEN - anchor - end of input string<br>
         Y = L(31458),
         Z = L(19702);
       class X extends Y.Coder {
-        coders;
         constructor(O, T) {
           let L = !1,
             W = [];
@@ -16790,10 +16771,6 @@ AEN - anchor - end of input string<br>
       }
       let X = Symbol.for("_ethers_typed");
       class ee {
-        type;
-        value;
-        w__0;
-        _typedSymbol;
         constructor(O, T, L, Y) {
           null == Y && (Y = null),
             (0, J.assertPrivate)(W, O, "Typed"),
@@ -18343,9 +18320,6 @@ AEN - anchor - end of input string<br>
         Y = L(38478),
         Z = L(13672);
       class X {
-        interface;
-        bytecode;
-        runner;
         constructor(O, T, L) {
           let W = J.Interface.from(O);
           T instanceof Uint8Array ||
@@ -18492,9 +18466,6 @@ AEN - anchor - end of input string<br>
       let J = L(27773),
         W = L(38478);
       class Y extends J.Log {
-        interface;
-        fragment;
-        args;
         constructor(O, T, L) {
           super(O, O.provider);
           let J = T.decodeEventLog(L, O.data, O.topics);
@@ -18509,14 +18480,12 @@ AEN - anchor - end of input string<br>
       }
       T.EventLog = Y;
       class Z extends J.Log {
-        error;
         constructor(O, T) {
           super(O, O.provider), (0, W.defineProperties)(this, { error: T });
         }
       }
       T.UndecodedEventLog = Z;
       class X extends J.TransactionReceipt {
-        k__0;
         constructor(O, T, L) {
           super(L, T), (this.k__0 = O);
         }
