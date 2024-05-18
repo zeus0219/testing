@@ -11,12 +11,12 @@
       var r = n(94699),
         i = n(36076),
         s = new (class extends r.l {
-          #t;
-          #e;
-          #n;
+          __t;
+          __e;
+          __n;
           constructor() {
             super(),
-              (this.#n = (t) => {
+              (this.__n = (t) => {
                 if (!i.sk && window.addEventListener) {
                   let e = () => t();
                   return (
@@ -29,20 +29,20 @@
               });
           }
           onSubscribe() {
-            this.#e || this.setEventListener(this.#n);
+            this.__e || this.setEventListener(this.__n);
           }
           onUnsubscribe() {
-            this.hasListeners() || (this.#e?.(), (this.#e = void 0));
+            this.hasListeners() || (this.__e?.(), (this.__e = void 0));
           }
           setEventListener(t) {
-            (this.#n = t),
-              this.#e?.(),
-              (this.#e = t((t) => {
+            (this.__n = t),
+              this.__e?.(),
+              (this.__e = t((t) => {
                 "boolean" == typeof t ? this.setFocused(t) : this.onFocus();
               }));
           }
           setFocused(t) {
-            this.#t !== t && ((this.#t = t), this.onFocus());
+            this.__t !== t && ((this.__t = t), this.onFocus());
           }
           onFocus() {
             let t = this.isFocused();
@@ -51,8 +51,8 @@
             });
           }
           isFocused() {
-            return "boolean" == typeof this.#t
-              ? this.#t
+            return "boolean" == typeof this.__t
+              ? this.__t
               : globalThis.document?.visibilityState !== "hidden";
           }
         })();
