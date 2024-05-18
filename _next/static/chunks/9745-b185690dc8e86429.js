@@ -2277,11 +2277,12 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         let n;
         let { signed: s, size: o } = t,
           a = BigInt(e);
-        o
-          ? (n = s
-              ? (1n << (8n * BigInt(o) - 1n)) - 1n
-              : 2n ** (8n * BigInt(o)) - 1n)
-          : "number" == typeof e && (n = BigInt(Number.MAX_SAFE_INTEGER));
+          n = s;
+        // o
+        //   ? (n = s
+        //       ? (1n << (8n * BigInt(o) - 1n)) - 1n
+        //       : 2n ** (8n * BigInt(o)) - 1n)
+        //   : "number" == typeof e && (n = BigInt(Number.MAX_SAFE_INTEGER));
         let u = "bigint" == typeof n && s ? -n - 1n : 0;
         if ((n && a > n) || a < u) {
           let t = "bigint" == typeof e ? "n" : "";
