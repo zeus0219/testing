@@ -282,9 +282,9 @@
                       )({ cacheTime: 0 });
                       if (d) {
                         if (e === d) return;
-                        if (e - d > 1 && n)
-                          for (let t = d + 1n; t < e; t++)
-                            r.onBlockNumber(t, d), (d = t);
+                        // if (e - d > 1 && n)
+                        //   for (let t = d + 1n; t < e; t++)
+                        //     r.onBlockNumber(t, d), (d = t);
                       }
                       (!d || e > d) && (r.onBlockNumber(e, d), (d = e));
                     } catch (t) {

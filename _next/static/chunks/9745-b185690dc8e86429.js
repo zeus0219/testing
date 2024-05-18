@@ -2136,9 +2136,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
         let r = BigInt(e);
         if (!n) return r;
         let i = (e.length - 2) / 2;
-        return r <= (1n << (8n * BigInt(i) - 1n)) - 1n
-          ? r
-          : r - BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1n;
+        // return r <= (1n << (8n * BigInt(i) - 1n)) - 1n
+        //   ? r
+        //   : r - BigInt(`0x${"f".padStart(2 * i, "f")}`) - 1n;
       }
       function c(e, t = {}) {
         return Number(u(e, t));
