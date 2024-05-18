@@ -6880,14 +6880,14 @@ ${Y}`),
             for (ei = 0; ei < Z.length; ei += 1) ea.push(Z[ei].lower);
             for (ei = 0, ee = Y.length + Z.length; ei < ee; ei += 1)
               (et[ei] = !1), (er[ei] = null);
-            for (let O in W.callbacks) {
-              let T = O.toLowerCase();
-              if ((ei = ea.indexOf(T)) < 0)
-                throw Error(`${J}init: node '${O}' not a rule or udt name`);
-              "function" == typeof W.callbacks[O] &&
-                ((et[ei] = !0), (er[ei] = W.callbacks[O])),
-                !0 === W.callbacks[O] && (et[ei] = !0);
-            }
+            // for (let O in W.callbacks) {
+            //   let T = O.toLowerCase();
+            //   if ((ei = ea.indexOf(T)) < 0)
+            //     throw Error(`${J}init: node '${O}' not a rule or udt name`);
+            //   "function" == typeof W.callbacks[O] &&
+            //     ((et[ei] = !0), (er[ei] = W.callbacks[O])),
+            //     !0 === W.callbacks[O] && (et[ei] = !0);
+            // }
           }),
           (this.ruleDefined = function (O) {
             return !1 !== et[O];
