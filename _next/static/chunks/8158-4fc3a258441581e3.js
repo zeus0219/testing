@@ -2285,7 +2285,7 @@ ${(0, b.Bj)(h)}`),
         if (d && !(0, s.U)(d.address)) throw new a.b({ address: d.address });
         if (l && !(0, s.U)(l)) throw new a.b({ address: l });
         if (void 0 !== n && (void 0 !== u || void 0 !== c)) throw new i.xY();
-        // if (u && u > 2 ** 256n - 1) throw new o.Hh({ maxFeePerGas: u });
+        // if (u && u > 2 ** 256 - 1) throw new o.Hh({ maxFeePerGas: u });
         if (c && u && c > u)
           throw new o.cs({ maxFeePerGas: u, maxPriorityFeePerGas: c });
       }

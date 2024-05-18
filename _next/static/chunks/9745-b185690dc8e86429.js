@@ -2832,7 +2832,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`gasPrice` is not a valid EIP-1559 Transaction attribute."
                   );
-                if (i && i > 2 ** 256n - 1)
+                if (i && i > 2 ** 256 - 1)
                   throw new h.Hh({ maxFeePerGas: i });
                 if (n && i && n > i)
                   throw new h.cs({ maxFeePerGas: i, maxPriorityFeePerGas: n });
@@ -2888,7 +2888,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`maxFeePerGas`/`maxPriorityFeePerGas` is not a valid EIP-2930 Transaction attribute."
                   );
-                if (r && r > 2 ** 256n - 1)
+                if (r && r > 2 ** 256 - 1)
                   throw new h.Hh({ maxFeePerGas: r });
               })(e);
               let w = p(y),
@@ -2940,7 +2940,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   throw new c.G(
                     "`maxFeePerGas`/`maxPriorityFeePerGas` is not a valid Legacy Transaction attribute."
                   );
-                if (r && r > 2 ** 256n - 1)
+                if (r && r > 2 ** 256 - 1)
                   throw new h.Hh({ maxFeePerGas: r });
                 if (o)
                   throw new c.G(

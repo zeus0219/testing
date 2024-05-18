@@ -4433,10 +4433,6 @@
         i = n(92472),
         o = n(30558),
         a = class extends i.F {
-          t_tt;
-          e_ee;
-          n_nn;
-          r_rr;
           constructor(t) {
             super(),
               (this.mutationId = t.mutationId),

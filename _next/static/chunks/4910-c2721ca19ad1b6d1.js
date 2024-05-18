@@ -11,12 +11,12 @@
       var r = n(94699),
         i = n(36076),
         s = new (class extends r.l {
-          __t;
-          __e;
-          __n;
+          // t___1;
+          // e___1;
+          // n___1;
           constructor() {
             super(),
-              (this.__n = (t) => {
+              (this.n___1 = (t) => {
                 if (!i.sk && window.addEventListener) {
                   let e = () => t();
                   return (
@@ -29,20 +29,20 @@
               });
           }
           onSubscribe() {
-            this.__e || this.setEventListener(this.__n);
+            this.e___1 || this.setEventListener(this.n___1);
           }
           onUnsubscribe() {
-            this.hasListeners() || (this.__e?.(), (this.__e = void 0));
+            this.hasListeners() || (this.e___1?.(), (this.e___1 = void 0));
           }
           setEventListener(t) {
-            (this.__n = t),
-              this.__e?.(),
-              (this.__e = t((t) => {
+            (this.n___1 = t),
+              this.e___1?.(),
+              (this.e___1 = t((t) => {
                 "boolean" == typeof t ? this.setFocused(t) : this.onFocus();
               }));
           }
           setFocused(t) {
-            this.__t !== t && ((this.__t = t), this.onFocus());
+            this.t___1 !== t && ((this.__t = t), this.onFocus());
           }
           onFocus() {
             let t = this.isFocused();
@@ -51,8 +51,8 @@
             });
           }
           isFocused() {
-            return "boolean" == typeof this.__t
-              ? this.__t
+            return "boolean" == typeof this.t___1
+              ? this.t___1
               : globalThis.document?.visibilityState !== "hidden";
           }
         })();
