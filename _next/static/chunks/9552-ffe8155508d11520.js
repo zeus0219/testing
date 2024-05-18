@@ -23105,7 +23105,7 @@ AEN - anchor - end of input string<br>
             L.address
           );
         }
-        static async #ee(O, T) {
+        static async _ee(O, T) {
           let L = await ea.getEnsAddress(O);
           try {
             let J = new Y.Contract(
@@ -23126,7 +23126,7 @@ AEN - anchor - end of input string<br>
           for (;;) {
             if ("" === L || "." === L || ("eth" !== T && "eth" === L))
               return null;
-            let J = await ea.#ee(O, L);
+            let J = await ea._ee(O, L);
             if (null != J) {
               let W = new ea(O, J, T);
               if (L !== T && !(await W.supportsWildcard())) return null;
