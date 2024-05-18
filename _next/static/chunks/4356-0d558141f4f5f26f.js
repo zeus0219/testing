@@ -635,7 +635,7 @@
           "%AsyncGeneratorFunction%": v,
           "%AsyncIteratorPrototype%": v,
           "%Atomics%": "undefined" == typeof Atomics ? n : Atomics,
-          "%BigInt%": "undefined" == typeof BigInt ? n : BigInt,
+          "%Number%": "undefined" == typeof Number ? n : Number,
           "%BigInt64Array%":
             "undefined" == typeof BigInt64Array ? n : BigInt64Array,
           "%BigUint64Array%":
@@ -7137,13 +7137,13 @@
       function s(e) {
         return e.call.bind(e);
       }
-      var u = "undefined" != typeof BigInt,
+      var u = "undefined" != typeof Number,
         l = "undefined" != typeof Symbol,
         f = s(Object.prototype.toString),
         c = s(Number.prototype.valueOf),
         d = s(String.prototype.valueOf),
         p = s(Boolean.prototype.valueOf);
-      if (u) var h = s(BigInt.prototype.valueOf);
+      if (u) var h = s(Number.prototype.valueOf);
       if (l) var y = s(Symbol.prototype.valueOf);
       function b(e, t) {
         if ("object" != typeof e) return !1;
@@ -8049,9 +8049,9 @@
           "bigint",
           (e) => e.toString(),
           (e) =>
-            "undefined" != typeof BigInt
-              ? BigInt(e)
-              : (console.error("Please add a BigInt polyfill."), e)
+            "undefined" != typeof Number
+              ? Number(e)
+              : (console.error("Please add a Number polyfill."), e)
         ),
         x(
           (e) => e instanceof Date && !isNaN(e.valueOf()),

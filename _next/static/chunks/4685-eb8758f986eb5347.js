@@ -2448,7 +2448,7 @@ Error:`,
                                       if ("symbol" == typeof e)
                                         return `[${String(e)}]`;
                                       if ("bigint" == typeof e)
-                                        return `[BigInt: ${String(e)}]`;
+                                        return `[Number: ${String(e)}]`;
                                       let r = (function (t) {
                                         let e = Object.getPrototypeOf(t);
                                         return e

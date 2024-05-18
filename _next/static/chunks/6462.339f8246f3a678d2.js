@@ -6568,7 +6568,7 @@
         return (0, s.add0x)(r.join(""));
       }
       function u(e) {
-        return l(e), BigInt(c(e));
+        return l(e), Number(c(e));
       }
       function h(e) {
         var t;
@@ -6594,7 +6594,7 @@
       function d(e) {
         return (
           (0, i.assert)("bigint" == typeof e, "Value must be a bigint."),
-          (0, i.assert)(e >= BigInt(0), "Value must be a non-negative bigint."),
+          (0, i.assert)(e >= Number(0), "Value must be a non-negative bigint."),
           h(e.toString(16))
         );
       }
@@ -6628,16 +6628,16 @@
         (t.bytesToBigInt = u),
         (t.bytesToSignedBigInt = function (e) {
           l(e);
-          let t = BigInt(0);
-          for (let r of e) t = (t << BigInt(8)) + BigInt(r);
-          return BigInt.asIntN(8 * e.length, t);
+          let t = Number(0);
+          for (let r of e) t = (t << Number(8)) + Number(r);
+          return Number.asIntN(8 * e.length, t);
         }),
         (t.bytesToNumber = function (e) {
           l(e);
           let t = u(e);
           return (
             (0, i.assert)(
-              t <= BigInt(Number.MAX_SAFE_INTEGER),
+              t <= Number(Number.MAX_SAFE_INTEGER),
               "Number is not a safe integer. Use `bytesToBigInt` instead."
             ),
             Number(t)
@@ -6658,15 +6658,15 @@
             (0, i.assert)(
               (function (e, t) {
                 (0, i.assert)(t > 0);
-                let r = e >> BigInt(31);
-                return !(((~e & r) + (e & ~r)) >> BigInt(8 * t + -1));
+                let r = e >> Number(31);
+                return !(((~e & r) + (e & ~r)) >> Number(8 * t + -1));
               })(e, t),
               "Byte length is too small to represent the given value."
             );
           let r = e,
             n = new Uint8Array(t);
           for (let e = 0; e < n.length; e++)
-            (n[e] = Number(BigInt.asUintN(8, r))), (r >>= BigInt(8));
+            (n[e] = Number(Number.asUintN(8, r))), (r >>= Number(8));
           return n.reverse();
         }),
         (t.numberToBytes = f),
@@ -6723,7 +6723,7 @@
           o.StrictHexStruct,
         ]),
         l = (0, n.coerce)((0, n.number)(), a, Number),
-        c = (0, n.coerce)((0, n.bigint)(), a, BigInt);
+        c = (0, n.coerce)((0, n.bigint)(), a, Number);
       (0, n.union)([o.StrictHexStruct, (0, n.instance)(Uint8Array)]);
       let u = (0, n.coerce)(
           (0, n.instance)(Uint8Array),
@@ -7340,7 +7340,7 @@
           );
         }),
         (t.hexToBigInt = (e) => (
-          (0, i.assertIsHexString)(e), BigInt((0, i.add0x)(e))
+          (0, i.assertIsHexString)(e), Number((0, i.add0x)(e))
         ));
     },
     78331: function (e, t) {

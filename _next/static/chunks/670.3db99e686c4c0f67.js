@@ -4455,7 +4455,7 @@ if (cid) {
             ),
             (e, t) =>
               "string" == typeof t && t.match(/^\d+n$/)
-                ? BigInt(t.substring(0, t.length - 1))
+                ? Number(t.substring(0, t.length - 1))
                 : t
           );
       function rx(e) {
@@ -5131,7 +5131,7 @@ if (cid) {
         );
       }
       function iI(e = 6) {
-        return BigInt(iD(e));
+        return Number(iD(e));
       }
       function iS(e, t, r) {
         return { id: r || iD(), jsonrpc: "2.0", method: e, params: t };

@@ -292,9 +292,9 @@
           return l;
         },
       }),
-        BigInt(0);
-      let r = BigInt(1),
-        o = BigInt(2),
+        Number(0);
+      let r = Number(1),
+        o = Number(2),
         a = (t) => t instanceof Uint8Array,
         i = Array.from({ length: 256 }, (t, e) =>
           e.toString(16).padStart(2, "0")
@@ -308,7 +308,7 @@
       function u(t) {
         if ("string" != typeof t)
           throw Error("hex string expected, got " + typeof t);
-        return BigInt("" === t ? "0" : `0x${t}`);
+        return Number("" === t ? "0" : `0x${t}`);
       }
       function s(t) {
         if ("string" != typeof t)
@@ -373,7 +373,7 @@
         for (let n = 0; n < t.length; n++) if (t[n] !== e[n]) return !1;
         return !0;
       }
-      let g = (t) => (o << BigInt(t - 1)) - r,
+      let g = (t) => (o << Number(t - 1)) - r,
         w = (t) => new Uint8Array(t),
         b = (t) => Uint8Array.from(t);
       function v(t, e, n) {

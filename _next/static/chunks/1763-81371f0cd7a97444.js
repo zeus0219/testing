@@ -1143,12 +1143,12 @@
             d = 0;
           if (e.buyTaxEnabled) {
             let n = (Number(r) / 1e4) * Number(e.projectBuyTaxBasisPoints);
-            d = BigInt(Math.floor(Math.max(Number(t), n)));
+            d = Number(Math.floor(Math.max(Number(t), n)));
           }
           let u = 0;
           if (e.sellTaxEnabled) {
             let n = (Number(o) / 1e4) * Number(e.projectSellTaxBasisPoints);
-            u = BigInt(Math.floor(Math.max(Number(a), n)));
+            u = Number(Math.floor(Math.max(Number(a), n)));
           }
           return {
             projectBuyTaxPercent: (0, l._d)(e.projectBuyTaxBasisPoints),
@@ -1173,7 +1173,7 @@
           var n, t, l;
           let a =
               void 0 !== e.lpFundingWei && null !== e.lpFundingWei
-                ? String(2 * BigInt(e.lpFundingWei))
+                ? String(2 * Number(e.lpFundingWei))
                 : null,
             r =
               null !== (n = e.poolDurationInMinutes) && void 0 !== n
@@ -1212,8 +1212,8 @@
         l = (e, n) =>
           null === n || null === e || void 0 === n || void 0 === e
             ? null
-            : (e * BigInt(n) * BigInt(1e9)) / BigInt(1e4) / BigInt(1e9),
-        a = (e, n) => (n ? (e * BigInt(1e4)) / n : BigInt(0));
+            : (e * Number(n) * Number(1e9)) / Number(1e4) / Number(1e9),
+        a = (e, n) => (n ? (e * Number(1e4)) / n : Number(0));
     },
   },
 ]);

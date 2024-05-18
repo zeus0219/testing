@@ -32,7 +32,7 @@
               : c?.fees?.baseFeeMultiplier ?? 1.2)();
         if (f < 1) throw new n.Fz();
         let d = 10 ** (f.toString().split(".")[1]?.length ?? 0),
-          b = (e) => (e * BigInt(Math.ceil(f * d))) / BigInt(d),
+          b = (e) => (e * Number(Math.ceil(f * d))) / Number(d),
           m = a || (await (0, r.s)(e, o.Q, "getBlock")({}));
         if ("function" == typeof c?.fees?.estimateFeesPerGas)
           return c.fees.estimateFeesPerGas({
@@ -168,7 +168,7 @@
               method: "eth_estimateGas",
               params: v ? [P, v] : [P],
             });
-          return BigInt(F);
+          return Number(F);
         } catch (a) {
           throw (function (e, { docsPath: t, ...a }) {
             return new l(
@@ -274,7 +274,7 @@
         },
       });
       async function n(e) {
-        return BigInt(await e.request({ method: "eth_gasPrice" }));
+        return Number(await e.request({ method: "eth_gasPrice" }));
       }
     },
     96454: function (e, t, a) {
@@ -1095,10 +1095,10 @@
           baseFeePerGas: (i = await e.request({
             method: "eth_feeHistory",
             params: [(0, s.eC)(t), o || n, r],
-          })).baseFeePerGas.map((e) => BigInt(e)),
+          })).baseFeePerGas.map((e) => Number(e)),
           gasUsedRatio: i.gasUsedRatio,
-          oldestBlock: BigInt(i.oldestBlock),
-          reward: i.reward?.map((e) => e.map((e) => BigInt(e))),
+          oldestBlock: Number(i.oldestBlock),
+          reward: i.reward?.map((e) => e.map((e) => Number(e))),
         };
       }
       async function et(e, { filter: t }) {
@@ -1130,10 +1130,10 @@
             method: "eth_getProof",
             params: [t, r, o || (n ?? "latest")],
           })),
-          balance: i.balance ? BigInt(i.balance) : void 0,
+          balance: i.balance ? Number(i.balance) : void 0,
           nonce: i.nonce ? (0, Q.ly)(i.nonce) : void 0,
           storageProof: i.storageProof
-            ? i.storageProof.map((e) => ({ ...e, value: BigInt(e.value) }))
+            ? i.storageProof.map((e) => ({ ...e, value: Number(e.value) }))
             : void 0,
         };
       }

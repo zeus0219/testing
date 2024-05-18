@@ -487,7 +487,7 @@
       }
       function A(t, e, r, n, i) {
         _(e, n, i, t, r, 7);
-        let o = Number(e & BigInt(4294967295));
+        let o = Number(e & Number(4294967295));
         (t[r++] = o),
           (o >>= 8),
           (t[r++] = o),
@@ -495,7 +495,7 @@
           (t[r++] = o),
           (o >>= 8),
           (t[r++] = o);
-        let f = Number((e >> BigInt(32)) & BigInt(4294967295));
+        let f = Number((e >> Number(32)) & Number(4294967295));
         return (
           (t[r++] = f),
           (f >>= 8),
@@ -509,7 +509,7 @@
       }
       function I(t, e, r, n, i) {
         _(e, n, i, t, r, 7);
-        let o = Number(e & BigInt(4294967295));
+        let o = Number(e & Number(4294967295));
         (t[r + 7] = o),
           (o >>= 8),
           (t[r + 6] = o),
@@ -517,7 +517,7 @@
           (t[r + 5] = o),
           (o >>= 8),
           (t[r + 4] = o);
-        let f = Number((e >> BigInt(32)) & BigInt(4294967295));
+        let f = Number((e >> Number(32)) & Number(4294967295));
         return (
           (t[r + 3] = f),
           (f >>= 8),
@@ -936,7 +936,7 @@
           let n =
               e + 256 * this[++t] + 65536 * this[++t] + 16777216 * this[++t],
             i = this[++t] + 256 * this[++t] + 65536 * this[++t] + 16777216 * r;
-          return BigInt(n) + (BigInt(i) << BigInt(32));
+          return Number(n) + (Number(i) << Number(32));
         })),
         (u.prototype.readBigUInt64BE = j(function (t) {
           S((t >>>= 0), "offset");
@@ -946,7 +946,7 @@
           let n =
               16777216 * e + 65536 * this[++t] + 256 * this[++t] + this[++t],
             i = 16777216 * this[++t] + 65536 * this[++t] + 256 * this[++t] + r;
-          return (BigInt(n) << BigInt(32)) + BigInt(i);
+          return (Number(n) << Number(32)) + Number(i);
         })),
         (u.prototype.readIntLE = function (t, e, r) {
           (t >>>= 0), (e >>>= 0), r || E(t, e, this.length);
@@ -1005,11 +1005,11 @@
             r = this[t + 7];
           return (
             (void 0 === e || void 0 === r) && C(t, this.length - 8),
-            (BigInt(
+            (Number(
               this[t + 4] + 256 * this[t + 5] + 65536 * this[t + 6] + (r << 24)
             ) <<
-              BigInt(32)) +
-              BigInt(
+              Number(32)) +
+              Number(
                 e + 256 * this[++t] + 65536 * this[++t] + 16777216 * this[++t]
               )
           );
@@ -1020,11 +1020,11 @@
             r = this[t + 7];
           return (
             (void 0 === e || void 0 === r) && C(t, this.length - 8),
-            (BigInt(
+            (Number(
               (e << 24) + 65536 * this[++t] + 256 * this[++t] + this[++t]
             ) <<
-              BigInt(32)) +
-              BigInt(
+              Number(32)) +
+              Number(
                 16777216 * this[++t] + 65536 * this[++t] + 256 * this[++t] + r
               )
           );
@@ -1132,10 +1132,10 @@
             );
           }),
         (u.prototype.writeBigUInt64LE = j(function (t, e = 0) {
-          return A(this, t, e, BigInt(0), BigInt("0xffffffffffffffff"));
+          return A(this, t, e, Number(0), Number("0xffffffffffffffff"));
         })),
         (u.prototype.writeBigUInt64BE = j(function (t, e = 0) {
-          return I(this, t, e, BigInt(0), BigInt("0xffffffffffffffff"));
+          return I(this, t, e, Number(0), Number("0xffffffffffffffff"));
         })),
         (u.prototype.writeIntLE = function (t, e, r, n) {
           if (((t = +t), (e >>>= 0), !n)) {
@@ -1223,8 +1223,8 @@
             this,
             t,
             e,
-            -BigInt("0x8000000000000000"),
-            BigInt("0x7fffffffffffffff")
+            -Number("0x8000000000000000"),
+            Number("0x7fffffffffffffff")
           );
         })),
         (u.prototype.writeBigInt64BE = j(function (t, e = 0) {
@@ -1232,8 +1232,8 @@
             this,
             t,
             e,
-            -BigInt("0x8000000000000000"),
-            BigInt("0x7fffffffffffffff")
+            -Number("0x8000000000000000"),
+            Number("0x7fffffffffffffff")
           );
         })),
         (u.prototype.writeFloatLE = function (t, e, r) {
@@ -1357,7 +1357,7 @@
           throw (
             ((n =
               o > 3
-                ? 0 === e || e === BigInt(0)
+                ? 0 === e || e === Number(0)
                   ? `>= 0${i} and < 2${i} ** ${(o + 1) * 8}${i}`
                   : `>= -(2${i} ** ${(o + 1) * 8 - 1}${i}) and < 2 ** ${
                       (o + 1) * 8 - 1
@@ -1411,8 +1411,8 @@
                 ? (i = L(String(r)))
                 : "bigint" == typeof r &&
                   ((i = String(r)),
-                  (r > BigInt(2) ** BigInt(32) ||
-                    r < -(BigInt(2) ** BigInt(32))) &&
+                  (r > Number(2) ** Number(32) ||
+                    r < -(Number(2) ** Number(32))) &&
                     (i = L(i)),
                   (i += "n")),
               (n += ` It must be ${e}. Received ${i}`)
@@ -1499,10 +1499,10 @@
         return e;
       })();
       function j(t) {
-        return "undefined" == typeof BigInt ? F : t;
+        return "undefined" == typeof Number ? F : t;
       }
       function F() {
-        throw Error("BigInt not supported");
+        throw Error("Number not supported");
       }
     },
     19273: function (t, e) {

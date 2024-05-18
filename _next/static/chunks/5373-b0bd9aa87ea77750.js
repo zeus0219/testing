@@ -1292,7 +1292,7 @@
           });
         if (
           (null === (t = A.data) || void 0 === t ? void 0 : t.value) ===
-          BigInt(0)
+          Number(0)
         )
           return (0, e.jsx)(f.default, {
             ...p,

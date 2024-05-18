@@ -2385,14 +2385,14 @@
           !(function (t, e, r, n) {
             if ("function" == typeof t.setBigUint64)
               return t.setBigUint64(e, r, n);
-            let i = BigInt(32),
-              o = BigInt(4294967295),
+            let i = Number(32),
+              o = Number(4294967295),
               a = Number((r >> i) & o),
               u = Number(r & o),
               s = n ? 4 : 0,
               c = n ? 0 : 4;
             t.setUint32(e + s, a, n), t.setUint32(e + c, u, n);
-          })(r, o - 8, BigInt(8 * this.length), a),
+          })(r, o - 8, Number(8 * this.length), a),
             this.process(r, 0);
           let s = (0, i.GL)(t),
             c = this.outputLen;
@@ -2526,13 +2526,13 @@
       let d = (0, i.hE)(() => new f());
       var h = r(39014);
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let p =
-          BigInt(0),
-        y = BigInt(1),
-        v = BigInt(2),
-        b = BigInt(3),
-        g = BigInt(4),
-        m = BigInt(5),
-        E = BigInt(8);
+          Number(0),
+        y = Number(1),
+        v = Number(2),
+        b = Number(3),
+        g = Number(4),
+        m = Number(5),
+        E = Number(8);
       function w(t, e) {
         let r = t % e;
         return r >= p ? r : e + r;
@@ -2563,7 +2563,7 @@
         if (n !== y) throw Error("invert: does not exist");
         return w(i, e);
       }
-      BigInt(9), BigInt(16);
+      Number(9), Number(16);
       let O = [
         "create",
         "isValid",
@@ -2656,8 +2656,8 @@
       let T = (t, e, r) => new B(t, e).update(r).digest();
       T.create = (t, e) => new B(t, e);
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let x =
-          BigInt(0),
-        R = BigInt(1);
+          Number(0),
+        R = Number(1);
       function F(t) {
         return (
           !(function (t) {
@@ -2728,19 +2728,19 @@
             return `30${r(a + o + 4)}02${s}${i}02${u}${n}`;
           },
         },
-        L = BigInt(0),
-        N = BigInt(1),
-        U = (BigInt(2), BigInt(3));
-      BigInt(4);
+        L = Number(0),
+        N = Number(1),
+        U = (Number(2), Number(3));
+      Number(4);
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let M =
-          BigInt(
+          Number(
             "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f"
           ),
-        D = BigInt(
+        D = Number(
           "0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
         ),
-        q = BigInt(1),
-        Z = BigInt(2),
+        q = Number(1),
+        Z = Number(2),
         V = (t, e) => (t + e / Z) / e,
         z = (function (t, e, r = !1, n = {}) {
           if (t <= p) throw Error(`Expected Field ORDER > 0, got ${t}`);
@@ -2811,7 +2811,7 @@
                     let e = 1;
                     for (let r = t.sqr(l); e < u && !t.eql(r, t.ONE); e++)
                       r = t.sqr(r);
-                    let r = t.pow(s, y << BigInt(u - e - 1));
+                    let r = t.pow(s, y << Number(u - e - 1));
                     (s = t.sqr(r)),
                       (c = t.mul(c, r)),
                       (l = t.mul(l, s)),
@@ -2890,13 +2890,13 @@
           return Object.freeze(u);
         })(M, void 0, void 0, {
           sqrt: function (t) {
-            let e = BigInt(3),
-              r = BigInt(6),
-              n = BigInt(11),
-              i = BigInt(22),
-              o = BigInt(23),
-              a = BigInt(44),
-              u = BigInt(88),
+            let e = Number(3),
+              r = Number(6),
+              n = Number(11),
+              i = Number(22),
+              o = Number(23),
+              a = Number(44),
+              u = Number(88),
               s = (t * t * t) % M,
               c = (s * s * t) % M,
               l = (S(c, e, M) * c) % M,
@@ -3370,9 +3370,9 @@
                           let { windows: a, windowSize: u } = n(e),
                             s = t.ZERO,
                             c = t.BASE,
-                            l = BigInt(2 ** e - 1),
+                            l = Number(2 ** e - 1),
                             f = 2 ** e,
-                            d = BigInt(e);
+                            d = Number(e);
                           for (let t = 0; t < a; t++) {
                             let e = t * u,
                               n = Number(o & l);
@@ -3519,7 +3519,7 @@
                   function (t) {
                     let r = h.bytesToNumberBE(t),
                       n = 8 * t.length - e.nBitLength;
-                    return n > 0 ? r >> BigInt(n) : r;
+                    return n > 0 ? r >> Number(n) : r;
                   },
                 g =
                   e.bits2int_modN ||
@@ -3657,7 +3657,7 @@
                       })(e.randomBytes(t), e.n);
                     },
                     precompute: (t = 8, e = u.BASE) => (
-                      e._setWindowSize(t), e.multiply(BigInt(3)), e
+                      e._setWindowSize(t), e.multiply(Number(3)), e
                     ),
                   },
                 }
@@ -3671,27 +3671,27 @@
           return Object.freeze({ ...r(e), create: r });
         })(
           {
-            a: BigInt(0),
-            b: BigInt(7),
+            a: Number(0),
+            b: Number(7),
             Fp: z,
             n: D,
-            Gx: BigInt(
+            Gx: Number(
               "55066263022277343669578718895168534326250603453777594175500187360389116729240"
             ),
-            Gy: BigInt(
+            Gy: Number(
               "32670510020758816978083085130507043184471273380659243275938904335757337482424"
             ),
-            h: BigInt(1),
+            h: Number(1),
             lowS: !0,
             endo: {
-              beta: BigInt(
+              beta: Number(
                 "0x7ae96a2b657c07106e64479eac3434e99cf0497512f58995c1396c28719501ee"
               ),
               splitScalar: (t) => {
-                let e = BigInt("0x3086d221a7d46bcde86c90e49284eb15"),
-                  r = -q * BigInt("0xe4437ed6010e88286f547fa90abfe4c3"),
-                  n = BigInt("0x114ca50f7a8e2f3f657c1108d9d44cfd8"),
-                  i = BigInt("0x100000000000000000000000000000000"),
+                let e = Number("0x3086d221a7d46bcde86c90e49284eb15"),
+                  r = -q * Number("0xe4437ed6010e88286f547fa90abfe4c3"),
+                  n = Number("0x114ca50f7a8e2f3f657c1108d9d44cfd8"),
+                  i = Number("0x100000000000000000000000000000000"),
                   o = V(e * t, D),
                   a = V(-r * t, D),
                   u = w(t - o * e - a * n, D),
@@ -3706,7 +3706,7 @@
           },
           d
         );
-      BigInt(0), H.ProjectivePoint;
+      Number(0), H.ProjectivePoint;
     },
     54597: function (t, e, r) {
       "use strict";

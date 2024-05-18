@@ -4524,7 +4524,7 @@
                         case "D":
                           return new Date(Date.parse(n.slice(2)));
                         case "n":
-                          return BigInt(n.slice(2));
+                          return Number(n.slice(2));
                         default:
                           switch (
                             (e = I(e, (n = parseInt(n.slice(1), 16)))).status

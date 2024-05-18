@@ -7861,7 +7861,7 @@
             [l, m] = (0, ea.useState)(""),
             p = (0, ea.useCallback)(() => {
               if (r) {
-                let e = BigInt(
+                let e = Number(
                   "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                 );
                 r.approve(t, e).then((e) => {
@@ -7891,7 +7891,7 @@
                   t &&
                   (c(!0),
                   r.allowance(n, t).then((a) => {
-                    BigInt(e) < BigInt(a) ? d("approved") : d("not_approved"),
+                    Number(e) < Number(a) ? d("approved") : d("not_approved"),
                       c(!1);
                   }));
             }, [r, a, n, t, e]),
@@ -8047,7 +8047,7 @@
             c = ah[s].address,
             i = a === ap ? c : a,
             d = n === ap ? c : n,
-            r = BigInt(Math.floor(0.997 * Number(t))),
+            r = Number(Math.floor(0.997 * Number(t))),
             l = ac.p[s];
           return {
             routeSummary: {
@@ -9018,7 +9018,7 @@
               try {
                 let e;
                 D(!0), E(""), v("");
-                let t = BigInt(Math.floor(Date.now() / 1e3) + 60 * (m || 20)),
+                let t = Number(Math.floor(Date.now() / 1e3) + 60 * (m || 20)),
                   c = az.py[f],
                   i = (0, aY.f)(Math.floor(parseFloat(x)).toString()),
                   d = (0, aY.f)(s),
@@ -11859,7 +11859,7 @@
                     : a.amountOut
                 )
               ? (0, as.b)(
-                  BigInt(ee.routeSummary.amountOut),
+                  Number(ee.routeSummary.amountOut),
                   null == ed ? void 0 : ed.decimals
                 ).toString()
               : "";
@@ -11888,7 +11888,7 @@
                   : s.amountOut) &&
                 parseFloat(
                   (0, as.b)(
-                    BigInt(ee.routeSummary.amountOut),
+                    Number(ee.routeSummary.amountOut),
                     (null == ed ? void 0 : ed.decimals) || 18
                   )
                 ) / parseFloat(j),

@@ -28,8 +28,8 @@
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let n =
           r(31965),
         i = r(11509),
-        o = BigInt(0),
-        s = BigInt(1);
+        o = parseInt(0),
+        s = parseInt(1);
       (e.wNAF = function (t, e) {
         let r = (t, e) => {
             let r = e.negate();

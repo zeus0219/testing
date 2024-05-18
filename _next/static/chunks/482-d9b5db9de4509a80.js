@@ -393,11 +393,11 @@
           if (i) {
             let e = Number(i.totalSupply);
             (s =
-              i.maxTokensPerWallet === BigInt(0)
+              i.maxTokensPerWallet === Number(0)
                 ? "Unlimited"
                 : "".concat(M((100 * Number(i.maxTokensPerWallet)) / e), "%")),
               (o =
-                i.maxTokensPerTransaction === BigInt(0)
+                i.maxTokensPerTransaction === Number(0)
                   ? "Unlimited"
                   : "".concat(
                       M((100 * Number(i.maxTokensPerTransaction)) / e),
@@ -661,7 +661,7 @@
             { data: x } = L(
               e.erc20driPoolAddress,
               e.chainId,
-              BigInt(e.deployedBlockNumber)
+              Number(e.deployedBlockNumber)
             ),
             m = ["succeeded", "failed"].includes(
               null === (t = f.data) || void 0 === t ? void 0 : t.poolPhaseStatus
@@ -705,11 +705,11 @@
             [y, w] = (0, h.useState)(!0),
             [C, N] = (0, h.useState)({
               driPoolType: 1,
-              poolPerAddressMaxETH: BigInt(n.poolPerAddressCapWei || 0),
-              poolPerTransactionMinETH: BigInt(n.poolPerTxnMinWei || 0),
-              poolMaxETH: BigInt(n.poolMaxETHWei || "0"),
-              maxInitialBuy: BigInt(n.poolMaxInitialBuyWei || "0"),
-              poolMinETH: BigInt(n.poolMinWei || "0"),
+              poolPerAddressMaxETH: Number(n.poolPerAddressCapWei || 0),
+              poolPerTransactionMinETH: Number(n.poolPerTxnMinWei || 0),
+              poolMaxETH: Number(n.poolMaxETHWei || "0"),
+              maxInitialBuy: Number(n.poolMaxInitialBuyWei || "0"),
+              poolMinETH: Number(n.poolMinWei || "0"),
               poolContributionFeeBasisPoints: d.Ns.fairLaunchBasisPoints,
               participant: [0, 0],
               participantExcessRefundAvailable: 0,
@@ -733,7 +733,7 @@
                 n.poolStartDate &&
                 (0, x.E)(n.poolStartDate, n.poolVestingInSeconds),
               poolPhaseStatus: B(n),
-              lpFunding: BigInt(n.lpFundingWei || 0) - (n.burnLPTokens, 0),
+              lpFunding: Number(n.lpFundingWei || 0) - (n.burnLPTokens, 0),
             }),
             [T, E] = (0, h.useState)(0),
             M =
@@ -813,9 +813,9 @@
                       return {
                         ...e,
                         [n.dripHolder]:
-                          BigInt(n.ethPooled || 0) +
+                          Number(n.ethPooled || 0) +
                           (e[n.dripHolder]
-                            ? BigInt(e[n.dripHolder] || 0)
+                            ? Number(e[n.dripHolder] || 0)
                             : 0),
                       };
                     }, {}),
@@ -1019,7 +1019,7 @@
         s = n(51123);
       let o = (e) => {
         let { tokensCount: t, pooledETH: n } = e;
-        return n && t ? n / BigInt(t) : BigInt(0);
+        return n && t ? n / Number(t) : Number(0);
       };
       var r = n(25463),
         c = n(40731),
@@ -1027,7 +1027,7 @@
       async function u(e, t, n, a) {
         let { wagmiConfig: l, chainId: i } = a;
         return e <= 0
-          ? BigInt(0)
+          ? Number(0)
           : (0, d.L)(l, {
               abi: r.mC,
               address: c.p[i].uniswapV2Router.address,
@@ -1056,9 +1056,9 @@
           {
             parseAs: (e) => {
               let { result: t } = e;
-              return BigInt(t) === BigInt(0)
+              return Number(t) === Number(0)
                 ? l.PoolStart.ON_LAUNCH
-                : BigInt(t) === BigInt(i.zg)
+                : Number(t) === Number(i.zg)
                 ? l.PoolStart.MANUAL
                 : l.PoolStart.FIXED_DATE;
             },
@@ -1069,7 +1069,7 @@
             functionName: "poolStartDate",
             parseAs: (e) => {
               let { result: t } = e;
-              return BigInt(t) === BigInt(0) || BigInt(t) === BigInt(i.zg)
+              return Number(t) === Number(0) || Number(t) === Number(i.zg)
                 ? null
                 : new Date(1e3 * t);
             },
@@ -1083,14 +1083,14 @@
           e && { functionName: "participantExcessRefundAvailable", args: [e] },
           e && { functionName: "participantExcessETHRefunded", args: [e] },
         ],
-        f = (e) => (e / BigInt(1e12)) * BigInt(1e12),
+        f = (e) => (e / Number(1e12)) * Number(1e12),
         x = async (e, t, n, l) => {
           let i,
             { ethPrice: r, unicryptFee: c, pendingETH: d } = l,
             { totalETHContributed: p, balanceOf: x, totalSupply: v } = t,
-            { participant: b = [BigInt(0), BigInt(0)] } = t,
+            { participant: b = [Number(0), Number(0)] } = t,
             j = b[0],
-            y = j > BigInt(0);
+            y = j > Number(0);
           if (d > 0) {
             let e = f(
                 (0, a.Ob)(
@@ -1099,7 +1099,7 @@
                 )
               ),
               n = d - e,
-              l = n * BigInt(1e6);
+              l = n * Number(1e6);
             (p += n), (x += l), (v += l), (j += n);
           }
           let w = m(
@@ -1112,7 +1112,7 @@
             ),
             C =
               (null == t ? void 0 : t.totalETHFundedToLPAndTokenBuy) ===
-              BigInt(0)
+              Number(0)
                 ? null == t
                   ? void 0
                   : t.projectSeedContributionETH
@@ -1121,12 +1121,12 @@
               null == t ? void 0 : t.poolMaxETH,
               null == t ? void 0 : t.maxInitialBuy
             ),
-            N = BigInt((null == e ? void 0 : e.lpSupplyWei) || 0),
+            N = Number((null == e ? void 0 : e.lpSupplyWei) || 0),
             T = await u(w, C, N, { wagmiConfig: n, chainId: e.chainId }),
             B = Number((0, a.pC)(p, I)) / 1e4,
-            E = o({ tokensCount: Number(N / BigInt(1e18)), pooledETH: C }),
+            E = o({ tokensCount: Number(N / Number(1e18)), pooledETH: C }),
             M = o({
-              tokensCount: Number((N - T) / BigInt(1e18)),
+              tokensCount: Number((N - T) / Number(1e18)),
               pooledETH: w + C,
             }),
             L = (0, a.pC)(j, p),
@@ -1134,7 +1134,7 @@
               B > 1 && (null == t ? void 0 : t.maxInitialBuy) > 0
                 ? (0, a.Ob)(null == t ? void 0 : t.maxInitialBuy, L)
                 : j,
-            S = x || BigInt(0),
+            S = x || Number(0),
             A = (0, a.pC)(S, v),
             P = (0, a.pC)(null == t ? void 0 : t.vestedBalanceOf, S),
             D = (0, a.Ob)(T, A),
@@ -1142,7 +1142,7 @@
             H = (0, a.Ob)(F, P),
             R = (0, a.pC)(F, t.mainTokenSupply),
             _ = j - k,
-            V = (F * M) / BigInt(1e18),
+            V = (F * M) / Number(1e18),
             Z = r * parseFloat((0, s.d)(E)),
             O = r * parseFloat((0, s.d)(M)),
             z = Number(e.supply),
@@ -1158,14 +1158,14 @@
           null !== W &&
             (i = f(
               (W /
-                BigInt(
+                Number(
                   1e4 - (null == t ? void 0 : t.poolContributionFeeBasisPoints)
                 )) *
-                BigInt(1e4)
+                Number(1e4)
             ));
           let U =
             (null == t ? void 0 : t.projectSeedContributionETH) -
-            ((null == t ? void 0 : t.burnLPTokens) ? BigInt(0) : c);
+            ((null == t ? void 0 : t.burnLPTokens) ? Number(0) : c);
           return {
             poolFilledPercent: 100 * B,
             filledRatio:
@@ -1211,7 +1211,7 @@
         g = (e, t) =>
           t
             ? 100 *
-              parseFloat(((e * BigInt(1e10)) / t / BigInt(1e8)).toString())
+              parseFloat(((e * Number(1e10)) / t / Number(1e8)).toString())
             : 0;
     },
     72598: function (e, t, n) {
@@ -1632,7 +1632,7 @@
           });
         if (
           (null === (t = E.data) || void 0 === t ? void 0 : t.value) ===
-          BigInt(0)
+          Number(0)
         )
           return (0, a.jsx)(u.default, {
             ...g,
@@ -2384,8 +2384,8 @@
         l = (e, t) =>
           null === t || null === e || void 0 === t || void 0 === e
             ? null
-            : (e * BigInt(t) * BigInt(1e9)) / BigInt(1e4) / BigInt(1e9),
-        i = (e, t) => (t ? (e * BigInt(1e4)) / t : BigInt(0));
+            : (e * Number(t) * Number(1e9)) / Number(1e4) / Number(1e9),
+        i = (e, t) => (t ? (e * Number(1e4)) / t : Number(0));
     },
   },
 ]);

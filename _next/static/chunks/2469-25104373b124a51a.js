@@ -115,7 +115,7 @@
       }
       let c = (t) => `blockNumber.${t}`;
       async function i(t, { cacheTime: e = t.cacheTime } = {}) {
-        return BigInt(
+        return Number(
           await l(() => t.request({ method: "eth_blockNumber" }), {
             cacheKey: c(t.uid),
             cacheTime: e,

@@ -788,12 +788,10 @@
           T.split =
           T.fromBig =
             void 0);
-      let L = BigInt(4294967296 - 1),
-        J = BigInt(32);
+      let L = Number(4294967296 - 1),
+        J = Number(32);
       function W(O, T = !1) {
-        return T
-          ? { h: Number(O & L), l: Number((O >> J) & L) }
-          : { h: 0 | Number((O >> J) & L), l: 0 | Number(O & L) };
+        return { h: 0 , l: 0  };
       }
       function Y(O, T = !1) {
         let L = new Uint32Array(O.length),
@@ -805,7 +803,7 @@
         return [L, J];
       }
       (T.fromBig = W), (T.split = Y);
-      let Z = (O, T) => (BigInt(O >>> 0) << J) | BigInt(T >>> 0);
+      let Z = (O, T) => (parseInt(O >>> 0) << J) | parseInt(T >>> 0);
       T.toBig = Z;
       let X = (O, T, L) => O >>> L;
       T.shrSH = X;
@@ -18902,12 +18900,12 @@ AEN - anchor - end of input string<br>
         (T.Signature = void 0);
       let J = L(98148),
         W = L(38478),
-        Y = BigInt(0),
-        Z = BigInt(1),
-        X = BigInt(2),
-        ee = BigInt(27),
-        et = BigInt(28),
-        er = BigInt(35),
+        Y = parseInt(0),
+        Z = parseInt(1),
+        X = parseInt(2),
+        ee = parseInt(27),
+        et = parseInt(28),
+        er = parseInt(35),
         en = {};
       function es(O) {
         return (0, W.zeroPadValue)((0, W.toBeArray)(O), 32);
@@ -19008,7 +19006,7 @@ AEN - anchor - end of input string<br>
               (T - er) / X);
         }
         static getChainIdV(O, T) {
-          return (0, W.getBigInt)(O) * X + BigInt(35 + T - 27);
+          return (0, W.getBigInt)(O) * X + parseInt(35 + T - 27);
         }
         static getNormalizedV(O) {
           let T = (0, W.getBigInt)(O);
@@ -20891,10 +20889,10 @@ AEN - anchor - end of input string<br>
         X = L(42169),
         ee = new Uint8Array(32);
       ee.fill(0);
-      let et = BigInt(-1),
-        er = BigInt(0),
-        en = BigInt(1),
-        es = BigInt(
+      let et = parseInt(-1),
+        er = parseInt(0),
+        en = parseInt(1),
+        es = parseInt(
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         );
       function ei(O) {
@@ -21373,7 +21371,7 @@ AEN - anchor - end of input string<br>
         en = L(61927),
         es = L(27773),
         ei = L(22896),
-        ea = BigInt(2),
+        ea = parseInt(2),
         eo = 10;
       function ec(O) {
         return O && "function" == typeof O.then;
@@ -24798,8 +24796,8 @@ AEN - anchor - end of input string<br>
       let J = L(38478),
         W = L(58978),
         Y = L(61927),
-        Z = BigInt("1"),
-        X = BigInt("2");
+        Z = parseInt("1"),
+        X = parseInt("2");
       function ee(O) {
         for (let T = O.length - 1; T > 0; T--) {
           let L = Math.floor(Math.random() * (T + 1)),
@@ -27699,12 +27697,12 @@ AEN - anchor - end of input string<br>
         Z = L(38478),
         X = L(16532),
         ee = L(34924),
-        et = BigInt(0),
-        er = BigInt(2),
-        en = BigInt(27),
-        es = BigInt(28),
-        ei = BigInt(35),
-        ea = BigInt(
+        et = parseInt(0),
+        er = parseInt(2),
+        en = parseInt(27),
+        es = parseInt(28),
+        ei = parseInt(35),
+        ea = parseInt(
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         );
       function eo(O) {
@@ -27824,11 +27822,11 @@ AEN - anchor - end of input string<br>
               (L.push((0, Z.toBeArray)(J)), L.push("0x"), L.push("0x")),
             (0, Z.encodeRlp)(L)
           );
-        let W = BigInt(27 + T.yParity);
+        let W = parseInt(27 + T.yParity);
         return (
           J !== et
             ? (W = Y.Signature.getChainIdV(J, T.v))
-            : BigInt(T.v) !== W &&
+            : parseInt(T.v) !== W &&
               (0, Z.assertArgument)(!1, "tx.chainId/sig.v mismatch", "sig", T),
           L.push((0, Z.toBeArray)(W)),
           L.push((0, Z.toBeArray)(T.r)),
@@ -28414,7 +28412,7 @@ AEN - anchor - end of input string<br>
       function ee(O) {
         if (null == X) {
           X = {};
-          for (let O = 0; O < Z.length; O++) X[Z[O]] = BigInt(O);
+          for (let O = 0; O < Z.length; O++) X[Z[O]] = parseInt(O);
         }
         let T = X[O];
         return (
@@ -28422,8 +28420,8 @@ AEN - anchor - end of input string<br>
           T
         );
       }
-      let et = BigInt(0),
-        er = BigInt(58);
+      let et = parseInt(0),
+        er = parseInt(58);
       function en(O) {
         let T = (0, J.getBytes)(O),
           L = (0, Y.toBigInt)(T),
@@ -28735,20 +28733,20 @@ AEN - anchor - end of input string<br>
         W = L(7539),
         Y = L(31112),
         Z = L(43980),
-        X = BigInt(-1),
-        ee = BigInt(0),
-        et = BigInt(1),
-        er = BigInt(5),
+        X = parseInt(-1),
+        ee = parseInt(0),
+        et = parseInt(1),
+        er = parseInt(5),
         en = {},
         es = "0000";
       for (; es.length < 80; ) es += es;
       function ei(O) {
         let T = es;
         for (; T.length < O; ) T += T;
-        return BigInt("1" + T.substring(0, O));
+        return parseInt("1" + T.substring(0, O));
       }
       function ea(O, T, L) {
-        let J = BigInt(T.width);
+        let J = parseInt(T.width);
         if (T.signed) {
           let T = et << (J - et);
           (0, W.assert)(
@@ -29046,7 +29044,7 @@ AEN - anchor - end of input string<br>
             { operation: "fromString", fault: "underflow", value: O }
           ),
             (Z = Z.substring(0, J.decimals));
-          let X = BigInt(L[1] + Y + Z);
+          let X = parseInt(L[1] + Y + Z);
           return ea(X, J, "fromString"), new eu(en, X, J);
         }
         static fromBytes(O, T) {
@@ -29499,12 +29497,12 @@ AEN - anchor - end of input string<br>
             void 0);
       let J = L(54389),
         W = L(7539),
-        Y = BigInt(0),
-        Z = BigInt(1),
+        Y = parseInt(0),
+        Z = parseInt(1),
         X = 9007199254740991;
       function ee(O, T) {
         let L = es(O, "value"),
-          J = BigInt(eo(T, "width"));
+          J = parseInt(eo(T, "width"));
         return ((0, W.assert)(L >> J === Y, "overflow", "NUMERIC_FAULT", {
           operation: "fromTwos",
           fault: "overflow",
@@ -29516,7 +29514,7 @@ AEN - anchor - end of input string<br>
       }
       function et(O, T) {
         let L = en(O, "value"),
-          J = BigInt(eo(T, "width")),
+          J = parseInt(eo(T, "width")),
           X = Z << (J - Z);
         return L < Y
           ? ((L = -L),
@@ -29534,7 +29532,7 @@ AEN - anchor - end of input string<br>
             L);
       }
       function er(O, T) {
-        return es(O, "value") & ((Z << BigInt(eo(T, "bits"))) - Z);
+        return es(O, "value") & ((Z << parseInt(eo(T, "bits"))) - Z);
       }
       function en(O, T) {
         switch (typeof O) {
@@ -29554,13 +29552,13 @@ AEN - anchor - end of input string<br>
                 T || "value",
                 O
               ),
-              BigInt(O)
+              parseInt(O)
             );
           case "string":
             try {
               if ("" === O) throw Error("empty string");
-              if ("-" === O[0] && "-" !== O[1]) return -BigInt(O.substring(1));
-              return BigInt(O);
+              if ("-" === O[0] && "-" !== O[1]) return -parseInt(O.substring(1));
+              return parseInt(O);
             } catch (L) {
               (0, W.assertArgument)(
                 !1,
@@ -29599,7 +29597,7 @@ AEN - anchor - end of input string<br>
         if (O instanceof Uint8Array) {
           let T = "0x0";
           for (let L of O) T += ei[L >> 4] + ei[15 & L];
-          return BigInt(T);
+          return parseInt(T);
         }
         return en(O);
       }
@@ -29634,7 +29632,7 @@ AEN - anchor - end of input string<br>
           case "string":
             try {
               if ("" === O) throw Error("empty string");
-              return eo(BigInt(O), T);
+              return eo(parseInt(O), T);
             } catch (L) {
               (0, W.assertArgument)(
                 !1,
@@ -30182,7 +30180,7 @@ AEN - anchor - end of input string<br>
           66, 105, 116, 99, 111, 105, 110, 32, 115, 101, 101, 100,
         ]),
         es = 2147483648,
-        ei = BigInt(
+        ei = parseInt(
           "0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
         ),
         ea = "0123456789abcdef";
@@ -30366,7 +30364,7 @@ AEN - anchor - end of input string<br>
             eu,
             new J.SigningKey(
               (0, Z.toBeHex)(
-                ((0, Z.toBigInt)(Y) + BigInt(this.privateKey)) % ei,
+                ((0, Z.toBigInt)(Y) + parseInt(this.privateKey)) % ei,
                 32
               )
             ),

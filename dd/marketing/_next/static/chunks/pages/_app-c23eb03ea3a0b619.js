@@ -1161,7 +1161,7 @@
         "%AsyncGeneratorFunction%": b,
         "%AsyncIteratorPrototype%": b,
         "%Atomics%": "undefined" == typeof Atomics ? n : Atomics,
-        "%BigInt%": "undefined" == typeof BigInt ? n : BigInt,
+        "%Number%": "undefined" == typeof Number ? n : Number,
         "%BigInt64Array%": "undefined" == typeof BigInt64Array ? n : BigInt64Array,
         "%BigUint64Array%": "undefined" == typeof BigUint64Array ? n : BigUint64Array,
         "%Boolean%": Boolean,

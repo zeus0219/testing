@@ -2799,10 +2799,10 @@
         }
         toBigInt() {
           try {
-            return BigInt(this.toString());
+            return Number(this.toString());
           } catch (e) {}
           return u.throwError(
-            "this platform does not support BigInt",
+            "this platform does not support Number",
             s.Logger.errors.UNSUPPORTED_OPERATION,
             { value: this.toString() }
           );

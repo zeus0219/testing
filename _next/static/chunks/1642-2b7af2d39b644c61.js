@@ -610,7 +610,7 @@
           }).test(
             "min-eth",
             a,
-            (e) => !e || "" === e || (0, i.f)(n.toString()) <= BigInt(e)
+            (e) => !e || "" === e || (0, i.f)(n.toString()) <= Number(e)
           );
         }),
         s.addMethod(s.string, "maxEth", function (e) {
@@ -634,7 +634,7 @@
           }).test(
             "max-eth",
             a,
-            (e) => !e || "" === e || (0, i.f)(n.toString()) >= BigInt(e)
+            (e) => !e || "" === e || (0, i.f)(n.toString()) >= Number(e)
           );
         }),
         s.addMethod(s.string, "isAddress", function () {

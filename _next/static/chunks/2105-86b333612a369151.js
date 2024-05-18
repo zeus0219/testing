@@ -48,7 +48,7 @@
               abi: n.X$,
               functionName: "addr",
               ...(null != h
-                ? { args: [(0, l.V)(p), BigInt(h)] }
+                ? { args: [(0, l.V)(p), Number(h)] }
                 : { args: [(0, l.V)(p)] }),
             }),
             u = {
@@ -64,7 +64,7 @@
           if ("0x" === m[0]) return null;
           let b = (0, a.k)({
             abi: n.X$,
-            args: null != h ? [(0, l.V)(p), BigInt(h)] : void 0,
+            args: null != h ? [(0, l.V)(p), Number(h)] : void 0,
             functionName: "addr",
             data: m[0],
           });
@@ -249,7 +249,7 @@
               },
             ],
             functionName: "tokenURI",
-            args: [BigInt(t.tokenID)],
+            args: [Number(t.tokenID)],
           });
         if ("erc1155" === t.namespace)
           return (0, n.L)(e, {
@@ -264,7 +264,7 @@
               },
             ],
             functionName: "uri",
-            args: [BigInt(t.tokenID)],
+            args: [Number(t.tokenID)],
           });
         throw new c({ namespace: t.namespace });
       }
@@ -490,7 +490,7 @@
         { address: t, blockNumber: r, blockTag: a = "latest" }
       ) {
         let i = r ? (0, n.eC)(r) : void 0;
-        return BigInt(
+        return Number(
           await e.request({ method: "eth_getBalance", params: [t, i || a] })
         );
       }

@@ -6042,7 +6042,7 @@
         return JSON.parse(t, (t, n) => {
           let r = n;
           return (
-            r?.__type === "bigint" && (r = BigInt(r.value)),
+            r?.__type === "bigint" && (r = Number(r.value)),
             r?.__type === "Map" && (r = new Map(r.value)),
             e?.(t, r) ?? r
           );
