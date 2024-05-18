@@ -21061,8 +21061,6 @@ AEN - anchor - end of input string<br>
         get types() {
           return JSON.parse(this.B__0);
         }
-        O__0;
-        T__0;
         constructor(O) {
           (this.O__0 = new Map()), (this.T__0 = new Map());
           let T = new Map(),
