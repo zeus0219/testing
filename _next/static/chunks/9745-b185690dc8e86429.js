@@ -2504,8 +2504,8 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
           (t.yParity = (() => {
             if (e.yParity) return Number(e.yParity);
             if ("bigint" == typeof t.v) {
-              if (0 === t.v || 27n === t.v) return 0;
-              if (1 === t.v || 28n === t.v) return 1;
+              if (0 === t.v || 27 === t.v) return 0;
+              if (1 === t.v || 28 === t.v) return 1;
               if (t.v >= 35n) return t.v % 2 === 0 ? 1 : 0;
             }
           })()),
@@ -2855,7 +2855,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                     ? "0x"
                     : 1 === t.v
                     ? (0, o.NC)(1)
-                    : 27n === t.v
+                    : 27 === t.v
                     ? "0x"
                     : (0, o.NC)(1);
                 P.push(e, (0, s.f)(t.r), (0, s.f)(t.s));
@@ -2908,7 +2908,7 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                     ? "0x"
                     : 1 === t.v
                     ? (0, o.NC)(1)
-                    : 27n === t.v
+                    : 27 === t.v
                     ? "0x"
                     : (0, o.NC)(1);
                 x.push(e, (0, s.f)(t.r), (0, s.f)(t.s));
@@ -2960,9 +2960,9 @@ Try increasing the nonce or find the latest nonce with \`getTransactionCount\`.`
                   if (t.v >= 35n)
                     return (t.v - 35n) / 2 > 0
                       ? t.v
-                      : 27n + (35n === t.v ? 0 : 1);
-                  if (n > 0) return BigInt(2 * n) + BigInt(35n + t.v - 27n);
-                  let e = 27n + (27n === t.v ? 0 : 1);
+                      : 27 + (35n === t.v ? 0 : 1);
+                  if (n > 0) return BigInt(2 * n) + BigInt(35n + t.v - 27);
+                  let e = 27 + (27 === t.v ? 0 : 1);
                   if (t.v !== e) throw new r.vl({ v: t.v });
                   return e;
                 })();

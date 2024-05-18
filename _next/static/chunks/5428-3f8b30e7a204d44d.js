@@ -3744,7 +3744,7 @@
       }
       async function d({ hash: t, privateKey: e }) {
         let { r, s: o, recovery: a } = n.kA.sign(t.slice(2), e.slice(2));
-        return { r: (0, i.NC)(r), s: (0, i.NC)(o), v: a ? 28n : 27n };
+        return { r: (0, i.NC)(r), s: (0, i.NC)(o), v: a ? 28 : 27 };
       }
       async function h({ message: t, privateKey: e }) {
         return f(await d({ hash: (0, c.r)(t), privateKey: e }));

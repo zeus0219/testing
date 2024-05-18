@@ -4433,66 +4433,66 @@
         i = n(92472),
         o = n(30558),
         a = class extends i.F {
-          #t;
-          #e;
-          #n;
-          #r;
+          t_tt;
+          e_ee;
+          n_nn;
+          r_rr;
           constructor(t) {
             super(),
               (this.mutationId = t.mutationId),
-              (this.#e = t.defaultOptions),
-              (this.#n = t.mutationCache),
-              (this.#t = []),
+              (this.e_ee = t.defaultOptions),
+              (this.n_nn = t.mutationCache),
+              (this.t_tt = []),
               (this.state = t.state || s()),
               this.setOptions(t.options),
               this.scheduleGc();
           }
           setOptions(t) {
-            (this.options = { ...this.#e, ...t }),
+            (this.options = { ...this.e_ee, ...t }),
               this.updateGcTime(this.options.gcTime);
           }
           get meta() {
             return this.options.meta;
           }
           addObserver(t) {
-            this.#t.includes(t) ||
-              (this.#t.push(t),
+            this.t_tt.includes(t) ||
+              (this.t_tt.push(t),
               this.clearGcTimeout(),
-              this.#n.notify({
+              this.n_nn.notify({
                 type: "observerAdded",
                 mutation: this,
                 observer: t,
               }));
           }
           removeObserver(t) {
-            (this.#t = this.#t.filter((e) => e !== t)),
+            (this.t_tt = this.t_tt.filter((e) => e !== t)),
               this.scheduleGc(),
-              this.#n.notify({
+              this.n_nn.notify({
                 type: "observerRemoved",
                 mutation: this,
                 observer: t,
               });
           }
           optionalRemove() {
-            this.#t.length ||
+            this.t_tt.length ||
               ("pending" === this.state.status
                 ? this.scheduleGc()
-                : this.#n.remove(this));
+                : this.n_nn.remove(this));
           }
           continue() {
-            return this.#r?.continue() ?? this.execute(this.state.variables);
+            return this.r_rr?.continue() ?? this.execute(this.state.variables);
           }
           async execute(t) {
             let e = "pending" === this.state.status;
             try {
               if (!e) {
                 this.#i({ type: "pending", variables: t }),
-                  await this.#n.config.onMutate?.(t, this);
+                  await this.n_nn.config.onMutate?.(t, this);
                 let e = await this.options.onMutate?.(t);
                 e !== this.state.context &&
                   this.#i({ type: "pending", context: e, variables: t });
               }
-              let n = await ((this.#r = (0, o.Mz)({
+              let n = await ((this.r_rr = (0, o.Mz)({
                 fn: () =>
                   this.options.mutationFn
                     ? this.options.mutationFn(t)
@@ -4510,16 +4510,16 @@
                 retryDelay: this.options.retryDelay,
                 networkMode: this.options.networkMode,
               })),
-              this.#r.promise);
+              this.r_rr.promise);
               return (
-                await this.#n.config.onSuccess?.(
+                await this.n_nn.config.onSuccess?.(
                   n,
                   t,
                   this.state.context,
                   this
                 ),
                 await this.options.onSuccess?.(n, t, this.state.context),
-                await this.#n.config.onSettled?.(
+                await this.n_nn.config.onSettled?.(
                   n,
                   null,
                   this.state.variables,
@@ -4533,14 +4533,14 @@
             } catch (e) {
               try {
                 throw (
-                  (await this.#n.config.onError?.(
+                  (await this.n_nn.config.onError?.(
                     e,
                     t,
                     this.state.context,
                     this
                   ),
                   await this.options.onError?.(e, t, this.state.context),
-                  await this.#n.config.onSettled?.(
+                  await this.n_nn.config.onSettled?.(
                     void 0,
                     e,
                     this.state.variables,
@@ -4609,10 +4609,10 @@
               }
             })(this.state)),
               r.V.batch(() => {
-                this.#t.forEach((e) => {
+                this.t_tt.forEach((e) => {
                   e.onMutationUpdate(t);
                 }),
-                  this.#n.notify({
+                  this.n_nn.notify({
                     mutation: this,
                     type: "updated",
                     action: t,
