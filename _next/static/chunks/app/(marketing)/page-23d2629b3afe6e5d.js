@@ -216,7 +216,7 @@
             bulletPoints: o,
             imgClassName: d = "",
             className: u,
-            // videoUrl,
+            videoUrl,
             headerText
           } = e;
           return (0, l.jsxs)("div", {
@@ -243,21 +243,21 @@
                         $(e.target).next().attr("src","videos/live-text-editor.mp4")
                       })
                     }),
-                    // (0, l.jsx)("video", {
-                    //   className:"rounded-list md:mt-11 mb-5 hidden",
-                    //   controls: !1,
-                    //   height: "0",
-                    //   loop: !0,
-                    //   muted: !0,
-                    //   autoplay: 1,
-                    //   width: "100%",
-                    //   children:[
-                    //     (0, l.jsx)("source", {
-                    //       type: "video/webm",
-                    //       // src:videoUrl,
-                    //     })
-                    //   ]
-                    // }),
+                    (0, l.jsx)("video", {
+                      className:"rounded-list md:mt-11 mb-5 hidden",
+                      controls: !1,
+                      height: "0",
+                      loop: !0,
+                      muted: !0,
+                      autoplay: 1,
+                      width: "100%",
+                      children:[
+                        (0, l.jsx)("source", {
+                          type: "video/webm",
+                          src:videoUrl,
+                        })
+                      ]
+                    }),
               ]
           });
         },
@@ -541,20 +541,20 @@
                             $(`#video_${index}`).attr("src",data?.videoUrl);
                           }),  
                         }),
-                        // (0,l.jsx)("video",{
-                        //   className:"rounded md:mt-11 mb-5 hidden",
-                        //   id:`video_${index}`,
-                        //   controls: !1,
-                        //   height: "0",
-                        //   loop: !0,
-                        //   muted: !0,
-                        //   autoplay: 1,
-                        //   width: "100%",
-                        //   children:[(0,l.jsx)("source",{
-                        //     type:"video/webm",
-                        //     // src:data?.posterUrl
-                        //   })]
-                        // }),
+                        (0,l.jsx)("video",{
+                          className:"rounded md:mt-11 mb-5 hidden",
+                          id:`video_${index}`,
+                          controls: !1,
+                          height: "0",
+                          loop: !0,
+                          muted: !0,
+                          autoplay: 1,
+                          width: "100%",
+                          children:[(0,l.jsx)("source",{
+                            type:"video/webm",
+                            src:data?.posterUrl
+                          })]
+                        }),
                       ]
                     })
                   ))

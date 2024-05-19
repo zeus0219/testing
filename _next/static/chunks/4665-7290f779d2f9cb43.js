@@ -252,7 +252,6 @@
       let T = i.default.StrictMode;
       function w(e) {
         let { children: t } = e;
-        console.log(t,'ttttttttttttttt');
         return t;
       }
       function C(e) {
@@ -278,7 +277,6 @@
             )
           ),
           r = { onRecoverableError: f.default };
-          console.log(0, w,777777);
 
         "__next_error__" === document.documentElement.id
           ? l.default.createRoot(_, r).render(t)
@@ -299,7 +297,6 @@
         r(17438),
         (0, r(41161).appBootstrap)(() => {
           let { hydrate: e } = r(45581);
-          console.log(r(45581),'ffffffddddddd');
            e();
         }),
         ("function" == typeof t.default ||

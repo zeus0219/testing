@@ -1218,7 +1218,6 @@
             x = (0, n.useRef)(null),
             m = (0, n.useRef)(null),
             f = (0, n.useRef)(null);
-          console.log('progress,444""::', g);
           return (0, n.useEffect)(() => {
             (() => {
               if (g > 0.1 && (p.current.style.animationDuration = "0s"), h.current && x.current && m.current && f.current) {
