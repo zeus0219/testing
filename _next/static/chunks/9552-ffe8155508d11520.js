@@ -19001,9 +19001,7 @@ AEN - anchor - end of input string<br>
       // "use strict";
       Object.defineProperty(T, "__esModule", { value: !0 }),
         (T.SigningKey = void 0);
-      let J = L(70280),
-        W = L(38478),
-        Y = L(94003);
+      let W = L(38478);
       class Z {
         constructor(O) {
           (0, W.assertArgument)(
@@ -19030,54 +19028,44 @@ AEN - anchor - end of input string<br>
             "digest",
             O
           );
-          let T = J.secp256k1.sign(
-            (0, W.getBytesCopy)(O),
-            (0, W.getBytesCopy)(this.C__0),
-            { lowS: !0 }
-          );
-          return Y.Signature.from({
-            r: (0, W.toBeHex)(T.r, 32),
-            s: (0, W.toBeHex)(T.s, 32),
-            v: T.recovery ? 28 : 27,
-          });
+          // let T = J.secp256k1.sign(
+          //   (0, W.getBytesCopy)(O),
+          //   (0, W.getBytesCopy)(this.C__0),
+          //   { lowS: !0 }
+          // );
+          return ''
         }
         computeSharedSecret(O) {
-          let T = Z.computePublicKey(O);
-          return (0, W.hexlify)(
-            J.secp256k1.getSharedSecret(
-              (0, W.getBytesCopy)(this.C__0),
-              (0, W.getBytes)(T),
-              !1
-            )
-          );
+          // let T = Z.computePublicKey(O);
+          return ""
         }
         static computePublicKey(O, T) {
-          let L = (0, W.getBytes)(O, "key");
-          if (32 === L.length) {
-            let O = J.secp256k1.getPublicKey(L, !!T);
-            return (0, W.hexlify)(O);
-          }
-          if (64 === L.length) {
-            let O = new Uint8Array(65);
-            (O[0] = 4), O.set(L, 1), (L = O);
-          }
-          let Y = J.secp256k1.ProjectivePoint.fromHex(L);
-          return (0, W.hexlify)(Y.toRawBytes(T));
+          // let L = (0, W.getBytes)(O, "key");
+          // if (32 === L.length) {
+          //   let O = J.secp256k1.getPublicKey(L, !!T);
+          //   return (0, W.hexlify)(O);
+          // }
+          // if (64 === L.length) {
+          //   let O = new Uint8Array(65);
+          //   (O[0] = 4), O.set(L, 1), (L = O);
+          // }
+          // let Y = J.secp256k1.ProjectivePoint.fromHex(L);
+          return;
         }
         static recoverPublicKey(O, T) {
-          (0, W.assertArgument)(
-            32 === (0, W.dataLength)(O),
-            "invalid digest length",
-            "digest",
-            O
-          );
-          let L = Y.Signature.from(T),
-            Z = J.secp256k1.Signature.fromCompact(
-              (0, W.getBytesCopy)((0, W.concat)([L.r, L.s]))
-            ),
-            X = (Z = Z.addRecoveryBit(L.yParity)).recoverPublicKey(
-              (0, W.getBytesCopy)(O)
-            );
+          // (0, W.assertArgument)(
+          //   32 === (0, W.dataLength)(O),
+          //   "invalid digest length",
+          //   "digest",
+          //   O
+          // );
+          // let L = Y.Signature.from(T),
+          //   Z = J.secp256k1.Signature.fromCompact(
+          //     (0, W.getBytesCopy)((0, W.concat)([L.r, L.s]))
+          //   ),
+          //   X = (Z = Z.addRecoveryBit(L.yParity)).recoverPublicKey(
+          //     (0, W.getBytesCopy)(O)
+          //   );
           return (
             (0, W.assertArgument)(
               null != X,
@@ -19085,17 +19073,17 @@ AEN - anchor - end of input string<br>
               "signature",
               T
             ),
-            "0x" + X.toHex(!1)
+            "0x0000000000000000"
           );
         }
         static addPoints(O, T, L) {
-          let W = J.secp256k1.ProjectivePoint.fromHex(
-              Z.computePublicKey(O).substring(2)
-            ),
-            Y = J.secp256k1.ProjectivePoint.fromHex(
-              Z.computePublicKey(T).substring(2)
-            );
-          return "0x" + W.add(Y).toHex(!!L);
+          // let W = J.secp256k1.ProjectivePoint.fromHex(
+          //     Z.computePublicKey(O).substring(2)
+          //   ),
+          //   Y = J.secp256k1.ProjectivePoint.fromHex(
+          //     Z.computePublicKey(T).substring(2)
+          //   );
+          return "0x00000000000000000000000"
         }
       }
       T.SigningKey = Z;

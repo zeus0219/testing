@@ -2177,7 +2177,6 @@
         d = a.n(o),
         c = a(15039),
         u = a(54597),
-        p = a(89599),
         m = a(91818),
         x = a(74354);
       function h(e) {
@@ -2212,9 +2211,9 @@
                   type: "ghost",
                   onClick: (e) => {
                     e.stopPropagation(), e.preventDefault();
-                    let t = (0, u.w)(),
-                      a = (0, p.L)(t);
-                    y(!0), w({ target: { name: v.name, value: a.address } });
+                    let t = (0, u.w)()
+                      // a = (0, p.L)(t);
+                    // y(!0), w({ target: { name: v.name, value: a.address } });
                   },
                   children: "rdm",
                 }),

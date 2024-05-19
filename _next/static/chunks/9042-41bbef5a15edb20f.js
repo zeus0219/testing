@@ -274,13 +274,13 @@
             void 0);
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let n =
           r(11509),
-        i = BigInt(0),
-        o = BigInt(1),
-        s = BigInt(2),
-        a = BigInt(3),
-        l = BigInt(4),
-        f = BigInt(5),
-        u = BigInt(8);
+        i = _BigInt(0),
+        o = _BigInt(1),
+        s = _BigInt(2),
+        a = _BigInt(3),
+        l = _BigInt(4),
+        f = _BigInt(5),
+        u = _BigInt(8);
       function h(t, e) {
         let r = t % e;
         return r >= i ? r : e + r;
@@ -339,7 +339,7 @@
             if (t.eql(h, t.ZERO)) return t.ZERO;
             let e = 1;
             for (let r = t.sqr(h); e < s && !t.eql(r, t.ONE); e++) r = t.sqr(r);
-            let r = t.pow(l, o << BigInt(s - e - 1));
+            let r = t.pow(l, o << (s - e - 1));
             (l = t.sqr(r)), (u = t.mul(u, r)), (h = t.mul(h, l)), (s = e);
           }
           return u;
@@ -368,8 +368,8 @@
         }
         return p(t);
       }
-      BigInt(9),
-        BigInt(16),
+      Number(9),
+        Number(16),
         (e.mod = h),
         (e.pow = d),
         (e.pow2 = function (t, e, r) {
@@ -575,9 +575,8 @@
           e.bytesToHex =
             void 0);
       /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let r =
-          BigInt(0),
-        n = BigInt(1),
-        i = BigInt(2),
+          _BigInt(0),
+        n = _BigInt(1),
         o = (t) => t instanceof Uint8Array,
         s = Array.from({ length: 256 }, (t, e) =>
           e.toString(16).padStart(2, "0")
@@ -595,7 +594,7 @@
       function f(t) {
         if ("string" != typeof t)
           throw Error("hex string expected, got " + typeof t);
-        return BigInt("" === t ? "0" : `0x${t}`);
+        return Number("" === t ? "0" : `0x${t}`);
       }
       function u(t) {
         if ("string" != typeof t)
@@ -676,14 +675,14 @@
         }),
         (e.bitLen = function (t) {
           let e;
-          for (e = 0; t > r; t >>= n, e += 1);
+          for (e = 0; t > r;  e += 1);
           return e;
         }),
         (e.bitGet = function (t, e) {
-          return (t >> BigInt(e)) & n;
+          return (t >> Number(e)) & 1;
         }),
-        (e.bitSet = (t, e, i) => t | ((i ? n : r) << BigInt(e))),
-        (e.bitMask = (t) => (i << BigInt(t - 1)) - n);
+        (e.bitSet = (t, e, i) => t),
+        (e.bitMask = (t) => n);
       let c = (t) => new Uint8Array(t),
         p = (t) => Uint8Array.from(t);
       e.createHmacDrbg = function (t, e, r) {
@@ -811,11 +810,11 @@
           return `30${r(s + o + 4)}02${l}${i}02${a}${n}`;
         },
       };
-      let f = BigInt(0),
-        u = BigInt(1),
-        h = BigInt(2),
-        d = BigInt(3),
-        c = BigInt(4);
+      let f = _BigInt(0),
+        u = _BigInt(1),
+        h = _BigInt(2),
+        d = _BigInt(3),
+        c = _BigInt(4);
       function p(t) {
         let e = (function (t) {
             let e = (0, s.validateBasic)(t);
@@ -1388,7 +1387,7 @@
               function (t) {
                 let e = i.bytesToNumberBE(t),
                   n = 8 * t.length - r.nBitLength;
-                return n > 0 ? e >> BigInt(n) : e;
+                return n > 0 ? e >> _BigInt(n) : e;
               },
             A =
               r.bits2int_modN ||
@@ -1516,7 +1515,7 @@
                   return n.mapHashToField(r.randomBytes(t), r.n);
                 },
                 precompute: (t = 8, e = g.BASE) => (
-                  e._setWindowSize(t), e.multiply(BigInt(3)), e
+                  e._setWindowSize(t), e.multiply((3)), e
                 ),
               },
             }
@@ -1559,224 +1558,6 @@
             return (h = t.cmov(t.neg(h), h, p)), { x: (u = t.div(u, a)), y: h };
           };
         });
-    },
-    70280: function (t, e, r) {
-      Object.defineProperty(e, "__esModule", { value: !0 }),
-        (e.encodeToCurve = e.hashToCurve = e.schnorr = e.secp256k1 = void 0);
-      /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */ let n =
-          r(93782),
-        i = r(8962),
-        o = r(31965),
-        s = r(69691),
-        a = r(11509),
-        l = r(80455),
-        f = r(60269),
-        u = BigInt(
-          "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f"
-        ),
-        h = BigInt(
-          "0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
-        ),
-        d = BigInt(1),
-        c = BigInt(2),
-        p = (t, e) => (t + e / c) / e;
-      function y(t) {
-        let e = BigInt(3),
-          r = BigInt(6),
-          n = BigInt(11),
-          i = BigInt(22),
-          s = BigInt(23),
-          a = BigInt(44),
-          l = BigInt(88),
-          f = (t * t * t) % u,
-          h = (f * f * t) % u,
-          d = ((0, o.pow2)(h, e, u) * h) % u,
-          p = ((0, o.pow2)(d, e, u) * h) % u,
-          y = ((0, o.pow2)(p, c, u) * f) % u,
-          b = ((0, o.pow2)(y, n, u) * y) % u,
-          m = ((0, o.pow2)(b, i, u) * b) % u,
-          w = ((0, o.pow2)(m, a, u) * m) % u,
-          E = ((0, o.pow2)(w, l, u) * w) % u,
-          B = ((0, o.pow2)(E, a, u) * m) % u,
-          v = ((0, o.pow2)(B, e, u) * h) % u,
-          x = ((0, o.pow2)(v, s, u) * b) % u,
-          S = ((0, o.pow2)(x, r, u) * f) % u,
-          A = (0, o.pow2)(S, c, u);
-        if (!g.eql(g.sqr(A), t)) throw Error("Cannot find square root");
-        return A;
-      }
-      let g = (0, o.Field)(u, void 0, void 0, { sqrt: y });
-      e.secp256k1 = (0, f.createCurve)(
-        {
-          a: BigInt(0),
-          b: BigInt(7),
-          Fp: g,
-          n: h,
-          Gx: BigInt(
-            "55066263022277343669578718895168534326250603453777594175500187360389116729240"
-          ),
-          Gy: BigInt(
-            "32670510020758816978083085130507043184471273380659243275938904335757337482424"
-          ),
-          h: BigInt(1),
-          lowS: !0,
-          endo: {
-            beta: BigInt(
-              "0x7ae96a2b657c07106e64479eac3434e99cf0497512f58995c1396c28719501ee"
-            ),
-            splitScalar: (t) => {
-              let e = BigInt("0x3086d221a7d46bcde86c90e49284eb15"),
-                r = -d * BigInt("0xe4437ed6010e88286f547fa90abfe4c3"),
-                n = BigInt("0x114ca50f7a8e2f3f657c1108d9d44cfd8"),
-                i = BigInt("0x100000000000000000000000000000000"),
-                s = p(e * t, h),
-                a = p(-r * t, h),
-                l = (0, o.mod)(t - s * e - a * n, h),
-                f = (0, o.mod)(-s * r - a * e, h),
-                u = l > i,
-                c = f > i;
-              if ((u && (l = h - l), c && (f = h - f), l > i || f > i))
-                throw Error("splitScalar: Endomorphism failed, k=" + t);
-              return { k1neg: u, k1: l, k2neg: c, k2: f };
-            },
-          },
-        },
-        n.sha256
-      );
-      let b = BigInt(0),
-        m = (t) => "bigint" == typeof t && b < t && t < u,
-        w = (t) => "bigint" == typeof t && b < t && t < h,
-        E = {};
-      function B(t, ...e) {
-        let r = E[t];
-        if (void 0 === r) {
-          let e = (0, n.sha256)(Uint8Array.from(t, (t) => t.charCodeAt(0)));
-          (r = (0, a.concatBytes)(e, e)), (E[t] = r);
-        }
-        return (0, n.sha256)((0, a.concatBytes)(r, ...e));
-      }
-      let v = (t) => t.toRawBytes(!0).slice(1),
-        x = (t) => (0, a.numberToBytesBE)(t, 32),
-        S = (t) => (0, o.mod)(t, u),
-        A = (t) => (0, o.mod)(t, h),
-        O = e.secp256k1.ProjectivePoint,
-        I = (t, e, r) => O.BASE.multiplyAndAddUnsafe(t, e, r);
-      function T(t) {
-        let r = e.secp256k1.utils.normPrivateKeyToScalar(t),
-          n = O.fromPrivateKey(r);
-        return { scalar: n.hasEvenY() ? r : A(-r), bytes: v(n) };
-      }
-      function L(t) {
-        if (!m(t)) throw Error("bad x: need 0 < x < p");
-        let e = S(t * t),
-          r = y(S(e * t + BigInt(7)));
-        r % c !== b && (r = S(-r));
-        let n = new O(t, r, d);
-        return n.assertValidity(), n;
-      }
-      function H(...t) {
-        return A((0, a.bytesToNumberBE)(B("BIP0340/challenge", ...t)));
-      }
-      function N(t, e, r) {
-        let n = (0, a.ensureBytes)("signature", t, 64),
-          i = (0, a.ensureBytes)("message", e),
-          o = (0, a.ensureBytes)("publicKey", r, 32);
-        try {
-          let t = L((0, a.bytesToNumberBE)(o)),
-            e = (0, a.bytesToNumberBE)(n.subarray(0, 32));
-          if (!m(e)) return !1;
-          let r = (0, a.bytesToNumberBE)(n.subarray(32, 64));
-          if (!w(r)) return !1;
-          let s = H(x(e), v(t), i),
-            l = I(t, r, A(-s));
-          if (!l || !l.hasEvenY() || l.toAffine().x !== e) return !1;
-          return !0;
-        } catch (t) {
-          return !1;
-        }
-      }
-      e.schnorr = {
-        getPublicKey: function (t) {
-          return T(t).bytes;
-        },
-        sign: function (t, e, r = (0, i.randomBytes)(32)) {
-          let n = (0, a.ensureBytes)("message", t),
-            { bytes: o, scalar: s } = T(e),
-            l = (0, a.ensureBytes)("auxRand", r, 32),
-            f = x(s ^ (0, a.bytesToNumberBE)(B("BIP0340/aux", l))),
-            u = B("BIP0340/nonce", f, o, n),
-            h = A((0, a.bytesToNumberBE)(u));
-          if (h === b) throw Error("sign failed: k is zero");
-          let { bytes: d, scalar: c } = T(h),
-            p = H(d, o, n),
-            y = new Uint8Array(64);
-          if ((y.set(d, 0), y.set(x(A(c + p * s)), 32), !N(y, n, o)))
-            throw Error("sign: Invalid signature produced");
-          return y;
-        },
-        verify: N,
-        utils: {
-          randomPrivateKey: e.secp256k1.utils.randomPrivateKey,
-          lift_x: L,
-          pointToBytes: v,
-          numberToBytesBE: a.numberToBytesBE,
-          bytesToNumberBE: a.bytesToNumberBE,
-          taggedHash: B,
-          mod: o.mod,
-        },
-      };
-      let _ = (0, l.isogenyMap)(
-          g,
-          [
-            [
-              "0x8e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38daaaaa8c7",
-              "0x7d3d4c80bc321d5b9f315cea7fd44c5d595d2fc0bf63b92dfff1044f17c6581",
-              "0x534c328d23f234e6e2a413deca25caece4506144037c40314ecbd0b53d9dd262",
-              "0x8e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38e38daaaaa88c",
-            ],
-            [
-              "0xd35771193d94918a9ca34ccbb7b640dd86cd409542f8487d9fe6b745781eb49b",
-              "0xedadc6f64383dc1df7c4b2d51b54225406d36b641f5e41bbc52a56612a8c6d14",
-              "0x0000000000000000000000000000000000000000000000000000000000000001",
-            ],
-            [
-              "0x4bda12f684bda12f684bda12f684bda12f684bda12f684bda12f684b8e38e23c",
-              "0xc75e0c32d5cb7c0fa9d0a54b12a0a6d5647ab046d686da6fdffc90fc201d71a3",
-              "0x29a6194691f91a73715209ef6512e576722830a201be2018a765e85a9ecee931",
-              "0x2f684bda12f684bda12f684bda12f684bda12f684bda12f684bda12f38e38d84",
-            ],
-            [
-              "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffff93b",
-              "0x7a06534bb8bdb49fd5e9e6632722c2989467c1bfc8e8d978dfb425d2685c2573",
-              "0x6484aa716545ca2cf3a70c3fa8fe337e0a3d21162f0d6299a7bf8192bfd2a76f",
-              "0x0000000000000000000000000000000000000000000000000000000000000001",
-            ],
-          ].map((t) => t.map((t) => BigInt(t)))
-        ),
-        k = (0, s.mapToCurveSimpleSWU)(g, {
-          A: BigInt(
-            "0x3f8731abdd661adca08a5558f0f5d272e953d363cb6f0e5d405447c01a444533"
-          ),
-          B: BigInt("1771"),
-          Z: g.create(BigInt("-11")),
-        }),
-        U = (0, l.createHasher)(
-          e.secp256k1.ProjectivePoint,
-          (t) => {
-            let { x: e, y: r } = k(g.create(t[0]));
-            return _(e, r);
-          },
-          {
-            DST: "secp256k1_XMD:SHA-256_SSWU_RO_",
-            encodeDST: "secp256k1_XMD:SHA-256_SSWU_NU_",
-            p: g.ORDER,
-            m: 1,
-            k: 128,
-            expand: "xmd",
-            hash: n.sha256,
-          }
-        );
-      (e.hashToCurve = U.hashToCurve), (e.encodeToCurve = U.encodeToCurve);
     },
     83008: function (t, e) {
       function r(t) {
@@ -1875,14 +1656,14 @@
           !(function (t, e, r, n) {
             if ("function" == typeof t.setBigUint64)
               return t.setBigUint64(e, r, n);
-            let i = BigInt(32),
-              o = BigInt(4294967295),
+            let i = (32),
+              o = (4294967295),
               s = Number((r >> i) & o),
               a = Number(r & o),
               l = n ? 4 : 0,
               f = n ? 0 : 4;
             t.setUint32(e + l, s, n), t.setUint32(e + f, a, n);
-          })(r, o - 8, BigInt(8 * this.length), s),
+          })(r, o - 8, (8 * this.length), s),
             this.process(r, 0);
           let l = (0, i.createView)(t),
             f = this.outputLen;
@@ -1945,8 +1726,8 @@
           e.split =
           e.fromBig =
             void 0);
-      let r = BigInt(4294967296 - 1),
-        n = BigInt(32);
+      let r = _BigInt(4294967296 - 1),
+        n = _BigInt(32);
       function i(t, e = !1) {
         return e
           ? { h: Number(t & r), l: Number((t >> n) & r) }
@@ -1962,7 +1743,7 @@
         return [r, n];
       }
       (e.fromBig = i), (e.split = o);
-      let s = (t, e) => (BigInt(t >>> 0) << n) | BigInt(e >>> 0);
+      let s = (t, e) => 0;
       e.toBig = s;
       let a = (t, e, r) => t >>> r;
       e.shrSH = a;
@@ -2352,12 +2133,12 @@
         i = r(11379),
         o = r(8962),
         [s, a, l] = [[], [], []],
-        f = BigInt(0),
-        u = BigInt(1),
-        h = BigInt(2),
-        d = BigInt(7),
-        c = BigInt(256),
-        p = BigInt(113);
+        f = _BigInt(0),
+        u = _BigInt(1),
+        h = _BigInt(2),
+        d = _BigInt(7),
+        c = _BigInt(256),
+        p = _BigInt(113);
       for (let t = 0, e = u, r = 1, n = 0; t < 24; t++) {
         ([r, n] = [n, (2 * r + 3 * n) % 5]),
           s.push(2 * (5 * n + r)),
@@ -2365,7 +2146,7 @@
         let i = f;
         for (let t = 0; t < 7; t++)
           (e = ((e << u) ^ ((e >> d) * p)) % c) & h &&
-            (i ^= u << ((u << BigInt(t)) - u));
+            (i ^= u << ((u << _BigInt(t)) - u));
         l.push(i);
       }
       let [y, g] = (0, i.split)(l, !0),
